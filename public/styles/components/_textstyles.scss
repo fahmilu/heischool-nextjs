@@ -1,0 +1,21 @@
+@layer components {
+    .text-default {
+        @apply text-[18px]/[140%] font-dmsans font-normal;
+    }
+}
+
+h1 {
+    @apply font-noyh text-[60px]/[normal] font-black;
+}
+
+h2 {
+    @apply font-noyh text-[48px]/[normal] font-black;
+
+    &.bigger {
+        @apply text-[64px]/[normal] font-black;
+    }
+}
+
+h3 {
+    @apply font-noyh text-[36px]/[normal] font-black;
+}

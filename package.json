@@ -9,9 +9,14 @@
     "lint": "eslint"
   },
   "dependencies": {
+    "@gsap/react": "^2.1.2",
+    "embla-carousel-react": "^8.6.0",
+    "gsap": "^3.13.0",
+    "lenis": "^1.3.11",
     "next": "15.5.2",
     "react": "19.1.0",
-    "react-dom": "19.1.0"
+    "react-dom": "19.1.0",
+    "tailwindcss-px-to-viewport": "^0.1.4"
   },
   "devDependencies": {
     "@eslint/eslintrc": "^3",

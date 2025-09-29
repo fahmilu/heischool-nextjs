@@ -2,33 +2,56 @@
 @tailwind components;
 @tailwind utilities;
 
-// Sass variables
-$light-bg: #ffffff;
-$light-fg: #171717;
-$dark-bg: #0a0a0a;
-$dark-fg: #ededed;
-$font-family: Arial, Helvetica, sans-serif;
 
-:root {
-  --background: #{$light-bg};
-  --foreground: #{$light-fg};
+@import "./components/partials";
+@import "./components/textstyles";
+@import "./components/image-animations";
+
+html {
+    @apply scroll-smooth;
 }
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #{$dark-bg};
-    --foreground: #{$dark-fg};
-  }
-}
-
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: $font-family;
-  
-  // Sass nesting example
-  &.loading {
-    opacity: 0.7;
-    pointer-events: none;
-  }
+    @apply text-default antialiased bg-[#FBF8F2];
 }
+
+main {
+    @apply overflow-x-clip;
+}
+.container {
+    @apply w-full max-w-[1366px] mx-auto;
+}
+
+.embla {
+    overflow: hidden;
+}
+
+.embla__container {
+    display: flex;
+}
+
+.embla__slide {
+    flex: 0 0 100%;
+    min-width: 0;
+
+    .embla__slide-image {
+        @apply relative w-full aspect-[1200/629];
+
+        img {
+            @apply object-cover;
+        }
+    }
+}
+
+.floating-button {
+    @apply fixed bottom-[100px] px-[30px] gap-[10px] rotate-90 origin-right right-[30px] z-50 bg-white rounded-b-[40px] p-[15px] flex items-end justify-center;
+
+    span {
+        @apply text-hei-blue text-[24px] font-black font-noyh;
+    }
+
+
+}
+
+
+
+@import "./components/home";

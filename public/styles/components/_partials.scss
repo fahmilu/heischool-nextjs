@@ -1,0 +1,102 @@
+.header {
+    @apply fixed top-0 left-0 right-0 z-50 px-[22px];
+
+    .container {
+        @apply  max-w-[100%] mx-auto h-[126px] flex items-center justify-between px-[31px] pt-[21px] pb-[32px] transition-all duration-300;
+    }
+
+    &__brand {
+        @apply relative w-[64px] aspect-square 2xl:pw-w-[64px] flex-shrink-0;
+
+        img {
+            @apply w-full h-full object-contain;
+        }
+    }
+
+    &__nav {
+        @apply flex items-center justify-between gap-x-[25px];
+
+        &-item {
+            @apply font-noyh font-black text-[20px]  leading-[normal] text-hei-blue px-5 py-[5px] rounded-full bg-transparent;
+        }
+    }
+
+    &__nav-mobile {
+        @apply flex items-center justify-between md:hidden;
+
+        &-item {
+            @apply text-default text-[18px]/[140%] font-dmsans font-normal;
+        }
+        
+    }
+
+    &--scrolled {
+        .container {
+            @apply bg-white max-w-[90%] rounded-b-[25px];
+        }
+        .header__nav-item {
+            @apply text-white bg-hei-blue rounded-full;
+        }
+    }
+
+    &__nav {
+        .has-children {
+            @apply relative;
+            > .header__nav-item {
+                @apply relative z-10;
+            }
+            .header__nav-item-children {
+                @apply absolute top-0 left-0 w-full bg-hei-blue rounded-[30px] pt-[40px] pb-[15px] flex flex-col gap-y-[10px] opacity-0 pointer-events-none transition-all duration-300;
+
+                .header__nav-item {
+                    @apply text-white;
+                }
+            }
+
+            &:hover {
+                > .header__nav-item {
+                    @apply text-white bg-hei-blue rounded-t-[30px] rounded-b-none;
+                }
+                .header__nav-item-children {
+                    @apply opacity-100 pointer-events-auto;
+                }
+            }
+        }
+    }
+}
+
+footer {
+    @apply bg-[url('/imgs/footer.jpg')] bg-cover bg-center bg-no-repeat pt-[100px] pb-[94px];
+
+    .container {
+        @apply flex items-end justify-between;
+    }
+    
+    .copyright {
+        @apply text-hei-blue text-[18px]/[normal] font-normal;
+    }
+
+    .footer-left {
+        @apply flex flex-col items-start gap-y-[38px] justify-between;
+
+        .book-tour-button {
+            @apply text-white text-center font-noyh h-[60px] px-[40px] flex items-center justify-center text-[44px] font-black rounded-[39.149px] bg-hei-blue hover:bg-hei-blue/80 transition-all duration-300;
+        }
+    }
+
+    .footer-right {
+        @apply flex flex-col items-end gap-y-[25px] justify-between;
+
+        .contact-us-button {
+            @apply text-hei-blue text-[38px]/[normal] underline font-noyh font-black;
+        }
+
+        .social-media {
+            @apply flex items-center gap-x-[16px];
+
+            svg {
+                @apply w-[25px] h-[27px];
+            }
+        }
+    }
+}

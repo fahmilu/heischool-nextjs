@@ -1,0 +1,104 @@
+{
+    "success": true,
+    "data": {
+        "title": "HEI Schools Indonesia",
+        "description": "HEI Schools Senayan",
+        "components": [
+            {
+                "type": "home-banner",
+                "data": {
+                    "title": "WELCOME TO<br /> HEI SCHOOLS<br /> INDONESIA",
+                    "image": "/imgs/banner.png"
+                }
+            },
+            {
+                "type": "home-about",
+                "data": {
+                    "title": "About Us",
+                    "description": "HEI Schools is an international preschool concept that brings the excellence of Finnish Early Childhood Education<br /> to schools all over the world",
+                    "image": "/imgs/home-about.png"
+                }
+            },
+            {
+                "type": "home-history",
+                "data": {
+                    "title": "HEI Schools is founded in partnership with the University of Helsinki",
+                    "description": "<p>The Finnish model has been rigorously tested for decades with outstanding learning results.  It combines the best and latest learning philosophies, models, and practices to meet the highest standards in education. At HEI Schools, we adapt its holistic approach, emphasizing on a child’s perspective without compromising academic results.</p><p>As our co-founder, the education experts at the University of Helsinki are a part of our daily working team. Together, we constantly strive to research, plan, and innovate for a successful implementation of the Finnish early education system. This is done through a carefully designed plan by providing purposeful play, nurturing guidance from highly-trained teachers, as well as the opportunity to adopt learning as a natural process shaped by one’s interests, all in due time. In this way, learning can happen everywhere, all the time.</p>",
+                    "image": "/imgs/home-history.png",
+                    "image2": "/imgs/home-history-2.jpg"
+                }
+            },
+            {
+                "type": "home-education",
+                "data": {
+                    "title": "The Finnish education system and HEI Schools successfully combine emotional intelligence and academic competence",
+                    "description": "<p>Competitive, performance and test based models are not good for children.</p><p>At HEI Schools, with the Finnish education model, we promote comprehensive growth, learning, development and the well-being of children, and provide a rich foundation for the progress of their emotional development, skills and competence.</p>",
+                    "image": "/imgs/home-education.png"
+                }
+            },
+            {
+                "type": "home-map",
+                "data": {
+                    "title": "world of HEI",
+                    "image": "/imgs/home-map.png"
+                }
+            },
+            {
+                "type": "home-location",
+                "data": {
+                    "title": "Location",
+                    "items": [
+                        {
+                            "title": "Senayan",
+                            "slug": "senayan",
+                            "images": [
+                                "/imgs/locations/senayan/1.webp",
+                                "/imgs/locations/senayan/2.webp",
+                                "/imgs/locations/senayan/3.webp"
+                            ]
+                        },
+                        {
+                            "title": "Menteng",
+                            "slug": "menteng",
+                            "images": [
+                                "/imgs/locations/menteng/1.webp",
+                                "/imgs/locations/menteng/2.webp",
+                                "/imgs/locations/menteng/3.webp"
+                            ]
+                        }
+                    ]
+                }
+            },
+            {
+                "type": "home-awards",
+                "data": {
+                    "title": "AWARDS & RECOGNITION",
+                    "image": "/imgs/home-award.png"
+                }
+            },
+            {
+                "type": "home-testimonials",
+                "data": {
+                    "title": "our alumni",
+                    "items": [
+                        {
+                            "title": "Mrs. Jenny Doe",
+                            "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua",
+                            "image": "/imgs/avatars/1.jpg"
+                        },
+                        {
+                            "title": "Mr. John Doe",
+                            "description": "Random lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque euismod, nisi eu consectetur cursus, lorem urna dictum enim, nec facilisis lorem erat nec erat.",
+                            "image": "/imgs/avatars/2.jpg"
+                        },
+                        {
+                            "title": "Mrs. Lena Doe",
+                            "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+                            "image": "/imgs/avatars/3.jpg"
+                        }
+                    ]
+                }
+            }
+        ]
+    }
+}
