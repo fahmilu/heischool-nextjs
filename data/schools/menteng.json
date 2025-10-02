@@ -1,0 +1,154 @@
+{
+    "title": "HEI SCHOOLS SPM MENTENG",
+    "slug": "menteng",
+    "address": "Jl. Dr. GSSJ Ratulangi No.5-1",
+    "city": "Gondangdia, Kec. Menteng, Jakarta",
+    "maps": "https://maps.app.goo.gl/P1k6bMxBcUZ2a5K76",
+    "color": "#FACDB7",
+    "description": "Menteng",
+    "image": "/imgs/schools/menteng/banner.webp",
+    "icon": "/imgs/schools/menteng/icon.svg",
+    "components": [
+        {
+            "type": "side-image",
+            "data": {
+                "title": "Welcome to HEI SCHOOLS MENTENG!",
+                "description": "In collaboration with Sekolah Perkumpulan Mandiri (SPM) Menteng, HEI Schools SPM Menteng will open starting in July 2025, marking it as the second HEI Schools campus in Indonesia.",
+                "image": "/imgs/schools/menteng/1.png",
+                "position": "right"
+            }
+        },
+        {
+            "type": "arrangement",
+            "data": {
+                "title": "CLASS ARRANGEMENT",
+                "image": "/imgs/schools/menteng/arr.webp",
+                "link": "https://drive.google.com/file/d/1LGpCGp66wv2l8ysTEif8b1b_sof0hYCt/view?usp=sharing",
+                "link_text": "click here",
+                "link_description": "Read the Students Cut-Off Ages for 2024-2025"
+            }
+        },
+        {   
+            "type": "calendar",
+            "data": {
+                "title": "Academic Calendar",
+                "link": "https://drive.google.com/file/d/1LGpCGp66wv2l8ysTEif8b1b_sof0hYCt/view?usp=sharing",
+                "link_text": "Learn More",
+                "link_description": "Read the Prospectus",
+                "items": [
+                    {
+                        "term": "Term One",
+                        "start": "29 July 2024",
+                        "end": "4 October 2024",
+                        "break": "7-11 October 2024"
+                    },
+                    {
+                        "term": "Term Two",
+                        "start": "13 October 2024",
+                        "end": "21 December 2024",
+                        "break": "24-28 November 2024"
+                    },
+                    {
+                        "term": "Term Three",
+                        "start": "22 December 2024",
+                        "end": "24 January 2025",
+                        "break": "25-29 December 2024"
+                    },
+                    {
+                        "term": "Term Four",
+                        "start": "25 January 2025",
+                        "end": "28 February 2025",
+                        "break": "2-6 February 2025"
+                    }
+                ]
+            }
+        },
+        {
+            "type": "day-at-hei",
+            "data": {
+                "title": "DAY AT HEI SCHOOLS MENTENG",
+                "description": "This is a typical day at HEI Schools. Each day varies according to the curriculum activities. Our days have been designed with thought to have the right balance of lessons and free play, movement and rest, excitement and calmness, group activities and individual time indoors and outdoors.",
+                "image": "/imgs/schools/menteng/day.png"
+            }
+        },
+        {
+            "type": "facilities",
+            "data": {
+                "title": "OUR FACILITIES",
+                "items": [
+                    {
+                        "title": "Classes",
+                        "image": "/imgs/schools/menteng/fac/1.webp"
+                    },
+                    {
+                        "title": "Backyard",
+                        "image": "/imgs/schools/menteng/fac/2.webp"
+                    },
+                    {
+                        "title": "Cafeteria",
+                        "image": "/imgs/schools/menteng/fac/3.webp"
+                    },
+                    {
+                        "title": "HEI Playcabin",
+                        "image": "/imgs/schools/menteng/fac/4.webp"
+                    },
+                    {
+                        "title": "HEI Book Cabin",
+                        "image": "/imgs/schools/menteng/fac/5.webp"
+                    },
+                    {
+                        "title": "Clinic",
+                        "image": "/imgs/schools/menteng/fac/6.webp"
+                    },
+                    {
+                        "title": "Toilet",
+                        "image": "/imgs/schools/menteng/fac/7.webp"
+                    }
+                ]
+            }
+        },
+        {
+            "type": "clubs",
+            "data": {
+                "title": "HEI CLUBS AVAILABLE",
+                "items": []
+            }
+        },
+        {
+            "type": "home-testimonials",
+            "data": {
+                "title": "What do our parents say about us?",
+                "color": "#302864",
+                "items": [
+                    {
+                        "title": "Mrs. Jenny Doe",
+                        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua",
+                        "image": "/imgs/avatars/1.jpg"
+                    },
+                    {
+                        "title": "Mr. John Doe",
+                        "description": "Random lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque euismod, nisi eu consectetur cursus, lorem urna dictum enim, nec facilisis lorem erat nec erat.",
+                        "image": "/imgs/avatars/2.jpg"
+                    },
+                    {
+                        "title": "Mrs. Lena Doe",
+                        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+                        "image": "/imgs/avatars/3.jpg"
+                    }
+                ]
+            }
+        },
+        {
+            "type": "cta",
+            "data": {
+                "title": "CURIOUS TO KNOW OUR ENROLLMENT JOURNEY?",
+                "link_text": "Know more",
+                "image": "/imgs/schools/menteng/cta.jpg",
+                "link_description": "Book a tour",
+                "link": "https://forms.littlelives.com/interest-form/123607-hei-schools-menteng?lang=eng&embed=true"
+            }
+        }
+    ]
+}
+
+

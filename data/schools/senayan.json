@@ -1,0 +1,282 @@
+{
+    "title": "HEI SCHOOLS SENAYAN",
+    "slug": "senayan",
+    "address": "Jl. Simprug Golf 8 No.6 ",
+    "city": "Kebayoran Lama, Grogol, Jakarta",
+    "maps": "https://maps.app.goo.gl/P1k6bMxBcUZ2a5K76",
+    "color": "#FACDB7",
+    "description": "Senayan",
+    "image": "/imgs/schools/senayan/banner.png",
+    "icon": "/imgs/schools/senayan/icon.svg",
+    "components": [
+        {
+            "type": "side-image",
+            "data": {
+                "title": "Welcome to HEI SCHOOLS SENAYAN!",
+                "description": "HEI Schools Senayan is meticulously designed to encourage children to interact, explore, rest and unwind. To always find the joy of learning in every little detail, for there is always something to gain in every little step.",
+                "image": "/imgs/schools/senayan/1.png",
+                "position": "right"
+            }
+        },
+        {
+            "type": "arrangement",
+            "data": {
+                "title": "CLASS ARRANGEMENT",
+                "description": "Classes will gradually open starting with K1 and K2 in Juli 2025. <br /> The other levels will be launched soon -- stay tuned!",
+                "image": "/imgs/schools/senayan/arr.webp",
+                "link": "https://drive.google.com/file/d/1LGpCGp66wv2l8ysTEif8b1b_sof0hYCt/view?usp=sharing",
+                "link_text": "click here",
+                "link_description": "Read the Students Cut-Off Ages for 2024-2025"
+            }
+        },
+        {   
+            "type": "calendar",
+            "data": {
+                "title": "Academic Calendar",
+                "link": "https://drive.google.com/file/d/1LGpCGp66wv2l8ysTEif8b1b_sof0hYCt/view?usp=sharing",
+                "link_text": "Learn More",
+                "link_description": "Read the Prospectus",
+                "items": [
+                    {
+                        "term": "Term One",
+                        "start": "29 July 2024",
+                        "end": "4 October 2024",
+                        "break": "7-11 October 2024"
+                    },
+                    {
+                        "term": "Term Two",
+                        "start": "13 October 2024",
+                        "end": "21 December 2024",
+                        "break": "24-28 November 2024"
+                    },
+                    {
+                        "term": "Term Three",
+                        "start": "22 December 2024",
+                        "end": "24 January 2025",
+                        "break": "25-29 December 2024"
+                    },
+                    {
+                        "term": "Term Four",
+                        "start": "25 January 2025",
+                        "end": "28 February 2025",
+                        "break": "2-6 February 2025"
+                    }
+                ]
+            }
+        },
+        {
+            "type": "day-at-hei",
+            "data": {
+                "title": "DAY AT HEI SCHOOLS SENAYAN",
+                "description": "This is a typical day at HEI Schools. Each day varies according to the curriculum activities. Our days have been designed with thought to have the right balance of lessons and free play, movement and rest, excitement and calmness, group activities and individual time indoors and outdoors.",
+                "image": "/imgs/schools/senayan/day.png"
+            }
+        },
+        {
+            "type": "facilities",
+            "data": {
+                "title": "OUR FACILITIES",
+                "items": [
+                    {
+                        "title": "Classes",
+                        "image": "/imgs/schools/senayan/fac/1.webp"
+                    },
+                    {
+                        "title": "Backyard",
+                        "image": "/imgs/schools/senayan/fac/2.webp"
+                    },
+                    {
+                        "title": "Cafeteria",
+                        "image": "/imgs/schools/senayan/fac/3.webp"
+                    },
+                    {
+                        "title": "HEI Playcabin",
+                        "image": "/imgs/schools/senayan/fac/4.webp"
+                    },
+                    {
+                        "title": "HEI Book Cabin",
+                        "image": "/imgs/schools/senayan/fac/5.webp"
+                    },
+                    {
+                        "title": "Clinic",
+                        "image": "/imgs/schools/senayan/fac/6.webp"
+                    },
+                    {
+                        "title": "Toilet",
+                        "image": "/imgs/schools/senayan/fac/7.webp"
+                    }
+                ]
+            }
+        },
+        {
+            "type": "clubs",
+            "data": {
+                "title": "HEI CLUBS AVAILABLE",
+                "items": [
+                    {
+                        "title": "S.T.E.A.M",
+                        "description": "Through STEAM (Science, Technology, Engineering, Art, and Math), little ones get to explore, create, and discover the world around them while having fun!",
+                        "image_icon": "/imgs/schools/senayan/club/icon/1.png",
+                        "image": "/imgs/schools/senayan/club/1.png",
+                        "theme": "yellow",
+                        "criterias": [
+                            {
+                                "title": "Starter Builder (2–3 years old)",
+                                "description": "In this class, our starter builders will use their imagination to create, construct, and explore with ease. Perfect for K1–K2 students."
+                            },
+                            {
+                                "title": "Little Builder (3–4 years old)",
+                                "description": "In this class, our little builders will use their imagination to create, construct, and explore with ease. Perfect for K1–K2 students."
+                            },
+                            {
+                                "title": "Engineer Explorers (4–6 years old)",
+                                "description": "In this class, our engineer explorers will build, tinker, and create hands-on projects that spark curiosity and problem-solving skills. Perfect for K1–K2 students."
+                            }
+                        ]
+                    },
+                    {
+                        "title": "Music",
+                        "description": "Music is an important part of a child’s development. It helps them express themselves, develop creativity, and build confidence. Our music classes are designed to be fun and engaging, and to help children develop a love for music.",
+                        "image_icon": "/imgs/schools/senayan/club/icon/2.png",
+                        "image": "/imgs/schools/senayan/club/1.png",
+                        "theme": "blue",
+                        "criterias": [
+                            {
+                                "title": "Starter Builder (2–3 years old)",
+                                "description": "In this class, our starter builders will use their imagination to create, construct, and explore with ease. Perfect for K1–K2 students."
+                            },
+                            {
+                                "title": "Little Builder (3–4 years old)",
+                                "description": "In this class, our little builders will use their imagination to create, construct, and explore with ease. Perfect for K1–K2 students."
+                            },
+                            {
+                                "title": "Engineer Explorers (4–6 years old)",
+                                "description": "In this class, our engineer explorers will build, tinker, and create hands-on projects that spark curiosity and problem-solving skills. Perfect for K1–K2 students."
+                            }
+                        ]
+                    },
+                    {
+                        "title": "Gymnastics",
+                        "description": "Gymnastics is a great way to improve a child’s physical and mental health. It helps them develop strength, balance, coordination, and flexibility. Our gymnastics classes are designed to be fun and engaging, and to help children develop a love for gymnastics.",
+                        "image_icon": "/imgs/schools/senayan/club/icon/3.png",
+                        "image": "/imgs/schools/senayan/club/1.png",
+                        "theme": "green",
+                        "criterias": [
+                            {
+                                "title": "Starter Builder (2–3 years old)",
+                                "description": "In this class, our starter builders will use their imagination to create, construct, and explore with ease. Perfect for K1–K2 students."
+                            },
+                            {
+                                "title": "Little Builder (3–4 years old)",
+                                "description": "In this class, our little builders will use their imagination to create, construct, and explore with ease. Perfect for K1–K2 students."
+                            },
+                            {
+                                "title": "Engineer Explorers (4–6 years old)",
+                                "description": "In this class, our engineer explorers will build, tinker, and create hands-on projects that spark curiosity and problem-solving skills. Perfect for K1–K2 students."
+                            }
+                        ]
+                    },
+                    {
+                        "title": "Taekwondo",
+                        "description": "Taekwondo is a great way to improve a child’s physical and mental health. It helps them develop strength, balance, coordination, and flexibility. Our taekwondo classes are designed to be fun and engaging, and to help children develop a love for taekwondo.",
+                        "image_icon": "/imgs/schools/senayan/club/icon/4.png",
+                        "image": "/imgs/schools/senayan/club/1.png",
+                        "theme": "blue",
+                        "criterias": [
+                            {
+                                "title": "Starter Builder (2–3 years old)",
+                                "description": "In this class, our starter builders will use their imagination to create, construct, and explore with ease. Perfect for K1–K2 students."
+                            },
+                            {
+                                "title": "Little Builder (3–4 years old)",
+                                "description": "In this class, our little builders will use their imagination to create, construct, and explore with ease. Perfect for K1–K2 students."
+                            },
+                            {
+                                "title": "Engineer Explorers (4–6 years old)",
+                                "description": "In this class, our engineer explorers will build, tinker, and create hands-on projects that spark curiosity and problem-solving skills. Perfect for K1–K2 students."
+                            }
+                        ]
+                    },
+                    {
+                        "title": "Arts & Crafts",
+                        "description": "Arts & Crafts is a great way to improve a child’s creativity and imagination. It helps them develop creativity, and build confidence. Our arts & crafts classes are designed to be fun and engaging, and to help children develop a love for arts & crafts.",
+                        "image_icon": "/imgs/schools/senayan/club/icon/5.png",
+                        "image": "/imgs/schools/senayan/club/1.png",
+                        "theme": "yellow",
+                        "criterias": [
+                            {
+                                "title": "Starter Builder (2–3 years old)",
+                                "description": "In this class, our starter builders will use their imagination to create, construct, and explore with ease. Perfect for K1–K2 students."
+                            },
+                            {
+                                "title": "Little Builder (3–4 years old)",
+                                "description": "In this class, our little builders will use their imagination to create, construct, and explore with ease. Perfect for K1–K2 students."
+                            },
+                            {
+                                "title": "Engineer Explorers (4–6 years old)",
+                                "description": "In this class, our engineer explorers will build, tinker, and create hands-on projects that spark curiosity and problem-solving skills. Perfect for K1–K2 students."
+                            }
+                        ]
+                    },
+                    {
+                        "title": "Dance",
+                        "description": "Dance is a great way to improve a child’s physical and mental health. It helps them develop strength, balance, coordination, and flexibility. Our dance classes are designed to be fun and engaging, and to help children develop a love for dance.",
+                        "image_icon": "/imgs/schools/senayan/club/icon/6.png",
+                        "image": "/imgs/schools/senayan/club/1.png",
+                        "theme": "green",
+                        "criterias": [
+                            {
+                                "title": "Starter Builder (2–3 years old)",
+                                "description": "In this class, our starter builders will use their imagination to create, construct, and explore with ease. Perfect for K1–K2 students."
+                            },
+                            {
+                                "title": "Little Builder (3–4 years old)",
+                                "description": "In this class, our little builders will use their imagination to create, construct, and explore with ease. Perfect for K1–K2 students."
+                            },
+                            {
+                                "title": "Engineer Explorers (4–6 years old)",
+                                "description": "In this class, our engineer explorers will build, tinker, and create hands-on projects that spark curiosity and problem-solving skills. Perfect for K1–K2 students."
+                            }
+                        ]
+                    }
+                ]
+            }
+        },
+        {
+            "type": "home-testimonials",
+            "data": {
+                "title": "What do our parents say about us?",
+                "color": "#E5645F",
+                "items": [
+                    {
+                        "title": "Mrs. Jenny Doe",
+                        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua",
+                        "image": "/imgs/avatars/1.jpg"
+                    },
+                    {
+                        "title": "Mr. John Doe",
+                        "description": "Random lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque euismod, nisi eu consectetur cursus, lorem urna dictum enim, nec facilisis lorem erat nec erat.",
+                        "image": "/imgs/avatars/2.jpg"
+                    },
+                    {
+                        "title": "Mrs. Lena Doe",
+                        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+                        "image": "/imgs/avatars/3.jpg"
+                    }
+                ]
+            }
+        },
+        {
+            "type": "cta",
+            "data": {
+                "title": "CURIOUS TO KNOW OUR ENROLLMENT JOURNEY?",
+                "link_text": "Know more",
+                "image": "/imgs/schools/senayan/cta.jpg",
+                "link_description": "Book a tour",
+                "link": "https://forms.littlelives.com/interest-form/123607-hei-schools-senayan?lang=eng&embed=true"
+            }
+        }
+    ]
+}
+
+

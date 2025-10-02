@@ -1,0 +1,218 @@
+.page__section {
+    .container {
+        @apply relative lg:px-20 md:px-10 px-5 flex flex-col gap-y-[32px];
+
+        h2 {
+            @apply text-hei-blue;
+        }
+    }
+}
+
+.section {
+    &__banner {
+        @apply relative pt-[220px] pb-[95px];
+
+        .container {
+            @apply relative flex flex-col gap-y-[32px];
+        }
+        &__image {
+            @apply relative w-full aspect-[1200/743];
+        }
+    }
+
+    &__hei-way {
+        &__items {
+            @apply flex flex-row gap-x-[2px] h-[500px];
+        }
+        --color: #BFD5B1;
+        &__item {
+            &:not(.active) {
+                @apply w-[100px];
+            }
+            @apply flex h-full transition-all duration-300 delay-100;
+            &__icon {
+                @apply w-[100px] h-full relative bg-[--color] cursor-pointer;
+
+                img {
+                    @apply w-[64px] h-[64px] aspect-square object-contain top-[52px] left-[50%] -translate-x-1/2 #{!important};
+                }
+            }
+
+            & > div:last-child {
+                @apply flex-grow transition-all duration-300 relative;
+                @apply relative top-0 left-0;
+                @apply before:content-[''] before:absolute before:w-full before:h-full before:bg-[--color] before:opacity-60;
+            }
+
+            &__content {
+                @apply w-full h-full absolute top-0 left-0 opacity-0 transition-all duration-300 delay-0 pt-[38px] px-[24px] pb-[45px] overflow-auto;
+
+                // Custom scrollbar styles
+                &::-webkit-scrollbar {
+                    width: 6px;
+                }
+
+                &::-webkit-scrollbar-track {
+                    background: rgba(#302864, 0);
+                    border-radius: 4px;
+                }
+
+                &::-webkit-scrollbar-thumb {
+                    background: #302864;
+                    border-radius: 4px;
+                    transition: background 0.3s ease;
+                }
+
+                &::-webkit-scrollbar-thumb:hover {
+                    background: #302864;
+                }
+
+                // Firefox scrollbar
+                scrollbar-width: thin;
+                scrollbar-color: #302864 rgba(#302864, 0);
+
+                h3 {
+                    @apply text-hei-blue text-[35px]/[100%] mb-[12px];
+                }
+
+                p {
+                    @apply text-hei-blue text-[20px]/[140%];
+                }
+
+                &__image {
+                    @apply w-[44%] h-[auto] aspect-square object-contain float-right relative #{!important};
+                }
+            }
+
+
+            &.active {
+                @apply flex-grow;
+
+                .section__hei-way__item__content {
+                    @apply opacity-100 delay-300 pointer-events-auto;
+                }
+            }
+        }
+    }
+
+    &__learning-areas {
+        &__items {
+            @apply relative;
+
+            .embla__arrow {
+                @apply absolute top-1/2 -translate-y-1/2 z-10;
+
+                &--prev {
+                    @apply left-0 translate-x-[-100%];
+                }
+
+                &--next {
+                    @apply right-0 translate-x-[100%];
+                }
+
+                &:disabled {
+                    @apply opacity-50 cursor-not-allowed #{!important};
+                }
+            }
+        }
+        .embla {
+            @apply overflow-visible #{!important};
+        }
+        .embla__viewport {
+            @apply pb-[32px] #{!important};
+        }
+        .embla__container {
+            @apply flex flex-row #{!important};
+        }
+        .embla__slide {
+            @apply min-w-[400px] px-[34px] #{!important};
+        }
+        &__item {
+            @apply flex w-[335px] flex-col h-full transition-all duration-300 delay-100;
+            @apply bg-[#FFFFFF] overflow-hidden rounded-[34px] shadow-[0_4px_4px_0_rgba(0,0,0,0.25)];
+            --color: #BFD5B1;
+            &__image {
+                @apply relative bg-[--color] w-full aspect-[335/225];
+                img {
+                    @apply object-cover #{!important};
+                }
+            }
+
+            &__content {
+                @apply flex flex-col items-start justify-center p-[35px] pt-[16px] gap-3;
+
+                h4 {
+                    @apply text-hei-blue text-[32px] leading-[32px] font-noyh font-black;
+                }
+
+                p {
+                    @apply text-hei-blue;
+                }
+            }
+        }
+        // Learning areas styles will be added here
+    }
+
+    &__learning-aspiration {
+        @apply mb-[906px] pt-[74px];
+        // &__items {
+        //     // @apply flex flex-row gap-x-[2px] h-[500px];
+        // }
+        --gap: 150px;
+        --gap2: 120px;
+        &__item {
+            @apply h-[80vh] sticky top-[--gap] w-full bg-white rounded-t-[38px] border-t border-x border-black/[0.09];
+
+            // Use calc() for proper CSS variable math
+            &:nth-child(1) {
+                margin-bottom: calc(var(--gap) * 0);
+                top: calc(var(--gap) * 1);
+            }
+            &:nth-child(2) {
+                margin-bottom: calc(var(--gap) * -1);
+                top: calc(var(--gap) * 2);
+            }
+            &:nth-child(3) {
+                margin-bottom: calc(var(--gap) * -2);
+                top: calc(var(--gap) * 3);
+            }
+            &:nth-child(4) {
+                margin-bottom: calc(var(--gap) * -3);
+                top: calc(var(--gap) * 4);
+            }
+            &:nth-child(5) {
+                margin-bottom: calc(var(--gap) * -4);
+                top: calc(var(--gap) * 5);
+            }
+
+            .container {
+                @apply pt-[38px];
+            }
+
+            &__content {
+                @apply flex items-start justify-between gap-[47px];
+
+                &__image {
+                    @apply min-w-[270px] relative;
+
+                    img {
+                        @apply object-contain #{!important};
+                    }
+                }
+
+                &__text {
+                    @apply flex-1 flex flex-col gap-y-[30px];
+
+                    .image-text {
+                        @apply relative w-full h-[165px];
+
+                        img {
+                            @apply w-auto h-full object-contain relative #{!important};
+                        }
+                    }
+                }
+            }
+        }
+        // Learning aspiration styles will be added here
+    }
+}

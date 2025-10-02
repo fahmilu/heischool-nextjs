@@ -5,7 +5,7 @@ import Mobile from '@/components/Nav/Mobile';
 import Link from 'next/link';
 import Image from 'next/image';
 import { useState, useEffect } from 'react';
-const Header = () => {
+const Header = ({ isHome = true }) => {
 
   const [isScrolled, setIsScrolled] = useState(false);
 
@@ -24,16 +24,12 @@ const Header = () => {
 
   const navItems = [
     {
-      label: "Home",
+      label: "About HEI",
       href: "/",
     },
     {
-      label: "About HEI",
-      href: "#about-hei",
-    },
-    {
       label: "Our Approach",
-      href: "/approach",
+      href: "/our-approach",
     },
     {
       label: "Our Locations",
@@ -59,7 +55,7 @@ const Header = () => {
     }
   ]      
   return (
-    <header className={`header ${isScrolled ? 'header--scrolled' : ''}`}>
+    <header className={`header ${isScrolled || !isHome ? 'header--scrolled' : ''}`}>
       <div className='container'>
         <Mobile navItems={navItems} />
         <Desktop navItems={navItems} />

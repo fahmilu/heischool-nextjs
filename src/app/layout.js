@@ -5,6 +5,7 @@ import "@/public/styles/globals.scss";
 import Header from "@/components/Partials/Header";
 import Footer from "@/components/Partials/Footer";
 import { ReactLenis } from "lenis/react";
+import DynamicHeaderWrapper from "@/components/Partials/DynamicHeaderWrapper";
 const DMSans = DM_Sans({
   variable: "--font-dmsans",
   weight: ["400", "600", "700"],
@@ -61,7 +62,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body className={`${DMSans.variable} ${Noyh.variable} antialiased`} >
-        <Header />
+        <DynamicHeaderWrapper />
         <ReactLenis root>
           <main>
             {children}

@@ -1,0 +1,138 @@
+{
+    "components": [
+        {
+            "type": "banner",
+            "data": {
+                "title": "Our Approach",
+                "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur pharetra fringilla eros quis tempor.",
+                "image": "/imgs/approach.webp"
+            }
+        },
+        {
+            "type": "hei-way",
+            "data": {
+                "title": "Our pedagogical corner stones: HEI WAY",
+                "items": [
+                    {
+                        "title": "TThe foundation of learning is fueled by curiosity and creativity.",
+                        "description": "At HEI Schools, we believe children's innate desire to wonder, inquire, delve into new ideas, and explore should be nurtured and celebrated.",
+                        "icon": "/imgs/hei-way/icons/1.png",
+                        "image": "/imgs/hei-way/1.webp"
+                    },
+                    {
+                        "title": "Active participation fosters a sense of capability, ownership, and dedication.",
+                        "description": " Children, similar to adults, thrive when they can take the lead and be proactive. Taking responsibility also teaches children the importance of accountability. Sharing your ideas instills the important message that your voice matters.",
+                        "icon": "/imgs/hei-way/icons/2.png",
+                        "image": "/imgs/hei-way/2.webp"
+                    },
+                    {
+                        "title": "Trust is like a superpower that simplifies everything.",
+                        "description": "When there is a culture of trust within the school community, it allows everyone to concentrate on what truly matters, knowing that others are giving their best. This culture of trust creates a safe space for taking risks, learning from mistakes, and working together towards shared goals.",
+                        "icon": "/imgs/hei-way/icons/3.png",
+                        "image": "/imgs/hei-way/3.webp"
+                    },
+                    {
+                        "title": "Living sustainably involves considering not just the environment, but also the economic and social aspects, striving for a harmonious approach towards ensuring the long-term health of our planet and the well-being of all.",
+                        "description": "This includes safeguarding natural resources, championing biodiversity, and minimizing pollution and waste. It also means fostering growth and progress that meets present needs without compromising the ability of future generations to meet their own. Embracing inclusivity, encouraging socially responsible and ethical conduct, and investing in community advancement are essential components of sustainable living.",
+                        "icon": "/imgs/hei-way/icons/4.png",
+                        "image": "/imgs/hei-way/4.webp"
+                    },
+                    {
+                        "title": "At HEI Schools, learning does not only happen in a classroom or at school, it happens everywhere. ",
+                        "description": "Every moment and interaction holds valuable lessons for both children and adults, which provides endless learning opportunities. Children learn wisdom not just from teachers, but from every individual they encounter, making us all their guides in unique ways.",
+                        "icon": "/imgs/hei-way/icons/5.png",
+                        "image": "/imgs/hei-way/5.webp"
+                    }
+                ]
+            }
+        },
+        {
+            "type": "learning-areas",
+            "data": {
+                "title": "Learning Areas",
+                "items": [
+                    {
+                        "title": "Holistic learning and development",
+                        "description": "We view children as unique individuals with their own ideas, thoughts and needs and we therefore prioritize children’s wellbeing, both physical and emotional.",
+                        "image": "/imgs/areas/1.png",
+                        "color": "#BFD5B1"
+                    },
+                    {
+                        "title": "Sustainable practices",
+                        "description": "We believe that all aspects of education should involve practices that are lasting and caring for the community.",
+                        "image": "/imgs/areas/2.png",
+                        "color": "#B2D1C0"
+                    },
+                    {
+                        "title": "The importance of teachers",
+                        "description": "We believe that all aspects of education should involve practices that are lasting and caring for the community.",
+                        "image": "/imgs/areas/3.png",
+                        "color": "#E7F2F3"
+                    },
+                    {
+                        "title": "Learning everywhere and all the time",
+                        "description": "Children’s learning is not limited to specific activities or the classroom. Rather, every situation and moment is a",
+                        "image": "/imgs/areas/4.png",
+                        "color": "#EDE3AC"
+                    },
+                    {
+                        "title": "Play as a way to learn",
+                        "description": "Play is the most natural way for children to learn and it's a prerequisite for their development. During play, children display their overall",
+                        "image": "/imgs/areas/5.png",
+                        "color": "#EFD9A3"
+                    },
+                    {
+                        "title": "The social experience of learning",
+                        "description": "Knowledge is socially constructed, which means that children learn through their relationships with others.",
+                        "color": "#FFE5CA",
+                        "image": "/imgs/areas/6.png"
+                    },
+                    {
+                        "title": "Learning through exploration",
+                        "description": "Children also learn through guided exploration, and this is achieved by completing projects. “Inquiry-based learning,”",
+                        "image": "/imgs/areas/7.png",
+                        "color": "#EDB7A4"
+                    },
+                    {
+                        "title": "Transversal skills and learning areas",
+                        "description": "Lifelong learning begins in the early years, and transversal competencies are a combination of knowledge, skills, values and attitudes,",
+                        "image": "/imgs/areas/8.png",
+                        "color": "#EA9D98"
+                    }  
+                ]
+            }
+        },
+        {
+            "type": "learning-aspiration",
+            "data": {
+                "title": "Learning Aspiration",
+                "items": [
+                    {
+                        "title": "Exploring and interacting with the world around them",
+                        "description": "<p>Exploration and curiosity are key elements of learning. We promote children’s natural abilities to observe, analyze and understand the world around them. We support the development of children’s linguistic and mathematical skills through different everyday activities. We strengthen children’s relationship with nature and the surrounding environment through science and environmental education.</p>",
+                        "image": "/imgs/aspiration/1.png",
+                        "image_text": "/imgs/aspiration/text/1.webp"
+                    },
+                    {
+                        "title": "Understanding the world we live in",
+                        "description": "<p>We support children in understanding the diversity in their local community, as well as the practices that activate respect for diversity. We support children’s growth as conscious human beings and help them to understand what it means to be an ethically responsible member of society.</p>",
+                        "image": "/imgs/aspiration/2.png",
+                        "image_text": "/imgs/aspiration/text/2.webp"
+                    },
+                    {
+                        "title": "Learning forms of expression",
+                        "description": "<p>We familiarize them with different art forms and their cultural heritage.</p><p> We offer children opportunities to express themselves through musical activities, visual arts/crafts and bodily/verbal expression.</p>",
+                        "image": "/imgs/aspiration/3.png",
+                        "image_text": "/imgs/aspiration/text/3.webp"
+                    },
+                    {
+                        "title": "Practicing a healthy way of living",
+                        "description": "<p>We focus on building a strong foundation for a healthy way of living which consists of physical activity, nutrition, rest, self-care and care of others. This learning area supports other learning areas and helps children manage their daily life and routines.</p>",
+                        "image": "/imgs/aspiration/4.png",
+                        "image_text": "/imgs/aspiration/text/4.webp"
+                    }
+                ]
+            }
+        }
+    ]
+}     

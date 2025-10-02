@@ -9,3 +9,12 @@ export async function getPageData(slug) {
         notFound();
     }
 }
+
+export async function getDataData(slug) {
+    try {
+        const pageData = await import(`@/data/pages/${slug}.json`);
+        return pageData.default;
+    } catch (error) {
+        notFound();
+    }
+}
