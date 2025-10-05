@@ -3,7 +3,7 @@
     "slug": "menteng",
     "address": "Jl. Dr. GSSJ Ratulangi No.5-1",
     "city": "Gondangdia, Kec. Menteng, Jakarta",
-    "maps": "https://maps.app.goo.gl/P1k6bMxBcUZ2a5K76",
+    "maps": "<iframe src='https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3966.561162889445!2d106.82949497696357!3d-6.189428860645079!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69f54bd58f57bd%3A0x21803aa1ffc89a94!2sHEI%20Schools%20SPM%20Menteng!5e0!3m2!1sen!2sid!4v1759668916002!5m2!1sen!2sid' width='600' height='450' style='border:0;' allowfullscreen='' loading='lazy' referrerpolicy='no-referrer-when-downgrade'></iframe>",
     "color": "#FACDB7",
     "description": "Menteng",
     "image": "/imgs/schools/menteng/banner.webp",
@@ -112,7 +112,7 @@
             }
         },
         {
-            "type": "home-testimonials",
+            "type": "testimonials",
             "data": {
                 "title": "What do our parents say about us?",
                 "color": "#302864",

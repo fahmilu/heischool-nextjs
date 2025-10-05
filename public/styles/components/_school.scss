@@ -492,6 +492,25 @@
         }
     }
 
+    &-detail-location {
+        @apply relative bg-[#FBF8F2] pt-[66px] pb-[79px];
+        .container {
+            @apply flex flex-col items-start justify-center gap-10;
+        }
+
+        .map-container {
+            @apply w-full h-[450px] relative aspect-[1000/450] overflow-hidden;
+
+            iframe {
+                @apply w-full h-full absolute top-0 left-0;
+            }
+        }
+
+        a {
+            @apply  uppercase text-white bg-black mx-auto px-[64px] py-[10px] font-bold text-sm;
+        }
+    }
+
 }
 
 @media (min-height: 800px) {

@@ -1,6 +1,6 @@
 import { getDetailData } from "@/utils/pageData";   
 import Schools from "@/components/Schools";
-
+import DetailLocation from "@/components/Schools/DetailLocation";
 export async function generateMetadata({ params }) {
     const { slug, detail } = await params;
     
@@ -22,9 +22,16 @@ const DetailPage = async ({params}) => {
     if(['locations', 'our-locations'].includes(slug)) {
         const pageData = await getDetailData(slug, detail);
 
-        return pageData.components.map((component, index) => (
-            <Schools key={index} page={pageData} data={component} />
-        ));
+        return (
+            <>
+            {
+                pageData.components.map((component, index) => (
+                    <Schools key={index} page={pageData} data={component} />
+                ))
+            }
+            <DetailLocation data={pageData} />  
+            </>
+        );
     }
 
     return (
