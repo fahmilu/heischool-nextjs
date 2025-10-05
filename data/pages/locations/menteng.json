@@ -1,5 +1,5 @@
 {
-    "title": "HEI SCHOOLS SPM MENTENG",
+    "title": "HEI Schools SPM Menteng",
     "slug": "menteng",
     "address": "Jl. Dr. GSSJ Ratulangi No.5-1",
     "city": "Gondangdia, Kec. Menteng, Jakarta",
@@ -9,6 +9,17 @@
     "image": "/imgs/schools/menteng/banner.webp",
     "icon": "/imgs/schools/menteng/icon.svg",
     "components": [
+        {
+            "type": "banner",
+            "data": {
+                "title": "HEI SCHOOLS MENTENG",
+                "images": [
+                    "/imgs/schools/menteng/banner.webp",
+                    "/imgs/schools/menteng/banner2.webp",
+                    "/imgs/schools/menteng/banner3.webp"
+                ]
+            }
+        },
         {
             "type": "side-image",
             "data": {
@@ -25,43 +36,45 @@
                 "image": "/imgs/schools/menteng/arr.webp",
                 "link": "https://drive.google.com/file/d/1LGpCGp66wv2l8ysTEif8b1b_sof0hYCt/view?usp=sharing",
                 "link_text": "click here",
-                "link_description": "Read the Students Cut-Off Ages for 2024-2025"
+                "link_description": "Read the Students Cut-Off Ages for 2024-2025",
+                "calendar": {
+                    "title": "Academic Calendar",
+                    "link": "https://drive.google.com/file/d/1LGpCGp66wv2l8ysTEif8b1b_sof0hYCt/view?usp=sharing",
+                    "link_text": "Learn More",
+                    "link_description": "Read the Prospectus",
+                    "image": "/imgs/schools/menteng/cal.png",
+                    "items": [
+                        {
+                            "term": "Term One",
+                            "start": "29 July 2024",
+                            "end": "4 October 2024",
+                            "break": "7-11 October 2024"
+                        },
+                        {
+                            "term": "Term Two",
+                            "start": "13 October 2024",
+                            "end": "21 December 2024",
+                            "break": "24-28 November 2024"
+                        },
+                        {
+                            "term": "Term Three",
+                            "start": "22 December 2024",
+                            "end": "24 January 2025",
+                            "break": "25-29 December 2024"
+                        },
+                        {
+                            "term": "Term Four",
+                            "start": "25 January 2025",
+                            "end": "28 February 2025",
+                            "break": "2-6 February 2025"
+                        }
+                    ]
+                }
             }
         },
         {   
-            "type": "calendar",
-            "data": {
-                "title": "Academic Calendar",
-                "link": "https://drive.google.com/file/d/1LGpCGp66wv2l8ysTEif8b1b_sof0hYCt/view?usp=sharing",
-                "link_text": "Learn More",
-                "link_description": "Read the Prospectus",
-                "items": [
-                    {
-                        "term": "Term One",
-                        "start": "29 July 2024",
-                        "end": "4 October 2024",
-                        "break": "7-11 October 2024"
-                    },
-                    {
-                        "term": "Term Two",
-                        "start": "13 October 2024",
-                        "end": "21 December 2024",
-                        "break": "24-28 November 2024"
-                    },
-                    {
-                        "term": "Term Three",
-                        "start": "22 December 2024",
-                        "end": "24 January 2025",
-                        "break": "25-29 December 2024"
-                    },
-                    {
-                        "term": "Term Four",
-                        "start": "25 January 2025",
-                        "end": "28 February 2025",
-                        "break": "2-6 February 2025"
-                    }
-                ]
-            }
+            "type": "calendar"
+
         },
         {
             "type": "day-at-hei",
@@ -87,22 +100,6 @@
                     {
                         "title": "Cafeteria",
                         "image": "/imgs/schools/menteng/fac/3.webp"
-                    },
-                    {
-                        "title": "HEI Playcabin",
-                        "image": "/imgs/schools/menteng/fac/4.webp"
-                    },
-                    {
-                        "title": "HEI Book Cabin",
-                        "image": "/imgs/schools/menteng/fac/5.webp"
-                    },
-                    {
-                        "title": "Clinic",
-                        "image": "/imgs/schools/menteng/fac/6.webp"
-                    },
-                    {
-                        "title": "Toilet",
-                        "image": "/imgs/schools/menteng/fac/7.webp"
                     }
                 ]
             }

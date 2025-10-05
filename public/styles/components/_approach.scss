@@ -48,28 +48,7 @@
                 @apply w-full h-full absolute top-0 left-0 opacity-0 transition-all duration-300 delay-0 pt-[38px] px-[24px] pb-[45px] overflow-auto;
 
                 // Custom scrollbar styles
-                &::-webkit-scrollbar {
-                    width: 6px;
-                }
 
-                &::-webkit-scrollbar-track {
-                    background: rgba(#302864, 0);
-                    border-radius: 4px;
-                }
-
-                &::-webkit-scrollbar-thumb {
-                    background: #302864;
-                    border-radius: 4px;
-                    transition: background 0.3s ease;
-                }
-
-                &::-webkit-scrollbar-thumb:hover {
-                    background: #302864;
-                }
-
-                // Firefox scrollbar
-                scrollbar-width: thin;
-                scrollbar-color: #302864 rgba(#302864, 0);
 
                 h3 {
                     @apply text-hei-blue text-[35px]/[100%] mb-[12px];

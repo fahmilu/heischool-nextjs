@@ -102,8 +102,44 @@ main {
               }
         }
     }
+
+    &__arrow {
+        @apply absolute top-1/2 -translate-y-1/2;
+
+        &--prev {
+            @apply left-10;
+        }
+
+        &--next {
+            @apply right-10;
+        }
+    }
 }
 
+*::-webkit-scrollbar {
+  width: 6px;
+}
+
+*::-webkit-scrollbar-track {
+  background: rgba(#302864, 0);
+  border-radius: 4px;
+}
+
+*::-webkit-scrollbar-thumb {
+  background: #302864;
+  border-radius: 4px;
+  transition: background 0.3s ease;
+}
+
+*::-webkit-scrollbar-thumb:hover {
+  background: #302864;
+}
+
+* {
+  // Firefox scrollbar
+  scrollbar-width: thin;
+  scrollbar-color: #BBBBBB rgba(#E7E7E7, 1);
+}
 
 
 .embla__container {

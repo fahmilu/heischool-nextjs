@@ -2,6 +2,7 @@
 import Image from "next/image";
 import { useState } from "react";
 import Arrow from "@/components/Link/Arrow";
+import HeiWayContent from "@/components/Approach/HeiWayContent";
 const HeiWay = ({ data }) => {
     const [activeItem, setActiveItem] = useState(0);
 
@@ -28,7 +29,7 @@ const HeiWay = ({ data }) => {
                                 <Image src={item.icon} alt={item.title} fill />
                             </div>
                             <div>
-                                <div className="section__hei-way__item__content" data-lenis-prevent> 
+                                <div className="section__hei-way__item__content" data-lenis-prevent={activeItem === index}> 
                                     <h3>{item.title}</h3>
                                     <Image src={item.image} alt={item.title} fill className="section__hei-way__item__content__image" />
                                     <p>{item.description}</p>

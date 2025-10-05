@@ -2,10 +2,12 @@ import localFont from "next/font/local";
 
 import { DM_Sans } from "next/font/google";
 import "@/public/styles/globals.scss";
-import Header from "@/components/Partials/Header";
+// import Header from "@/components/Partials/Header";
 import Footer from "@/components/Partials/Footer";
 import { ReactLenis } from "lenis/react";
 import DynamicHeaderWrapper from "@/components/Partials/DynamicHeaderWrapper";
+import FloatingButton from "@/components/floatingButton";
+
 const DMSans = DM_Sans({
   variable: "--font-dmsans",
   weight: ["400", "600", "700"],
@@ -69,6 +71,7 @@ export default function RootLayout({ children }) {
           </main>
         </ReactLenis>
         <Footer />
+        <FloatingButton />
       </body>
     </html>
   );

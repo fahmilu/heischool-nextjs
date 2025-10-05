@@ -1,5 +1,5 @@
 {
-    "title": "HEI SCHOOLS SENAYAN",
+    "title": "HEI Schools Senayan",
     "slug": "senayan",
     "address": "Jl. Simprug Golf 8 No.6 ",
     "city": "Kebayoran Lama, Grogol, Jakarta",
@@ -10,9 +10,20 @@
     "icon": "/imgs/schools/senayan/icon.svg",
     "components": [
         {
+            "type": "banner",
+            "data": {
+                "title": "HEI SCHOOLS MENTENG",
+                "images": [
+                    "/imgs/schools/menteng/banner.png",
+                    "/imgs/schools/menteng/banner2.webp",
+                    "/imgs/schools/menteng/banner3.webp"
+                ]
+            }
+        },
+        {
             "type": "side-image",
             "data": {
-                "title": "Welcome to HEI SCHOOLS SENAYAN!",
+                "title": "Welcome to <br /> HEI SCHOOLS SENAYAN!",
                 "description": "HEI Schools Senayan is meticulously designed to encourage children to interact, explore, rest and unwind. To always find the joy of learning in every little detail, for there is always something to gain in every little step.",
                 "image": "/imgs/schools/senayan/1.png",
                 "position": "right"
@@ -22,52 +33,50 @@
             "type": "arrangement",
             "data": {
                 "title": "CLASS ARRANGEMENT",
-                "description": "Classes will gradually open starting with K1 and K2 in Juli 2025. <br /> The other levels will be launched soon -- stay tuned!",
+                "description": "<p>Classes will gradually open starting with K1 and K2 in Juli 2025.</p><p>The other levels will be launched soon -- stay tuned!</p>",
                 "image": "/imgs/schools/senayan/arr.webp",
                 "link": "https://drive.google.com/file/d/1LGpCGp66wv2l8ysTEif8b1b_sof0hYCt/view?usp=sharing",
                 "link_text": "click here",
-                "link_description": "Read the Students Cut-Off Ages for 2024-2025"
-            }
-        },
-        {   
-            "type": "calendar",
-            "data": {
-                "title": "Academic Calendar",
-                "link": "https://drive.google.com/file/d/1LGpCGp66wv2l8ysTEif8b1b_sof0hYCt/view?usp=sharing",
-                "link_text": "Learn More",
-                "link_description": "Read the Prospectus",
-                "items": [
-                    {
-                        "term": "Term One",
-                        "start": "29 July 2024",
-                        "end": "4 October 2024",
-                        "break": "7-11 October 2024"
-                    },
-                    {
-                        "term": "Term Two",
-                        "start": "13 October 2024",
-                        "end": "21 December 2024",
-                        "break": "24-28 November 2024"
-                    },
-                    {
-                        "term": "Term Three",
-                        "start": "22 December 2024",
-                        "end": "24 January 2025",
-                        "break": "25-29 December 2024"
-                    },
-                    {
-                        "term": "Term Four",
-                        "start": "25 January 2025",
-                        "end": "28 February 2025",
-                        "break": "2-6 February 2025"
-                    }
-                ]
+                "link_description": "Read the Students Cut-Off Ages for 2024-2025",
+                "calendar": {
+                    "title": "Academic Calendar",
+                    "image": "/imgs/schools/senayan/cal.png",
+                    "link": "https://drive.google.com/file/d/1LGpCGp66wv2l8ysTEif8b1b_sof0hYCt/view?usp=sharing",
+                    "link_text": "Learn More",
+                    "link_description": "Read the Prospectus",
+                    "items": [
+                        {
+                            "term": "Term One",
+                            "start": "29 July 2024",
+                            "end": "4 October 2024",
+                            "break": "7-11 October 2024"
+                        },
+                        {
+                            "term": "Term Two",
+                            "start": "13 October 2024",
+                            "end": "21 December 2024",
+                            "break": "24-28 November 2024"
+                        },
+                        {
+                            "term": "Term Three",
+                            "start": "22 December 2024",
+                            "end": "24 January 2025",
+                            "break": "25-29 December 2024"
+                        },
+                        {
+                            "term": "Term Four",
+                            "start": "25 January 2025",
+                            "end": "28 February 2025",
+                            "break": "2-6 February 2025"
+                        }
+                    ]
+                }
             }
         },
         {
             "type": "day-at-hei",
             "data": {
-                "title": "DAY AT HEI SCHOOLS SENAYAN",
+                "title": "DAY AT HEI SCHOOLS <br /> SENAYAN",
                 "description": "This is a typical day at HEI Schools. Each day varies according to the curriculum activities. Our days have been designed with thought to have the right balance of lessons and free play, movement and rest, excitement and calmness, group activities and individual time indoors and outdoors.",
                 "image": "/imgs/schools/senayan/day.png"
             }
@@ -117,7 +126,7 @@
                         "title": "S.T.E.A.M",
                         "description": "Through STEAM (Science, Technology, Engineering, Art, and Math), little ones get to explore, create, and discover the world around them while having fun!",
                         "image_icon": "/imgs/schools/senayan/club/icon/1.png",
-                        "image": "/imgs/schools/senayan/club/1.png",
+                        "image": "/imgs/schools/senayan/club/1.webp",
                         "theme": "yellow",
                         "criterias": [
                             {
@@ -138,7 +147,7 @@
                         "title": "Music",
                         "description": "Music is an important part of a child’s development. It helps them express themselves, develop creativity, and build confidence. Our music classes are designed to be fun and engaging, and to help children develop a love for music.",
                         "image_icon": "/imgs/schools/senayan/club/icon/2.png",
-                        "image": "/imgs/schools/senayan/club/1.png",
+                        "image": "/imgs/schools/senayan/club/1.webp",
                         "theme": "blue",
                         "criterias": [
                             {
@@ -159,7 +168,7 @@
                         "title": "Gymnastics",
                         "description": "Gymnastics is a great way to improve a child’s physical and mental health. It helps them develop strength, balance, coordination, and flexibility. Our gymnastics classes are designed to be fun and engaging, and to help children develop a love for gymnastics.",
                         "image_icon": "/imgs/schools/senayan/club/icon/3.png",
-                        "image": "/imgs/schools/senayan/club/1.png",
+                        "image": "/imgs/schools/senayan/club/1.webp",
                         "theme": "green",
                         "criterias": [
                             {
@@ -180,7 +189,7 @@
                         "title": "Taekwondo",
                         "description": "Taekwondo is a great way to improve a child’s physical and mental health. It helps them develop strength, balance, coordination, and flexibility. Our taekwondo classes are designed to be fun and engaging, and to help children develop a love for taekwondo.",
                         "image_icon": "/imgs/schools/senayan/club/icon/4.png",
-                        "image": "/imgs/schools/senayan/club/1.png",
+                        "image": "/imgs/schools/senayan/club/1.webp",
                         "theme": "blue",
                         "criterias": [
                             {
@@ -201,7 +210,7 @@
                         "title": "Arts & Crafts",
                         "description": "Arts & Crafts is a great way to improve a child’s creativity and imagination. It helps them develop creativity, and build confidence. Our arts & crafts classes are designed to be fun and engaging, and to help children develop a love for arts & crafts.",
                         "image_icon": "/imgs/schools/senayan/club/icon/5.png",
-                        "image": "/imgs/schools/senayan/club/1.png",
+                        "image": "/imgs/schools/senayan/club/1.webp",
                         "theme": "yellow",
                         "criterias": [
                             {
@@ -222,7 +231,7 @@
                         "title": "Dance",
                         "description": "Dance is a great way to improve a child’s physical and mental health. It helps them develop strength, balance, coordination, and flexibility. Our dance classes are designed to be fun and engaging, and to help children develop a love for dance.",
                         "image_icon": "/imgs/schools/senayan/club/icon/6.png",
-                        "image": "/imgs/schools/senayan/club/1.png",
+                        "image": "/imgs/schools/senayan/club/1.webp",
                         "theme": "green",
                         "criterias": [
                             {
@@ -243,7 +252,7 @@
             }
         },
         {
-            "type": "home-testimonials",
+            "type": "testimonials",
             "data": {
                 "title": "What do our parents say about us?",
                 "color": "#E5645F",

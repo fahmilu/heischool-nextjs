@@ -10,6 +10,18 @@ export async function getPageData(slug) {
     }
 }
 
+export async function getDetailData(slug, detail) {
+    console.log('Slug:', slug);
+    console.log('Detail:', detail);
+    try {
+        const pageData = await import(`@/data/pages/${slug}/${detail}.json`);
+        console.log('Page Data:', pageData);
+        return pageData.default;
+    } catch (error) {
+        notFound();
+    }
+}
+
 export async function getDataData(slug) {
     try {
         const pageData = await import(`@/data/pages/${slug}.json`);
