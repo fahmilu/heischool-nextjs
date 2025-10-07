@@ -1,0 +1,101 @@
+{
+    "success": true,
+    "message": "Article detail retrieved successfully",
+    "data": {
+      "id": 2,
+      "title": "The Importance of Early Childhood Education",
+      "slug": "the-importance-of-early-childhood-education",
+      "lead": "Discover how early childhood education shapes a child's future and sets the foundation for lifelong learning success.",
+      "image": "/imgs/articles/detail/1.webp",
+      "publishedAt": "2025-09-25",
+      "meta_title": "Early Childhood Education Benefits - HEI School",
+      "meta_description": "Learn about the crucial role of early childhood education in developing cognitive, social, and emotional skills in young children.",
+      "reference": "https://www.heischool.com",
+      "categories": [
+        {
+          "id": 2,
+          "name": "Education",
+          "slug": "education"
+        },
+        {
+          "id": 3,
+          "name": "Child Development",
+          "slug": "child-development"
+        }
+      ],
+      "created_at": "2025-09-25 05:03:54",
+      "updated_at": "2025-09-25 05:03:54",
+      "content": [
+        {
+          "type": "paragraph",
+          "content": "<p><strong>Phuket, Thailand</strong> – The HEI Schools Summit 2025, the annual and exclusive gathering for HEI partners worldwide, was held over three days at the HEI Schools Phuket campus. The event brought together school founders, educators, administrators, and education leaders to share knowledge, review current challenges, and discuss strategies for improving early childhood and K–12 education.</p><p>The summit provided a platform for participants to network, exchange ideas, and collaborate on initiatives that align with the HEI Education Philosophy. Highlights included interactive workshops, keynote speeches, and panel discussions led by industry experts and HEI School leaders.</p>"
+        },
+        {
+          "type": "paragraph-with-image",
+          "title": "Day One: Building Foundations – The K-12 Education Path",
+          "content": "<p>The opening day examined the role of early childhood education as the starting point for a child’s learning journey and how HEI Schools can offer clear pathways beyond the early years. Key sessions included:</p><ul><li><strong>Inkeri Aimonen</strong>, CEO, HEI Schools HQ – HEI Schools Goes to School: What Makes Finnish Primary School Special and How It Can Be Implemented Outside of Finland</li><li><strong>Markus Ylönen</strong>, CEO, HEI Schools HQ – The Importance of a Playful Environment in Early Childhood Education</li><li><strong>Maija Salo</strong>, CEO, HEI Schools HQ – The Importance of a Playful Environment in Early Childhood Education</li><li><strong>Maija Salo</strong>, CEO, HEI Schools HQ – The Importance of a Playful Environment in Early Childhood Education</li></ul><p>The day also included a tour of HEI Schools Phuket and concluded with a welcome dinner hosted by HEI Schools HQ.</p>",
+          "image": "/imgs/articles/detail/2.webp",
+          "caption": "Photo collection: a snapshot of speakers and attendees captured during Day 1 of the HEI Schools Summit 2025"
+        },
+        {
+            "type": "paragraph-with-image",
+            "title": "Day Two: Curriculum, Branding, and Leadership",
+            "content": "<p>The second day focused on curriculum development, brand identity, and leadership strategies. Key sessions included:</p><ul><li><strong>Maija Salo</strong>, CEO, HEI Schools HQ – The Importance of a Playful Environment in Early Childhood Education</li><li><strong>Maija Salo</strong>, CEO, HEI Schools HQ – The Importance of a Playful Environment in Early Childhood Education</li><li><strong>Maija Salo</strong>, CEO, HEI Schools HQ – The Importance of a Playful Environment in Early Childhood Education</li><li><strong>Maija Salo</strong>, CEO, HEI Schools HQ – The Importance of a Playful Environment in Early Childhood Education</li></ul><p>The day also included a tour of HEI Schools Phuket and concluded with a welcome dinner hosted by HEI Schools HQ.</p>",
+            "image": "/imgs/articles/detail/3.webp",
+            "caption": "Photo collection: a snapshot of speakers and attendees captured during Day 2 of the HEI Schools Summit 2025"
+        },
+        {
+            "type": "paragraph",
+            "content": "<h5>Continuing a Global Dialogue</h5><p>This year’s summit followed the 2023 edition in Helsinki, Finland, which gathered over 25 partners and administrators for keynote sessions with Professor Lipponen and Dr. Pilvi Torsti, former State Secretary of Education of Finland.</p><p>“HEI Summit is more than an event – it’s where global education leaders unite to share, support, and shape the future together,” said Inkeri Aimonen, CEO of HEI Schools. “The ideas and strategies born here travel home with our partners and make a real difference in classrooms worldwide.”</p><p>The Phuket summit concluded with participants returning to their home countries with new contacts, case examples, and strategies aimed at improving the quality, inclusivity, and sustainability of early childhood education within their own communities.</p>"
+        },
+        {
+            "type": "paragraph",
+            "title": "Join the HEI School Community",
+            "content": "<h5>More information</h5><p>The HEI Schools Summit is a biennial, exclusive event that unites HEI Schools® partners from around the world. This gathering brings together early education leaders, school owners, and education entrepreneurs to share insights, exchange ideas, and foster global collaboration in a designated location each year.</p> <p>The HEI Schools Summit 2023 edition, held at HEI Schools HQ in Finland, brought together over 25 school partners from multiple continents for an unparalleled exchange of ideas. Participants gained world-class insights from Professor Lasse Lipponen, Professor of Education at the University of Helsinki and one of the foremost authorities on early childhood pedagogy, and Dr. Pilvi Torsti, former State Secretary of the Finnish Ministry of Education and Culture (2013–2015) and a leading voice in international education policy. Together, they addressed the evolving needs of early education, visionary leadership, and the role of Nordic pedagogy in shaping the future of global learning.</p> <p>For more information about the HEI Schools Summit 2025, please visit the <a href='https://www.heischool.com' target='_blank'>HEI Schools website</a>.</p>"
+        },
+        {
+            "type": "single-image",
+            "title": "Join the HEI School Community",
+            "image": "/imgs/articles/5.webp"
+        }
+      ],
+      "related": [
+        {
+          "id": 12,
+          "title": "Art Exhibition Showcases Student Creativity and Expression",
+          "slug": "art-exhibition-showcases-student-creativity-expression",
+          "image": "/imgs/articles/12.webp",
+          "theme": 2,
+          "categories": ["event"],
+          "excerpt": "Annual art exhibition features diverse works from students across all grade levels, celebrating artistic expression.",
+          "content": "The annual art exhibition is a celebration of student creativity and artistic expression. Featuring paintings, sculptures, digital art, and mixed media pieces, this event showcases the incredible talent and imagination of our student artists.",
+          "publishedAt": "2024-03-10",
+          "author": "Ms. Rachel Green"
+        },
+        {
+          "id": 8,
+          "title": "Time Management Hacks for Busy Students",
+          "slug": "time-management-hacks-busy-students",
+          "image": "/imgs/articles/8.webp",
+          "theme": 3,
+          "categories": ["hacks"],
+          "excerpt": "Learn practical strategies to balance academics, extracurricular activities, and personal time effectively.",
+          "content": "Effective time management is essential for student success. This article provides practical strategies including priority matrix techniques, digital organization tools, and methods for maintaining work-life balance while excelling academically.",
+          "publishedAt": "2024-02-20",
+          "author": "Dr. Robert Kim"
+        },
+        {
+          "id": 9,
+          "title": "HEI School Receives Excellence in Education Award",
+          "slug": "hei-school-receives-excellence-education-award",
+          "image": "/imgs/articles/9.webp",
+          "theme": 1,
+          "categories": ["news"],
+          "excerpt": "Recognition for outstanding commitment to innovative teaching methods and student achievement.",
+          "content": "HEI School has been honored with the Excellence in Education Award by the National Education Association. This recognition highlights our commitment to innovative teaching methods, student-centered learning, and academic excellence across all grade levels.",
+          "publishedAt": "2024-02-25",
+          "author": "Dr. Patricia Lee"
+        }
+      ]
+    }
+  }

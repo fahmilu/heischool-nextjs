@@ -1,6 +1,8 @@
-import { getDetailData } from "@/utils/pageData";   
+import { getDetailData, getArticleDetailData } from "@/utils/pageData";   
 import Schools from "@/components/Schools";
 import DetailLocation from "@/components/Schools/DetailLocation";
+import ArticleContents from "@/components/Articles/Contents";
+
 export async function generateMetadata({ params }) {
     const { slug, detail } = await params;
     
@@ -34,6 +36,13 @@ const DetailPage = async ({params}) => {
         );
     }
 
+    if(['articles', 'news'].includes(slug)) {
+        const articleDetailData = await getArticleDetailData(slug);
+        console.log(articleDetailData);
+        return (
+            <ArticleContents data={articleDetailData.data} />
+        );
+    }
     return (
         <div>
             <h1>{slug} {detail}</h1>

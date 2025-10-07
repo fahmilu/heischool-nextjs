@@ -1,0 +1,170 @@
+// Contact Component Styles
+.contact-us {
+  @apply py-[100px];
+
+  &__image {
+    @apply relative  w-full h-[594px];
+
+    img {
+      @apply object-contain;
+    }
+  }
+
+  &__container {
+    @apply max-w-[1000px] mx-auto bg-[#FBF8F2] rounded-[34px] -mt-[204px] relative z-10 px-10;
+  }
+}
+
+.contact-tabs {
+  @apply flex justify-center py-8;
+
+  .contact-tab {
+    @apply px-6 py-3 text-[24px] font-bold font-noyh uppercase transition-colors duration-200 border-r border-[#404040] last:border-r-0 text-[#404040];
+    position: relative;
+    cursor: pointer;
+    outline: none;
+
+    &:hover,
+    &.contact-tab-active {
+      @apply text-[#C0AFA3];
+    }
+  }
+}
+
+.contact-tab-content {
+
+    .enrollment {
+      
+      .enrollment-slides {
+        @apply relative px-[60px];
+        .embla {
+            @apply rounded-[24px];
+        }
+        .embla__arrow {
+
+            &--prev {
+                @apply left-0;
+            }
+
+            &--next {
+                @apply right-0;
+            }
+
+            &:disabled {
+                @apply opacity-50 cursor-not-allowed #{!important};
+            }
+        }
+    }
+
+    .enrollment-note {
+      @apply text-hei-green text-[20px] leading-[120%] font-noyh font-bold mx-auto py-[32px] max-w-[635px]; 
+    }
+
+    .enrollment-form {
+      @apply relative w-full aspect-[920/1887];
+      iframe {
+        @apply w-full h-full;
+      }
+    }
+  }
+
+
+  // Smooth transition for content changes
+  transition: all 0.3s ease-in-out;
+
+  form {
+    @apply space-y-6 max-w-[735px] py-[30px] mx-auto;
+    
+    .form-group {
+      @apply space-y-3;
+      
+      h4 {
+        @apply text-[20px] font-noyh font-bold text-[#404040];
+        
+        small {
+          @apply text-[14px] text-gray-600 font-medium ml-1 #{!important};
+        }
+      }
+      
+      p {
+        @apply text-[12px] text-gray-600 font-medium mt-0 #{!important};
+      }
+      
+      .form-row {
+        @apply flex flex-row gap-4;
+        
+        .form-col {
+          @apply flex-1 space-y-2;
+          
+          label {
+            @apply block text-[16px] font-noyh font-medium text-[#404040];
+          }
+          
+          textarea {
+            @apply w-full px-4 py-2 h-[120px] border border-gray-300 rounded-lg text-[16px] font-noyh bg-white focus:outline-none focus:ring-2 focus:ring-[#C0AFA3] focus:border-transparent transition-all duration-200;
+            
+            &:focus {
+              @apply shadow-md;
+            }
+          }
+          
+          input, select {
+            @apply w-full px-4 py-2 h-12 border border-gray-300 rounded-lg text-[16px] font-noyh bg-white focus:outline-none focus:ring-2 focus:ring-[#C0AFA3] focus:border-transparent transition-all duration-200;
+            
+            &:focus {
+              @apply shadow-md;
+            }
+          }
+          
+          select {
+            @apply cursor-pointer;
+          }
+          
+          &.form-checkbox-group {
+            @apply flex flex-wrap gap-4;
+            
+            .form-checkbox {
+              @apply flex items-center space-x-2;
+              
+              input[type="checkbox"] {
+                @apply w-4 h-4 text-[#C0AFA3] border-gray-300 rounded focus:ring-[#C0AFA3] focus:ring-2;
+              }
+              
+              label {
+                @apply text-[16px] font-noyh font-medium text-[#404040] cursor-pointer;
+              }
+            }
+          }
+        }
+      }
+    }
+
+    .button-group {
+      @apply flex justify-center mt-[60px] #{!important};
+
+      button {
+        @apply px-4 py-2 h-[52px] text-[20px] font-noyh bg-black text-white hover:bg-black/80 transition-all duration-200 uppercase font-bold tracking-wider;
+      }
+    }
+  }
+}
+
+// Responsive adjustments
+@media (max-width: 768px) {
+  .contact-tabs {
+    flex-direction: column;
+    
+    .contact-tab {
+      border-bottom: 1px solid #e5e7eb;
+      border-right: none;
+      
+      &.contact-tab-active {
+        border-bottom-color: #3b82f6;
+      }
+    }
+  }
+  
+  .contact-tab-content {
+    padding: 1rem;
+  }
+}

@@ -30,3 +30,21 @@ export async function getDataData(slug) {
         notFound();
     }
 }
+
+export async function getArticlesData() {
+    try {
+        const articlesData = await import(`@/data/articles.json`);
+        return articlesData.default;
+    } catch (error) {
+        notFound();
+    }
+}
+
+export async function getArticleDetailData(slug) {
+    try {
+        const articleDetailData = await import(`@/data/article-detail.json`);
+        return articleDetailData.default;
+    } catch (error) {
+        notFound();
+    }
+}
