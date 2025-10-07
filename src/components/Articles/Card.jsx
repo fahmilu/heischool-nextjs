@@ -10,23 +10,23 @@ gsap.registerPlugin(ScrollTrigger);
 const Card = ({ data, isRelated=false }) => {
     const cardRef = useRef(null);
 
-    useGSAP(() => {
-        if (cardRef.current) {
-            gsap.fromTo(cardRef.current, {
-                opacity: 0,
-                y: 50,
-            }, {
-                opacity: 1,
-                y: 0,
-                duration: 0.3,
-                scrollTrigger: {
-                    trigger: cardRef.current,
-                    start: 'top bottom',
-                    once: true,
-                },
-            });
-        }
-    }, { scope: cardRef });
+    // useGSAP(() => {
+    //     if (cardRef.current) {
+    //         gsap.fromTo(cardRef.current, {
+    //             opacity: 0,
+    //             y: 50,
+    //         }, {
+    //             opacity: 1,
+    //             y: 0,
+    //             duration: 0.3,
+    //             scrollTrigger: {
+    //                 trigger: cardRef.current,
+    //                 start: 'top bottom',
+    //                 once: true,
+    //             },
+    //         });
+    //     }
+    // }, { scope: cardRef });
     return (
             <Link href={`/articles/${data.slug}`} className="articles__index__item" data-theme={isRelated ? '3' : data.theme} ref={cardRef}>
                 <div className="articles__index__item__image">
