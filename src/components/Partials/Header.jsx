@@ -47,7 +47,7 @@ const Header = ({ isHome = true }) => {
     },
     {
       label: "Enrollment",
-      href: "/contact?#enrollment",
+      href: "/contact-us#enrollment",
     },
     {
       label: "News",
