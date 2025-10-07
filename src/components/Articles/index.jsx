@@ -94,7 +94,6 @@ const Articles = () => {
         // Run masonry layout immediately
         const runMasonry = () => {
             // First attempt - immediate
-            applyMasonryLayout();
             
             // Second attempt - after a short delay to ensure DOM is ready
             setTimeout(applyMasonryLayout, 50);
@@ -120,11 +119,13 @@ const Articles = () => {
                     }
                 });
             }
+
+            applyMasonryLayout();
+            setIsLoaded(true);
         };
 
         // Run masonry layout immediately when component mounts
         runMasonry();
-        setIsLoaded(true);
         // Reapply on window resize
         const handleResize = () => {
             setTimeout(applyMasonryLayout, 100);

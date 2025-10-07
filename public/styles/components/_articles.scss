@@ -2,7 +2,7 @@
     @apply relative overflow-hidden pt-[187px] pb-[95px];
 
     &__circle {
-        @apply absolute bottom-0 right-0 translate-x-[40%] translate-y-[20%] w-[1155px] h-[1155px];
+        @apply absolute top-[1000px] right-0 translate-x-[40%] translate-y-[20%] w-[1155px] h-[1155px];
     }
 
     &__index {
