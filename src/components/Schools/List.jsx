@@ -1,19 +1,9 @@
 import { BigCircle } from "@/components/SVGs";
 import Image from "next/image";
 import Link from "next/link";
-const List = () => {
-    const data = [
-        {
-            title: "SENAYAN",
-            slug: "senayan",
-            icon: "/imgs/schools/senayan/icon.svg",
-        },
-        {
-            title: "SPM MENTENG",
-            slug: "menteng",
-            icon: "/imgs/schools/menteng/icon.svg",
-        }
-    ]
+import { fetchData } from "@/services/api";
+const List = async () => {
+    const { data } = await fetchData("locations");
     return (
         <section className="schools-list">
             <div className="schools-list__circle">
@@ -26,7 +16,7 @@ const List = () => {
                         <Link key={index} href={`/locations/${item.slug}`} className="list-item">
                             <div className="list-item__title">{item.title}</div>
                             <div className="list-item__icon">
-                                <Image src={item.icon} alt={item.title} fill />
+                                <Image src={`${process.env.NEXT_PUBLIC_ASSET_URL}/${item.icon}`} alt={item.title} fill />
                             </div>
                         </Link>
                     ))}

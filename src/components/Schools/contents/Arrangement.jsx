@@ -1,15 +1,17 @@
 import Link from "next/link";
 import Image from "next/image";
 import { BigCircle } from "@/components/SVGs";
-const Arrangement = ({ data }) => {
+const Arrangement = ({ arrangement, calendar }) => {
+    console.log({arrangement, calendar});
     return (
         <div className="arr-cal">
+            {calendar?.data && (
             <section className="schools-calendar">
                 <div className="container">
-                    <h2>{data.calendar.title}</h2>
+                    <h2>{calendar.data.section_title}</h2>
                     <div className="schools-calendar__area">
                         <div className="schools-calendar__area__image">
-                            <Image src={data.calendar.image} alt={data.calendar.title} fill />
+                            <Image src={`${process.env.NEXT_PUBLIC_ASSET_URL}/${calendar.data.image}`} alt={calendar.data.title} fill />
                         </div>
                         <div className="calendar-items">
                             <div className="calendar-item">
@@ -18,39 +20,40 @@ const Arrangement = ({ data }) => {
                                 <div>End of the Term</div>
                                 <div>Term Break</div>
                             </div>
-                            {data.calendar.items.map((item, index) => (
+                            {calendar.data.items.map((item, index) => (
                                 <div key={index} className="calendar-item">
                                     <div>{item.term}</div>
-                                    <div>{item.start}</div>
-                                    <div>{item.end}</div>
-                                    <div>{item.break}</div>
+                                    <div>{item.start_date}</div>
+                                    <div>{item.end_date}</div>
+                                    <div>{item.break_date}</div>
                                 </div>
                             ))}
                         </div>
                         <div className="calendar-link">
-                            <p>{data.calendar.link_description}</p>
-                            <Link href={data.calendar.link}>{data.calendar.link_text}</Link>
+                            <p dangerouslySetInnerHTML={{ __html: calendar.data.description }} />
+                            <Link href={calendar.data.link}>{calendar.data.link_text}</Link>
                         </div>
                     </div>
                 </div>
             </section>
+            )}
             <div className="wrapper">
                 <section className="schools-arrangement">
                     <div className="container">
                         <div className="schools-arrangement__circle">
                             <BigCircle />
                         </div>
-                        <h2>{data.title}</h2>
+                        <h2>{arrangement.section_title}</h2>
                         <div className="schools-arrangement__content">
                             <div className="schools-arrangement__content__image">
-                                <Image src={data.image} alt={data.title} fill />
-                                {data.description && (
-                                    <div className="schools-arrangement__content__image__description" dangerouslySetInnerHTML={{ __html: data.description }} />
+                                <Image src={`${process.env.NEXT_PUBLIC_ASSET_URL}/${arrangement.image}`} alt={arrangement.title} fill />
+                                {arrangement.description && (
+                                    <div className="schools-arrangement__content__image__description" dangerouslySetInnerHTML={{ __html: arrangement.description }} />
                                 )}
                             </div>
                             <div className="schools-arrangement__content__link">
-                                <p>{data.link_description}</p>
-                                <Link href={data.link}>{data.link_text}</Link>
+                                <p>{arrangement.notes}</p>
+                                <Link href={arrangement.link}>{arrangement.link_text}</Link>
                             </div>
                         </div>
                     </div>

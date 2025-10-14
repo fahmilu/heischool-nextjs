@@ -8,11 +8,11 @@ const SideImage = ({ data }) => {
                     <BigCircle />
                 </div>
                 <div className="side-image__content">
-                    <h2 dangerouslySetInnerHTML={{ __html: data.title }} />
+                    <h2>{data.title}</h2>
                     <div className="side-image__content__description" dangerouslySetInnerHTML={{ __html: data.description }} />
                 </div>
                 <div className="side-image">
-                    <Image src={data.image} alt={data.title} fill />
+                    <Image src={`${process.env.NEXT_PUBLIC_ASSET_URL}/${data.image}`} alt={data.title} fill />
                 </div>
             </div>
         </section>

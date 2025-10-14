@@ -13,7 +13,7 @@ const ClubItem = ({ data }) => {
     <>
       <div className="schools-clubs__item" onClick={() => onItemClick()}>
         <div className="schools-clubs__item__image">
-          <Image src={data.image_icon} alt={data.title} fill />
+          <Image src={`${process.env.NEXT_PUBLIC_ASSET_URL}/${data.icon}`} alt={data.title} fill />
         </div>
         <div className="schools-clubs__item__title">{data.title}</div>
       </div>

@@ -15,12 +15,12 @@ const ClubModal = ({ data, active, setActive }) => {
                     </svg>
                 </div>
                 <div className="schools-clubs__dialog__content__image">
-                    <Image src={data.image} alt={data.title} fill />
+                    <Image src={`${process.env.NEXT_PUBLIC_ASSET_URL}/${data.image}`} alt={data.title} fill />
                 </div>
                 <div className="schools-clubs__dialog__content__content">
                     <h2>{data.title}</h2>
-                    <p>{data.description}</p>
-                    <div className="schools-clubs__dialog__content__criterias" theme={data.theme}>
+                    <p dangerouslySetInnerHTML={{ __html: data.description }} />
+                    <div className="schools-clubs__dialog__content__criterias" theme={data.theme_color}>
                         {data.criterias.map((criteria, index) => (
                             <ClubAccordion key={index} title={criteria.title} setActiveItem={setActiveItem} active={activeItem} isOpen={activeItem === index} index={index} description={criteria.description} />
                         ))}

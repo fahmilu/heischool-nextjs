@@ -5,7 +5,7 @@ const Clubs = ({ data }) => {
     return (
         <section className="schools-clubs">
             <div className="container">
-                <h2>{data.title}</h2>
+                <h2>{data.section_title}</h2>
                 <div className="schools-clubs__items">
                     {data.items.map((item, index) => (
                         <ClubItem key={index} data={item} />

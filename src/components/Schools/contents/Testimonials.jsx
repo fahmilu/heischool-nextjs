@@ -60,10 +60,10 @@ const Testimonials = ({ data }) => {
     }, { scope: containerRef });
 
     return (
-      <section className="schools-testimonials" ref={containerRef} style={{ backgroundColor: data.color }}>
+      <section className="schools-testimonials" ref={containerRef} style={{ backgroundColor: data.background_color }}>
         <div className="container">
           <div className="schools-testimonials-content">
-            <h3 className="bigger text-white text-center mx-auto max-w-[400px] mb-[40px]">{data.title}</h3>
+            <h3 className="bigger text-white text-center mx-auto max-w-[400px] mb-[40px]">{data.section_title}</h3>
             <div className="schools-testimonials-content-avatars" ref={avatarsRef}>
               {data.items.map((avatar, index) => (
                 <div
@@ -74,7 +74,7 @@ const Testimonials = ({ data }) => {
                       : ""
                   }`}
                 >
-                  <Image src={avatar.image} alt="Avatar" fill />
+                  <Image src={`${process.env.NEXT_PUBLIC_ASSET_URL}/${avatar.image}`} alt="Avatar" fill />
                 </div>
               ))}
             </div>
@@ -88,9 +88,9 @@ const Testimonials = ({ data }) => {
                     <div key={index} className="embla__slide">
                       <div className="schools-testimonials-content-slides-item">
                         <div className="schools-testimonials-content-slides-item-quote">
-                          {item.description}
+                          <p dangerouslySetInnerHTML={{ __html: item.quote }} />
                         </div>
-                        <h3 className="text-black">{item.title}</h3>
+                        <h3 className="text-black">{item.author}</h3>
                       </div>
                     </div>
                   ))}

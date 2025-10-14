@@ -2,12 +2,13 @@ import { getDetailData, getArticleDetailData } from "@/utils/pageData";
 import Schools from "@/components/Schools";
 import DetailLocation from "@/components/Schools/DetailLocation";
 import ArticleContents from "@/components/Articles/Contents";
+import { fetchData } from "@/services/api";
 
 export async function generateMetadata({ params }) {
     const { slug, detail } = await params;
     
     if(['locations', 'our-locations'].includes(slug)) {
-        const pageData = await getDetailData(slug, detail);
+        const { data: pageData } = await fetchData(`locations/${detail}`);
 
         return {
             title: `${pageData.meta?.title || pageData.title}`,
@@ -22,7 +23,7 @@ const DetailPage = async ({params}) => {
     const {slug, detail} = params;
 
     if(['locations', 'our-locations'].includes(slug)) {
-        const pageData = await getDetailData(slug, detail);
+        const { data: pageData } = await fetchData(`locations/${detail}`);
 
         return (
             <>
