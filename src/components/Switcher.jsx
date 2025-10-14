@@ -10,11 +10,12 @@ import ApproachBanner from "@/components/Approach/Banner";
 import ApproachHeiWay from "@/components/Approach/HeiWay";
 import ApproachLearningAreas from "@/components/Approach/LearningAreas";
 import ApproachLearningAspiration from "@/components/Approach/LearningAspiration";
+import Facilities from "@/components/Schools/contents/Facilities";
 export default function Switcher({ page, data }) {
     const { type } = data;
     
     switch (type) {
-        case 'home-banner':
+        case 'banner':
             return <HomeBanner page={page} data={data.data} />
         case 'home-about':
             return <HomeAbout data={data.data} />
@@ -22,22 +23,31 @@ export default function Switcher({ page, data }) {
             return <HomeHistory data={data.data} />
         case 'home-education':
             return <HomeEducation data={data.data} />
-        case 'home-map':
+        case 'single-image':
             return <HomeMap data={data.data} />
-        case 'home-location':
-            return <HomeLocation data={data.data} />
+        case 'tabs-of-images':
+            switch (data.data.theme) {
+                case 'plain':
+                    return <HomeLocation data={data.data} />
+                case 'colored':
+                    return <Facilities data={data.data} />
+            }
         case 'home-awards':
             return <HomeAwards data={data.data} />
         case 'home-testimonials':
             return <HomeTestimonials data={data.data} />
-        case 'banner':
-            return <ApproachBanner data={data.data} />
-        case 'hei-way':
-            return <ApproachHeiWay data={data.data} />
-        case 'learning-areas':
-            return <ApproachLearningAreas data={data.data} />
-        case 'learning-aspiration':
-            return <ApproachLearningAspiration data={data.data} />
+
+        case 'info-cards':
+            switch (data.data.theme) {
+                case 'accordion':
+                    return <ApproachHeiWay data={data.data} />
+                case 'carousel':
+                    return <ApproachLearningAreas data={data.data} />
+                case 'stacked':
+                    return <ApproachLearningAspiration data={data.data} />
+                default:
+                    return null;
+            }
         default:
             return null;
     }

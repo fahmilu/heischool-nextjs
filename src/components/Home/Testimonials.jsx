@@ -62,7 +62,7 @@ const Testimonials = ({ data }) => {
     return (
       <section className="home-testimonials" ref={containerRef}>
         <div className="container">
-          <h2 className="bigger text-hei-blue uppercase">{data.title}</h2>
+          <h2 className="bigger text-hei-blue uppercase">{data.section_title}</h2>
           <div className="home-testimonials-content">
             <div className="home-testimonials-content-avatars" ref={avatarsRef}>
               {data.items.map((avatar, index) => (
@@ -74,7 +74,7 @@ const Testimonials = ({ data }) => {
                       : ""
                   }`}
                 >
-                  <Image src={avatar.image} alt="Avatar" fill />
+                  <Image src={`${process.env.NEXT_PUBLIC_ASSET_URL}/${avatar.image}`} alt="Avatar" fill />
                 </div>
               ))}
             </div>
@@ -88,9 +88,9 @@ const Testimonials = ({ data }) => {
                     <div key={index} className="embla__slide">
                       <div className="home-testimonials-content-slides-item">
                         <div className="home-testimonials-content-slides-item-quote">
-                          {item.description}
+                          {item.quote}
                         </div>
-                        <h3 className="text-black">{item.title}</h3>
+                        <h3 className="text-black">{item.author}</h3>
                       </div>
                     </div>
                   ))}

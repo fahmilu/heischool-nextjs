@@ -8,11 +8,11 @@ const Awards = ({ data }) => {
     <div className='home-awards'>
         <div className='container'>
             <TextAnimation delay={0.1}>
-                <h2 className='bigger text-hei-blue uppercase'>{data.title}</h2>
+                <h2 className='bigger text-hei-blue uppercase'>{data.section_title}</h2>
             </TextAnimation>
             <ImageAnimation delay={0.4}>
                 <div className='home-awards-image'>
-                    <Image src={data.image} alt='Awards' fill />
+                    <Image src={`${process.env.NEXT_PUBLIC_ASSET_URL}/${data.image}`} alt='Awards' fill />
                 </div>
             </ImageAnimation>
         </div>

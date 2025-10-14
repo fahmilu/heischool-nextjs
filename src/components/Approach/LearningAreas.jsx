@@ -12,7 +12,7 @@ const LearningAreas = ({ data }) => {
     return (
         <section className="section__learning-areas">
             <div className="container">
-                <h2>{data.title}</h2>
+                <h2>{data.section_title}</h2>
                 <div className="section__learning-areas__items embla adaptive-width" >
                     <div className="embla__viewport" ref={emblaRef}>
                         <div className="embla__container">
@@ -20,11 +20,11 @@ const LearningAreas = ({ data }) => {
                                 <div key={index} className="embla__slide">
                                     <div className="section__learning-areas__item" style={{ "--color": item.color }}>
                                         <div className="section__learning-areas__item__image">
-                                            <Image src={item.image} alt={item.title} fill />
+                                            <Image src={`${process.env.NEXT_PUBLIC_ASSET_URL}/${item.image}`} alt={item.title} fill />
                                         </div>
                                         <div className="section__learning-areas__item__content">
                                             <h4>{item.title}</h4>
-                                            <p>{item.description}</p>
+                                            <p dangerouslySetInnerHTML={{ __html: item.description }} />
                                         </div>
                                     </div>
                                 </div>

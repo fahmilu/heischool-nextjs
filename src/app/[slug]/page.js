@@ -1,11 +1,10 @@
-import { getDataData } from "@/utils/pageData";
 import Switcher from "@/components/Switcher";
 import List from "@/components/Schools/List";
 import Articles from "@/components/Articles";
+import { fetchData } from "@/services/api";
 
 const Page = async ({ params }) => {
     const { slug } = await params;
-    // console.log(pageData);
     if (['locations', 'our-locations'].includes(slug)) {
         return <List />
     }
@@ -15,8 +14,7 @@ const Page = async ({ params }) => {
     }
 
     
-    const pageData = await getDataData(slug);
-
+    const {data: pageData} = await fetchData(`pages/${slug}`);
     return pageData.components.map((component, index) => (
         <Switcher key={index} page={pageData} data={component} />
     ));

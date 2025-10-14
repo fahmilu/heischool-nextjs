@@ -20,7 +20,7 @@ const Education = ({ data }) => {
                 <div className='home-education-content-description' dangerouslySetInnerHTML={{ __html: data.description }}/>
             </div>
             <div className='home-education-image'>
-                <Image src={data.image} alt={data.title} fill />
+                <Image src={`${process.env.NEXT_PUBLIC_ASSET_URL}/${data.image}`} alt={data.title} fill />
             </div>
         </div>
     </section>

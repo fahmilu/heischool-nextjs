@@ -29,11 +29,11 @@ const HomeAbout = ({ data }) => {
             </div>
             <div className="container">
                 <TextAnimation start="top 85%" delay={0.5}>
-                    <h2 dangerouslySetInnerHTML={{ __html: data.description }} className="home-about__text relative z-[2]" />
+                    <h2 dangerouslySetInnerHTML={{ __html: data.title }} className="home-about__text relative z-[2]" />
                 </TextAnimation>
                 <ImageAnimation animationType="fadeInUp" start="top 85%" delay={0.5}>
                     <div className="home-about__image relative z-[1]">
-                        <Image src={data.image} alt={data.title} fill />
+                        <Image src={`${process.env.NEXT_PUBLIC_ASSET_URL}/${data.image}`} alt={data.title} fill />
                     </div>
                 </ImageAnimation>
             </div>  

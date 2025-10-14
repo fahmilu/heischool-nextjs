@@ -1,7 +1,7 @@
 import Switcher from "@/components/Switcher";
-import { getPageData } from "@/utils/pageData";
+import { fetchData } from "@/services/api";
 const page = async () => {
-  const pageData = await getPageData("home");
+  const { data: pageData } = await fetchData("pages");
   return (
     <>
       {pageData.components && pageData.components.map((component, index) => (

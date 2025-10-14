@@ -23,7 +23,7 @@ const Gallery = ({ data, setActiveEmblaApi, activeIndex, index }) => {
                 {data.map((item, index) => (
                     <div key={index} className='embla__slide'>
                         <div className='embla__slide-image'>
-                            <Image src={item} alt={index} fill />
+                            <Image src={`${process.env.NEXT_PUBLIC_ASSET_URL}/${item.image}`} alt={index} fill />
                         </div>
                     </div>
                 ))}

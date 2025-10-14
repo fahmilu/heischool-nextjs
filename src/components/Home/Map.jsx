@@ -34,7 +34,7 @@ const Map = ({ data }) => {
             <div className='container !sticky !top-0'>
                 <h2 className="bigger uppercase">{data.title}</h2>
                 <div ref={imageRef} className='home-map-image relative overflow-hidden'>
-                    <Image src={data.image} alt={data.title} fill className="object-cover" />
+                    <Image src={`${process.env.NEXT_PUBLIC_ASSET_URL}/${data.image}`} alt={data.title} fill className="object-cover" />
                 </div>
             </div>
         </section>

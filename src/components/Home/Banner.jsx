@@ -54,7 +54,7 @@ const HomeBanner = ({ data }) => {
       <div ref={bannerRef} className="home-banner">
           <div ref={imageRef} className="home-banner__image">
             <Image 
-              src={data.image} 
+              src={`${process.env.NEXT_PUBLIC_ASSET_URL}/${data.image}`}
               alt={data.title} 
               fill 
               onLoad={handleImageLoad}

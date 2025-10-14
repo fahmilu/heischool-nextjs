@@ -16,7 +16,7 @@ const History = ({ data }) => {
             <section className='home-history'>
                 <div className='container'>
                     <div className='home-history-image'>
-                        <img src={data.image} alt={data.title} />
+                        <img src={`${process.env.NEXT_PUBLIC_ASSET_URL}/${data.logo}`} alt={data.title} />
                     </div>
                     <div className='home-history-content'>
                         <h3>{data.title}</h3>
@@ -24,7 +24,7 @@ const History = ({ data }) => {
                     </div>
                 </div>
             </section>
-            <section className='home-history-2' style={{ backgroundImage: `url(${data.image2})` }}></section>
+            <section className='home-history-2' style={{ backgroundImage: `url(${process.env.NEXT_PUBLIC_ASSET_URL}/${data.image})` }}></section>
         </>
     );
 }
