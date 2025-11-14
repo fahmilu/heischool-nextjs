@@ -24,9 +24,18 @@ const DetailPage = async ({params}) => {
 
     if(['locations', 'our-locations'].includes(slug)) {
         const { data: pageData } = await fetchData(`locations/${detail}`);
-
+        console.log(pageData);
         return (
             <>
+                <Schools page={pageData} data={
+                            {
+                                "type": "banner",
+                                "data": {
+                                    "title": "HEI SCHOOLS MENTENG",
+                                    "images": pageData.banner_images
+                                }
+                            }
+                } />
             {
                 pageData.components.map((component, index) => (
                     <Schools key={index} page={pageData} data={component} />
@@ -38,10 +47,13 @@ const DetailPage = async ({params}) => {
     }
 
     if(['articles', 'news'].includes(slug)) {
-        const articleDetailData = await getArticleDetailData(slug);
+        const articleDetailData = await fetchData(`news/${detail}`);
+        const articlesData = await fetchData('news');
+
+        const relatedArticles = articlesData.data.filter(article => article.id !== articleDetailData.data.id && article.tags.some(tag => articleDetailData.data.tags.includes(tag)));
         console.log(articleDetailData);
         return (
-            <ArticleContents data={articleDetailData.data} />
+            <ArticleContents data={articleDetailData.data} related={relatedArticles} />
         );
     }
     return (

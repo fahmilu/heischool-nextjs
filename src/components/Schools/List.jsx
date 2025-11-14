@@ -1,9 +1,20 @@
+'use client';
 import { BigCircle } from "@/components/SVGs";
 import Image from "next/image";
 import Link from "next/link";
-import { fetchData } from "@/services/api";
-const List = async () => {
-    const { data } = await fetchData("locations");
+import { useAppDispatch, useAppSelector } from '@/redux/hooks';
+import { 
+  fetchLocations,
+  selectAllLocations, 
+} from '@/redux/slices/locationsSlice';
+import { useEffect } from 'react';
+const List = () => {
+    const dispatch = useAppDispatch();
+    const locations = useAppSelector(selectAllLocations);
+
+    useEffect(() => {
+        dispatch(fetchLocations());
+    }, [dispatch]);
     return (
         <section className="schools-list">
             <div className="schools-list__circle">
@@ -12,9 +23,9 @@ const List = async () => {
             <div className="container">
                 <div className="list-area">
                     <h2>Which location <br /> would you like to visit?</h2>
-                    {data.map((item, index) => (
-                        <Link key={index} href={`/locations/${item.slug}`} className="list-item">
-                            <div className="list-item__title">{item.title}</div>
+                    {locations.map((item, index) => (
+                        <Link key={index} href={`/locations/${item.slug}`} className="list-item" style={{ '--bg-color': item.icon_bg_color }}>
+                            <div className="list-item__title">{item.label}</div>
                             <div className="list-item__icon">
                                 <Image src={`${process.env.NEXT_PUBLIC_ASSET_URL}/${item.icon}`} alt={item.title} fill />
                             </div>

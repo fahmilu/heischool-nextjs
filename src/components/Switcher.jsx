@@ -11,7 +11,7 @@ import ApproachHeiWay from "@/components/Approach/HeiWay";
 import ApproachLearningAreas from "@/components/Approach/LearningAreas";
 import ApproachLearningAspiration from "@/components/Approach/LearningAspiration";
 import Facilities from "@/components/Schools/contents/Facilities";
-export default function Switcher({ page, data }) {
+export default function Switcher({ page, data, isHome = false }) {
     const { type } = data;
     
     switch (type) {
@@ -24,7 +24,7 @@ export default function Switcher({ page, data }) {
         case 'home-education':
             return <HomeEducation data={data.data} />
         case 'single-image':
-            return <HomeMap data={data.data} />
+            return isHome ? <HomeMap data={data.data} /> : <ApproachBanner data={data.data} />;
         case 'tabs-of-images':
             switch (data.data.theme) {
                 case 'plain':

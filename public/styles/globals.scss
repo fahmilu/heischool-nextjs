@@ -166,7 +166,23 @@ main {
         @apply text-hei-blue text-[24px] font-black font-noyh;
     }
 
+    &__chat {
+        @apply fixed translate-y-[145px] hover:translate-y-0 transition-all duration-300 bottom-0 left-[57px]  bg-white pt-[17px] pb-[41px] px-[20px] rounded-t-[40px] flex flex-col items-center justify-center gap-5 z-[100] shadow-sm;
 
+        .button {
+          @apply flex items-center justify-center gap-2;
+          span {
+              @apply text-hei-blue text-[24px] font-black font-noyh;
+          }
+        }
+
+        .btn-area {
+          @apply flex flex-col items-center justify-center gap-4;
+          .btn-area__item {
+            @apply bg-hei-blue text-white text-[20px] w-[200px] text-center font-black font-noyh px-10 py-2 rounded-full hover:bg-hei-blue/80 transition-all duration-300;
+          }
+        }
+    }
 }
 
 

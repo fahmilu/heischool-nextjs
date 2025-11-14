@@ -14,9 +14,9 @@ const Schools = ({ page, data }) => {
             return <SideImage data={data.data} />
         case "arrangement":
             return <Arrangement arrangement={data.data} calendar={page.components.find(item => item.type === "calendar")} />
-        case "day-at-hei":
+        case "schedule":
             return <DayAtHEI data={data.data} />
-        case "facilities":
+        case "tabs-of-images":
             return <Facilities data={data.data} />
         case "clubs":
             return <Clubs data={data.data} />

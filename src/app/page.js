@@ -5,7 +5,7 @@ const page = async () => {
   return (
     <>
       {pageData.components && pageData.components.map((component, index) => (
-        <Switcher key={index} page={pageData} data={component} />
+        <Switcher key={index} page={pageData} data={component} isHome={true} />
       ))}
     </>
   );

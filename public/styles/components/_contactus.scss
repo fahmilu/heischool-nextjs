@@ -32,28 +32,30 @@
 }
 
 .contact-tab-content {
+  // Smooth transition for content changes
+  transition: all 0.3s ease-in-out;
 
-    .enrollment {
-      
-      .enrollment-slides {
-        @apply relative px-[60px];
-        .embla {
-            @apply rounded-[24px];
-        }
-        .embla__arrow {
+  .enrollment {
+    
+    .enrollment-slides {
+      @apply relative px-[60px];
+      .embla {
+          @apply rounded-[24px];
+      }
+      .embla__arrow {
 
-            &--prev {
-                @apply left-0;
-            }
+          &--prev {
+              @apply left-0;
+          }
 
-            &--next {
-                @apply right-0;
-            }
+          &--next {
+              @apply right-0;
+          }
 
-            &:disabled {
-                @apply opacity-50 cursor-not-allowed #{!important};
-            }
-        }
+          &:disabled {
+              @apply opacity-50 cursor-not-allowed #{!important};
+          }
+      }
     }
 
     .enrollment-note {
@@ -67,10 +69,6 @@
       }
     }
   }
-
-
-  // Smooth transition for content changes
-  transition: all 0.3s ease-in-out;
 
   form {
     @apply space-y-6 max-w-[735px] py-[30px] mx-auto;
@@ -115,6 +113,10 @@
               @apply shadow-md;
             }
           }
+
+          .error-message {
+            @apply text-red-500 text-[14px] font-noyh font-medium mt-1 #{!important};
+          }
           
           select {
             @apply cursor-pointer;
@@ -145,6 +147,49 @@
       button {
         @apply px-4 py-2 h-[52px] text-[20px] font-noyh bg-black text-white hover:bg-black/80 transition-all duration-200 uppercase font-bold tracking-wider;
       }
+    }
+
+    .contact-form-wrapper {
+      @apply mb-8 pb-8 border-b border-gray-200 last:border-b-0;
+      
+      .contact-form-header {
+        @apply flex justify-between items-center mb-4;
+        
+        h5 {
+          @apply text-[18px] font-noyh font-bold text-[#404040];
+        }
+        
+        .remove-contact-btn {
+          @apply px-4 py-2 text-[14px] font-noyh bg-red-500 text-white hover:bg-red-600 rounded-lg transition-all duration-200 uppercase font-semibold;
+        }
+      }
+    }
+
+    .add-contact-btn {
+      @apply flex items-center justify-center gap-2;
+      span {
+        @apply text-[32px] font-noyh font-black text-[#000];
+      }
+    }
+
+    .submit-success {
+      @apply mt-6 p-4 bg-green-50 border border-green-200 rounded-lg;
+      
+      p {
+        @apply text-green-700 text-[16px] font-noyh font-medium text-center m-0 #{!important};
+      }
+    }
+
+    .submit-error {
+      @apply mt-6 p-4 bg-red-50 border border-red-200 rounded-lg;
+      
+      p {
+        @apply text-red-700 text-[16px] font-noyh font-medium text-center m-0 #{!important};
+      }
+    }
+
+    button[type="submit"]:disabled {
+      @apply opacity-60 cursor-not-allowed #{!important};
     }
   }
 }

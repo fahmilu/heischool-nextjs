@@ -4,12 +4,15 @@ const DayAtHEI = ({ data }) => {
         <section className="schools-day-at-hei">
             <div className="container">
                 <div className="schools-day-at-hei__content">
-                    <h2 dangerouslySetInnerHTML={{ __html: data.title }} />
+                    <h2 dangerouslySetInnerHTML={{ __html: data.section_title }} />
                     <div className="schools-day-at-hei__content__description" dangerouslySetInnerHTML={{ __html: data.description }} />
                 </div>
             </div>
             <div className="schools-day-at-hei__image">
-                <Image src={data.image} alt={data.title} fill />
+                <Image src={`${process.env.NEXT_PUBLIC_ASSET_URL}/${data.image}`} alt={data.section_title} fill />
+            </div>
+            <div className="schools-day-at-hei__notes">
+                {data.notes}
             </div>
         </section>
     );

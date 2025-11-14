@@ -5,9 +5,22 @@ import Mobile from '@/components/Nav/Mobile';
 import Link from 'next/link';
 import Image from 'next/image';
 import { useState, useEffect } from 'react';
+import { useAppDispatch, useAppSelector } from '@/redux/hooks';
+import { 
+  fetchLocations, 
+  selectAllLocations, 
+} from '@/redux/slices/locationsSlice';
 const Header = ({ isHome = true }) => {
-
+  const dispatch = useAppDispatch();
+  const locations = useAppSelector(selectAllLocations);
   const [isScrolled, setIsScrolled] = useState(false);
+
+  useEffect(() => {
+    // Fetch locations when component mounts
+    if (locations.length === 0) {
+      dispatch(fetchLocations());
+    }
+  }, [dispatch, locations.length]);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -34,16 +47,10 @@ const Header = ({ isHome = true }) => {
     {
       label: "Our Locations",
       href: "/locations",
-      children: [
-        {
-          label: "Senayan",
-          href: "/locations/senayan",
-        },
-        {
-          label: "Menteng",
-          href: "/locations/menteng",
-        }
-      ]
+      children: locations.map((location) => ({
+        label: location.label,
+        href: `/locations/${location.slug}`,
+      })),
     },
     {
       label: "Enrollment",

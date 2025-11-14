@@ -7,6 +7,7 @@ import Footer from "@/components/Partials/Footer";
 import { ReactLenis } from "lenis/react";
 import DynamicHeaderWrapper from "@/components/Partials/DynamicHeaderWrapper";
 import FloatingButton from "@/components/floatingButton";
+import StoreProvider from "@/redux/StoreProvider";
 
 const DMSans = DM_Sans({
   variable: "--font-dmsans",
@@ -64,14 +65,16 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body className={`${DMSans.variable} ${Noyh.variable} antialiased`} >
-        <DynamicHeaderWrapper />
-        <ReactLenis root>
-          <main>
-            {children}
-          </main>
-        </ReactLenis>
-        <Footer />
-        <FloatingButton />
+        <StoreProvider>
+          <DynamicHeaderWrapper />
+          <ReactLenis root>
+            <main>
+              {children}
+            </main>
+          </ReactLenis>
+          <Footer />
+          <FloatingButton />
+        </StoreProvider>
       </body>
     </html>
   );

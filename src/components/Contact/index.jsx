@@ -24,7 +24,7 @@ const Contact = () => {
     };
 
     const tabs = [
-        { id: 'visit-us', label: 'Visit Us', component: VisitUs },
+        // { id: 'visit-us', label: 'Visit Us', component: VisitUs },
         { id: 'enrollment', label: 'Enrollment', component: Enrollment },
         { id: 'collaboration', label: 'Collaboration', component: Collaboration }
     ];

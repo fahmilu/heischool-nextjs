@@ -23,7 +23,7 @@ const ContentsSwitcher = ({ type, dataParent, data }) => {
     }
 }
 
-const ArticleContents = ({ data }) => {
+const ArticleContents = ({ data, related }) => {
     
     return (
         <section className="articles articles__detail">
@@ -31,10 +31,13 @@ const ArticleContents = ({ data }) => {
                 <BigCircle />
             </div>
             <Banner data={data} />
-            {data.content.map((item, index) => (
+            <Paragraph data={data} />
+            {/* {data.content.map((item, index) => (
                 <ContentsSwitcher key={index} type={item.type} dataParent={data} data={item} />
-            ))}
-            <Related data={data.related} />
+            ))} */}
+            {related.length > 0 && (
+                <Related data={related} />
+            )}
         </section>
     );
 }

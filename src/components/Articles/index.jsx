@@ -1,8 +1,9 @@
 "use client";
-import { getArticlesData } from "@/utils/pageData";
+// import { getArticlesData } from "@/utils/pageData";
 import { useState, useEffect, useRef } from "react";
 import { BigCircle } from "../SVGs";
 import Card from "./Card";
+import { fetchData } from "@/services/api";
 const Articles = () => {
     const [articlesData, setArticlesData] = useState([]);
     const [visibleItems, setVisibleItems] = useState(9);
@@ -13,8 +14,8 @@ const Articles = () => {
     
     useEffect(() => {
         const fetchArticlesData = async () => {
-            const articlesData = await getArticlesData();
-            setArticlesData(articlesData);
+            const articlesData = await fetchData('news');
+            setArticlesData(articlesData.data);
         }
         fetchArticlesData();
     }, []);

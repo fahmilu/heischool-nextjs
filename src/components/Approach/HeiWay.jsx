@@ -25,6 +25,9 @@ const HeiWay = ({ data }) => {
                     {data.items.map((item, index) => (
                         <div key={index} className={`section__hei-way__item ${activeItem === index ? 'active' : ''}`} onClick={() => onItemClick(index)} style={{ "--color": colorItems[index] }}>
                             <div className="section__hei-way__item__icon">
+                                <span>
+                                    Details
+                                </span>
                                 <Image src={`${process.env.NEXT_PUBLIC_ASSET_URL}/${item.icon}`} alt={item.title} fill />
                             </div>
                             <div>

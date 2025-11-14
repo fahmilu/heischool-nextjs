@@ -39,7 +39,7 @@ const Facilities = ({ data }) => {
                 <div className="container">
                     <h2>{data.title}</h2>
                     <div className="schools-facilities__content__items">
-                    {data.items.map((item, index) => (
+                    {data.items.filter(item => item.images.length > 0).map((item, index) => (
                         <div key={index} className="schools-facilities__content__item" style={{ "--color": colorItems[index] }} onClick={() => itemClick(index)}>
                             {item.title}
                         </div>
@@ -48,9 +48,9 @@ const Facilities = ({ data }) => {
                     <div className="schools-facilities__content">
                         <div className="embla" ref={emblaRef}>
                             <div className="embla__container">
-                            {data.items.map((item, index) => (
+                            {data.items.filter(item => item.images.length > 0).map((item, index) => (
                                 <div key={index} className="embla__slide">
-                                    <Image src={item.image} alt={item.title} fill />
+                                    <Image src={`${process.env.NEXT_PUBLIC_ASSET_URL}/${item.images[0].image}`} alt={item.title} fill />
                                 </div>
                             ))}
                         </div>

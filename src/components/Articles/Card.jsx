@@ -9,7 +9,7 @@ import { useRef } from "react";
 gsap.registerPlugin(ScrollTrigger);
 const Card = ({ data, isRelated=false }) => {
     const cardRef = useRef(null);
-
+    const theme = Math.floor(Math.random() * 3) + 1;
     // useGSAP(() => {
     //     if (cardRef.current) {
     //         gsap.fromTo(cardRef.current, {
@@ -28,18 +28,20 @@ const Card = ({ data, isRelated=false }) => {
     //     }
     // }, { scope: cardRef });
     return (
-            <Link href={`/articles/${data.slug}`} className="articles__index__item" data-theme={isRelated ? '3' : data.theme} ref={cardRef}>
+            <Link href={`/articles/${data.slug}`} className="articles__index__item" data-theme={isRelated ? '3' : theme} ref={cardRef}>
                 <div className="articles__index__item__image">
-                    <Image src={data.image} alt={data.title} fill />
+                    <Image src={`${process.env.NEXT_PUBLIC_ASSET_URL}/${data.image}`} alt={data.title} fill />
                 </div>
                 <div className="articles__index__item__content">
                     <div className="articles__index__item__content__date">{new Date(data.publishedAt).toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' })}</div>
                     <div className="articles__index__item__content__title">{data.title}</div>
+                    {data.tags.length > 0 && (
                     <div className="articles__index__item__content__categories">
-                        {data.categories.map((category, index) => (
-                            <div key={index} className="articles__index__item__content__categories__category">{category}</div>
-                        ))}
-                    </div>
+                            {data.tags.map((category, index) => (
+                                <div key={index} className="articles__index__item__content__categories__category">{category}</div>
+                            ))}
+                        </div>
+                    )}
                 </div>
             </Link>
     );

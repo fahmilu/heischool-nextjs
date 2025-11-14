@@ -3,7 +3,7 @@ import Image from "next/image";
 import useEmblaCarousel from "embla-carousel-react";
 import { Arrows } from "@/components/Gallery/Arrows";
 import Autoplay from 'embla-carousel-autoplay';
-import { Cloud } from "@/components/SVGs";
+// import { Cloud } from "@/components/SVGs";
 const Banner = ({ data , page }) => {
     const options = {
         loop: true,
@@ -24,15 +24,15 @@ const Banner = ({ data , page }) => {
         <>
             <section className="schools-banner embla" ref={emblaRef}>
                 <div className="embla__container">
-                    {data.images.map((image, index) => (
+                    {data.images.map((img, index) => (
                         <div key={index} className="embla__slide">
-                            <Image src={image} alt={image} fill />
+                            <Image src={`${process.env.NEXT_PUBLIC_ASSET_URL}/${img.image}`} alt={img.image} fill />
                         </div>
                     ))}
                 </div>
                 <Arrows emblaApi={emblaApi} />
             </section>
-            <section className="schools-banner__content" style={{ backgroundColor: page.color }}>
+            <section className="schools-banner__content" style={{ backgroundColor: page.ribbon_color }}>
                 <div className="container">
                     <h2>{page.title}</h2>
                     <p>{page.address}</p>
