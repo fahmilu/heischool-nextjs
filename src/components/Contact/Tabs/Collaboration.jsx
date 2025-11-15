@@ -22,6 +22,7 @@ const Collaboration = () => {
     const [errors, setErrors] = useState({});
     const [touched, setTouched] = useState({});
     const [isSubmitting, setIsSubmitting] = useState(false);
+    const [submitStatus, setSubmitStatus] = useState(null); // 'success' | 'error' | null
 
     // Validation functions
     const validateEmail = (email) => {
@@ -132,6 +133,7 @@ const Collaboration = () => {
         
         if (Object.keys(newErrors).length > 0) {
             setErrors(newErrors);
+            setSubmitStatus('error');
             // Scroll to first error
             const firstErrorField = Object.keys(newErrors)[0];
             const errorElement = document.getElementById(firstErrorField);
@@ -144,14 +146,16 @@ const Collaboration = () => {
 
         // Submit form
         setIsSubmitting(true);
-        
+        setSubmitStatus(null);
+        console.log('Form Data:', formData);
         // Here you would typically send the data to your API
         console.log('Form submitted:', formData);
         
         // Simulate API call
         setTimeout(() => {
             setIsSubmitting(false);
-            alert('Form submitted successfully!');
+            setSubmitStatus('success');
+
             // Reset form
             setFormData({
                 firstName: '',
@@ -280,6 +284,16 @@ const Collaboration = () => {
                     </div>
                 </div>
             </div>
+            {submitStatus === 'success' && (
+                <div className="submit-success">
+                    <p>✓ Collaboration request submitted successfully! We will contact you soon.</p>
+                </div>
+            )}
+            {submitStatus === 'error' && (
+                <div className="submit-error">
+                    <p>⚠ Please fill in all required fields correctly.</p>
+                </div>
+            )}
             <div className="form-group button-group">
                 <button type="submit" disabled={isSubmitting}>
                     {isSubmitting ? 'Submitting...' : 'Submit'}

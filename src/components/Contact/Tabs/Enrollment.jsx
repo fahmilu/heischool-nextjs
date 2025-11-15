@@ -97,6 +97,10 @@ const Enrollment = () => {
 
     const [formData, setFormData] = useState({
         location: '',
+        visitDate: '',
+        visitTime: '',
+        remarks: '',
+        enquirySource: '',
     });
 
     const validateField = (name, value) => {
@@ -127,6 +131,12 @@ const Enrollment = () => {
                 return value.trim() === '' ? 'Preferred start date is required' : '';
             case 'preferedLevel':
                 return value.trim() === '' ? 'Preferred level is required' : '';
+            case 'visitDate':
+                return value.trim() === '' ? 'Visit date is required' : '';
+            case 'visitTime':
+                return value.trim() === '' ? 'Visit time is required' : '';
+            case 'enquirySource':
+                return value.trim() === '' ? 'Enquiry source is required' : '';
             default:
                 return '';
         }
@@ -175,6 +185,26 @@ const Enrollment = () => {
     const handleBlur = (index, e) => {
         const { name } = e.target;
         setTouched(prev => ({ ...prev, [`${name}_${index}`]: true }));
+    };
+
+    const handleVisitTimeChange = (e) => {
+        const { name, value } = e.target;
+        setFormData({ ...formData, [name]: value });
+    };
+
+    const handleEnquirySourceChange = (e) => {
+        const { name, value } = e.target;
+        setFormData({ ...formData, [name]: value });
+    };
+
+    const handleVisitDateChange = (e) => {
+        const { name, value } = e.target;
+        setFormData({ ...formData, [name]: value });
+    };
+
+    const handleRemarksChange = (e) => {
+        const { name, value } = e.target;
+        setFormData({ ...formData, [name]: value });
     };
 
     const addContact = () => {
@@ -332,41 +362,54 @@ const Enrollment = () => {
         setIsSubmitting(true);
 
         try {
-            // Here you would typically send the data to your API
-            // Example API call:
+            formData.contacts = contacts;
+            formData.children = children;
+
+            console.log('Form Data:', formData);
+            
+            // Send data to API endpoint
             // const response = await fetch('/api/enrollment', {
             //     method: 'POST',
             //     headers: { 'Content-Type': 'application/json' },
-            //     body: JSON.stringify({ contacts, children })
+            //     body: JSON.stringify(formData)
             // });
 
-            // Simulate API call
-            await new Promise(resolve => setTimeout(resolve, 1500));
+            // const result = await response.json();
+
+            // if (!response.ok || !result.success) {
+            //     throw new Error(result.message || 'Failed to submit form');
+            // }
 
             // Log the data for now
-            console.log('Enrollment Form Submitted:', { contacts, children });
+            console.log('Enrollment Form Submitted:', result);
 
             // Set success status
             setSubmitStatus('success');
 
             // Optional: Reset form after successful submission
-            // setContacts([{
-            //     parentName: '',
-            //     relationship: '',
-            //     email: '',
-            //     phoneNumber: '',
-            //     address: ''
-            // }]);
-            // setChildren([{
-            //     childFullName: '',
-            //     gender: '',
-            //     birthdate: '',
-            //     preferedStartDate: '',
-            //     preferedLevel: ''
-            // }]);
-            // setErrors({});
-            // setTouched({});
-
+            setContacts([{
+                parentName: '',
+                relationship: '',
+                email: '',
+                phoneNumber: '',
+                address: ''
+            }]);
+            setChildren([{
+                childFullName: '',
+                gender: '',
+                birthdate: '',
+                preferedStartDate: '',
+                preferedLevel: ''
+            }]);
+            setErrors({});
+            setTouched({});
+            setFormData({
+                location: '',
+                visitDate: '',
+                visitTime: '',
+                remarks: '',
+                enquirySource: ''
+            });
             // Scroll to success message
             setTimeout(() => {
                 const successMessage = document.querySelector('.submit-success');
@@ -407,7 +450,7 @@ const Enrollment = () => {
                     <h4>School Location<small>(Required)</small></h4>
                     <div className="form-row">
                         <div className="form-col">
-                            <DropdownSelect options={locationArray} name="location" onChange={handleLocationChange} />
+                            <DropdownSelect options={locationArray} value={formData.location} name="location" onChange={handleLocationChange} />
                             {touched.location && errors.location && (
                                 <span className="error-message">{errors.location}</span>
                             )}
@@ -496,7 +539,40 @@ const Enrollment = () => {
                     </svg>
                     <span>Add Another Child</span>
                 </button>
-                
+                <div className="form-group !mt-[74px]">
+                    <h4>Schedule a Visit</h4>
+                    <div className="form-row">
+                        <div className="form-col">
+                            <label htmlFor="visit-date">Visit Date*</label>
+                            <input type="date" id="visitDate" name="visitDate" value={formData.visitDate} onChange={handleVisitDateChange} />
+                            {touched.visitDate && errors.visitDate && (
+                                <span className="error-message">{errors.visitDate}</span>
+                            )}
+                        </div>
+                        <div className="form-col">
+                            <label htmlFor="visit-time">Visit Time*</label>
+                            <DropdownSelect value={formData.visitTime} options={visitTimes} name="visitTime" onChange={handleVisitTimeChange} />
+                            {touched.visitTime && errors.visitTime && (
+                                <span className="error-message">{errors.visitTime}</span>
+                            )}
+                        </div>
+                    </div>
+                    <div className="form-row">
+                        <div className="form-col">
+                            <label htmlFor="remarks">Remarks</label>
+                            <textarea id="remarks" name="remarks" value={formData.remarks} onChange={handleRemarksChange} />
+                        </div>
+                    </div>
+                    <div className="form-row">
+                        <div className="form-col">
+                            <label htmlFor="enquiry-source">Enquiry Source*</label>
+                            <DropdownSelect value={formData.enquirySource} options={enquirySources} name="enquirySource" onChange={handleEnquirySourceChange} />
+                            {touched.enquirySource && errors.enquirySource && (
+                                <span className="error-message">{errors.enquirySource}</span>
+                            )}
+                        </div>
+                    </div>
+                </div>
                 {/* Status Messages */}
                 {submitStatus === 'success' && (
                     <div className="submit-success">
