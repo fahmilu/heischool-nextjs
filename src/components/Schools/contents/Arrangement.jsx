@@ -1,6 +1,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import { BigCircle } from "@/components/SVGs";
+import CalendarMobile from "@/components/CalendarMobile";
 const Arrangement = ({ arrangement, calendar }) => {
     // console.log({arrangement, calendar});
     return (
@@ -13,7 +14,7 @@ const Arrangement = ({ arrangement, calendar }) => {
                         <div className="schools-calendar__area__image">
                             <Image src={`${process.env.NEXT_PUBLIC_ASSET_URL}/${calendar.data.image}`} alt={calendar.data.section_title} fill />
                         </div>
-                        <div className="calendar-items">
+                        <div className="calendar-items max-sm:!hidden">
                             <div className="calendar-item">
                                 <div>Terms</div>
                                 <div>Start of the Term</div>
@@ -29,6 +30,7 @@ const Arrangement = ({ arrangement, calendar }) => {
                                 </div>
                             ))}
                         </div>
+                        <CalendarMobile calendar={calendar.data.items} />
                         <div className="calendar-link">
                             <p dangerouslySetInnerHTML={{ __html: calendar.data.description }} />
                             {calendar.data.link && (

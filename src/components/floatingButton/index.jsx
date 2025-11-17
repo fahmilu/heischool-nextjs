@@ -38,9 +38,15 @@ const FloatingButton = () => {
                 </div>
                 <div className="btn-area">
                     {locations.map((location) => (
-                        <Link key={location.slug} href={`/locations/${location.slug}`} className='btn-area__item'>
+                        <a
+                            key={location.slug}
+                            href={`https://wa.me/${location.phone?.replace(/\D/g, '') || ''}`}
+                            className='btn-area__item'
+                            target="_blank"
+                            rel="noopener noreferrer"
+                        >
                             {location.label}
-                        </Link>
+                        </a>
                     ))}
                 </div>
             </div>

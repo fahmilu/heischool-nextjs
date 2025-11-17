@@ -1,25 +1,25 @@
 // Contact Component Styles
 .contact-us {
-  @apply py-[100px];
+  @apply md:pb-[100px] pb-[50px];
 
   &__image {
-    @apply relative  w-full h-[594px];
+    @apply relative  w-full sm:h-[594px] h-[450px];
 
     img {
-      @apply object-contain;
+      @apply h-full w-full object-cover;
     }
   }
 
   &__container {
-    @apply max-w-[1000px] mx-auto bg-[#FBF8F2] rounded-[34px] -mt-[204px] relative z-10 px-10;
+    @apply max-w-[1000px] xl:mx-auto sm:mx-6 bg-[#FBF8F2] sm:rounded-[34px] rounded-[24px] -mt-[204px] relative z-10 md:px-10 sm:px-5 px-3;
   }
 }
 
 .contact-tabs {
-  @apply flex justify-center py-8;
+  @apply flex sm:flex-row flex-col justify-center py-8;
 
   .contact-tab {
-    @apply px-6 py-3 text-[24px] font-bold font-noyh uppercase transition-colors duration-200 border-r border-[#404040] last:border-r-0 text-[#404040];
+    @apply px-6 py-3 text-[24px]  font-bold font-noyh uppercase transition-colors duration-200 sm:border-r border-[#404040] last:border-r-0 text-[#404040];
     position: relative;
     cursor: pointer;
     outline: none;
@@ -38,18 +38,18 @@
   .enrollment {
     
     .enrollment-slides {
-      @apply relative px-[60px];
+      @apply relative md:px-[60px] px-3;
       .embla {
-          @apply rounded-[24px];
+          @apply sm:rounded-[24px] rounded-[16px];
       }
       .embla__arrow {
 
           &--prev {
-              @apply left-0;
+              @apply sm:left-0 -left-[8px];
           }
 
           &--next {
-              @apply right-0;
+              @apply sm:right-0 -right-[8px];
           }
 
           &:disabled {
@@ -71,16 +71,16 @@
   }
 
   form {
-    @apply space-y-6 max-w-[735px] py-[30px] mx-auto;
+    @apply md:space-y-6 space-y-5 max-w-[735px] py-[30px] mx-auto;
     
     .form-group {
       @apply space-y-3;
       
       h4 {
-        @apply text-[32px] font-noyh font-bold text-[#404040];
+        @apply md:text-[32px] text-[24px] font-noyh font-bold text-[#404040];
         
         small {
-          @apply text-[14px] text-gray-600 font-medium ml-1 #{!important};
+          @apply md:text-[14px] text-[12px] text-gray-600 font-medium ml-1 #{!important};
         }
       }
       
@@ -89,7 +89,7 @@
       }
       
       .form-row {
-        @apply flex flex-row gap-4;
+        @apply flex md:flex-row flex-col gap-4;
         
         .form-col {
           @apply flex-1 space-y-2;
@@ -168,7 +168,7 @@
     .add-contact-btn {
       @apply flex items-center justify-center gap-2;
       span {
-        @apply text-[32px] font-noyh font-black text-[#000];
+        @apply md:text-[32px] text-[24px] font-noyh font-black text-[#000];
       }
     }
 
@@ -197,16 +197,16 @@
 // Responsive adjustments
 @media (max-width: 768px) {
   .contact-tabs {
-    flex-direction: column;
+    // flex-direction: column;
     
-    .contact-tab {
-      border-bottom: 1px solid #e5e7eb;
-      border-right: none;
+    // .contact-tab {
+    //   border-bottom: 1px solid #e5e7eb;
+    //   border-right: none;
       
-      &.contact-tab-active {
-        border-bottom-color: #3b82f6;
-      }
-    }
+    //   &.contact-tab-active {
+    //     border-bottom-color: #3b82f6;
+    //   }
+    // }
   }
   
   .contact-tab-content {

@@ -13,7 +13,7 @@ const Map = ({ data }) => {
     const imageRef = useRef(null);
 
     useGSAP(() => {
-        if (imageRef.current) {
+        if (imageRef.current && window.innerWidth > 768) {
             gsap.fromTo(imageRef.current, {
                 scale: 0.5
             }, {
@@ -30,11 +30,16 @@ const Map = ({ data }) => {
     }, { scope: mapRef });
 
     return (
-        <section ref={mapRef} className='home-map h-[200vh]'>
+        <section ref={mapRef} className='home-map md:h-[200vh]'>
             <div className='container !sticky !top-0'>
                 <h2 className="bigger uppercase">{data.title}</h2>
                 <div ref={imageRef} className='home-map-image relative overflow-hidden'>
                     <Image src={`${process.env.NEXT_PUBLIC_ASSET_URL}/${data.image}`} alt={data.title} fill className="object-cover" />
+                </div>
+                <div className='overflow-scroll mx-[-20px] md:hidden relative w-[calc(100%+40px)] pb-[50px]'>
+                    <div className='relative w-[888px] h-[513px]'>
+                        <Image src={`${process.env.NEXT_PUBLIC_ASSET_URL}/${data.image}`} alt={data.title} fill className='' />
+                    </div>
                 </div>
             </div>
         </section>

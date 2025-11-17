@@ -9,7 +9,8 @@ const DayAtHEI = ({ data }) => {
                 </div>
             </div>
             <div className="schools-day-at-hei__image">
-                <Image src={`${process.env.NEXT_PUBLIC_ASSET_URL}/${data.image}`} alt={data.section_title} fill />
+                <Image src={`${process.env.NEXT_PUBLIC_ASSET_URL}/${data.image_mobile || data.image}`} alt={data.section_title} fill className="max-sm:!hidden" />
+                <Image src={`${process.env.NEXT_PUBLIC_ASSET_URL}/${data.image_mobile || data.image}`} alt={data.section_title} fill className="sm:!hidden" />
             </div>
             <div className="schools-day-at-hei__notes">
                 {data.notes}

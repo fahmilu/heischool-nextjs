@@ -5,6 +5,7 @@ import { Arrows } from "@/components/Gallery/Arrows";
 import Autoplay from 'embla-carousel-autoplay';
 import { Cloud } from "@/components/SVGs";
 const Facilities = ({ data }) => {
+    console.log(data);
     const options = {
         loop: true,
         align: "center",
@@ -37,7 +38,7 @@ const Facilities = ({ data }) => {
         <>
             <section className="schools-facilities embla">
                 <div className="container">
-                    <h2>{data.title}</h2>
+                    <h2>{data.section_title}</h2>
                     <div className="schools-facilities__content__items">
                     {data.items.filter(item => item.images.length > 0).map((item, index) => (
                         <div key={index} className="schools-facilities__content__item" style={{ "--color": colorItems[index] }} onClick={() => itemClick(index)}>

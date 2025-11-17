@@ -432,8 +432,8 @@ const Enrollment = () => {
                 <div className="embla" ref={emblaRef}>
                     <div className="embla__container">
                         {slides.map((slide, index) => (
-                            <div key={index} className="enrollment-slide embla__slide aspect-[1500/724] relative">
-                                <Image src={slide} alt="Enrollment" fill />
+                            <div key={index} className="enrollment-slide embla__slide md:aspect-[1500/724] aspect-[290/391] relative">
+                                <Image src={slide} alt="Enrollment" className="object-cover" fill />
                             </div>
                         ))}
                     </div>
@@ -498,7 +498,7 @@ const Enrollment = () => {
                     <span>Add Another Contact</span>
                 </button>
 
-                <div className="form-group">
+                <div className="form-group !mt-[74px]">
                     <h4>Child Information<small>(Required)</small></h4>
                 </div>
                 {children.map((child, index) => (

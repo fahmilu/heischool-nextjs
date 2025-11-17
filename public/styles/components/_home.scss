@@ -11,7 +11,7 @@
         }
 
         h1 {
-            @apply absolute opacity-0 text-white bottom-[40px] right-[122px] z-[3] w-full max-w-[500px];
+            @apply absolute opacity-0 text-white md:bottom-[40px] bottom-[100px] md:right-[122px] right-[20px] z-[3] w-full xl:max-w-[500px] max-w-[300px];
         }
         
         &.loaded {
@@ -29,18 +29,18 @@
         @apply relative;
 
         &__circle {
-            @apply absolute top-0 left-0 -translate-x-1/2 -translate-y-1/2 w-[1155px] h-[1155px];
+            @apply absolute top-0 left-0 -translate-x-1/2 -translate-y-1/2 md:w-[1155px] w-[500px] md:h-[1155px] h-[500px];
         }
 
         .container {
-            @apply relative flex flex-col items-center justify-center pt-[144px] max-w-[1200px] pb-[252px] gap-[52px];
+            @apply relative flex flex-col items-center justify-center sm:pt-[144px] pt-[100px] max-w-[1200px] pb-[252px] gap-[52px];
         }
         h2 {
             @apply text-center text-hei-blue;
         }
 
         &__image {
-            @apply relative w-full max-w-[600px] -mt-[200px];
+            @apply relative w-full md:max-w-[600px] max-w-[300px] -mt-[200px];
             
             img {
                 @apply w-full h-auto relative  #{!important};
@@ -49,10 +49,10 @@
     }
 
     &-history {
-        @apply bg-hei-green-light relative z-10 rounded-[51px];
+        @apply bg-hei-green-light relative z-10 md:rounded-[51px] rounded-[40px];
 
         .container {
-            @apply relative flex flex-row items-center justify-center py-[130px] pt-[66px] max-w-[1200px] pb-[52px] gap-[52px];
+            @apply relative flex lg:flex-row flex-col items-center justify-center py-[130px] pt-[66px] max-w-[1200px] pb-[52px] gap-[52px];
 
             > * {
                 @apply flex-1;
@@ -63,7 +63,7 @@
             @apply relative flex flex-col items-center justify-center;
 
             img {
-                @apply w-auto h-auto relative  #{!important};
+                @apply w-auto h-auto relative max-lg:max-w-[280px]  #{!important};
             }
         }
 
@@ -71,11 +71,11 @@
             @apply flex flex-col items-start justify-center;
 
             h3 {
-                @apply text-hei-green mb-[42px];
+                @apply text-hei-green mb-[42px] max-lg:text-center;
             }
 
             &-description {
-                @apply text-hei-green font-noyh text-[24px] leading-[normal];
+                @apply text-hei-green font-noyh max-lg:text-center md:text-[24px] text-[20px] leading-[normal];
 
                 p {
                     @apply mb-[24px] last:mb-0;
@@ -85,7 +85,7 @@
     }
 
     &-history-2 {
-        @apply bg-cover bg-center bg-no-repeat h-[507px] rounded-b-[51px] mt-[-100px] mb-[59px]; 
+        @apply bg-cover bg-center bg-no-repeat md:h-[507px] h-[606px] md:rounded-b-[51px] rounded-b-[40px] md:mt-[-100px] mt-[-50px] mb-[59px]; 
         // background-attachment: fixed;
     }
 
@@ -104,7 +104,7 @@
             }
 
             &-description {
-                @apply text-hei-green font-noyh text-[24px] leading-[normal];
+                @apply text-hei-green font-noyh md:text-[24px] text-[20px] leading-[normal];
 
                 p {
                     @apply mb-[24px] last:mb-0;
@@ -130,7 +130,7 @@
         }
         
         &-image {
-            @apply relative w-full h-[70vh] ml-auto overflow-hidden rounded-lg scale-[0.5];
+            @apply relative w-full h-[70vh] ml-auto overflow-hidden rounded-lg scale-[0.5] md:block hidden;
             transform-origin: center center;
             transition: transform 0.3s ease-out;
             
@@ -145,16 +145,16 @@
         @apply relative;
 
         .container {
-            @apply relative pt-[140px] pb-[90px] gap-0;
+            @apply relative md:pt-[140px] pt-[50px] md:pb-[90px] pb-[50px] max-md:px-0 gap-0;
         }
 
         &-tabs {
-            @apply relative px-[83px];
+            @apply relative md:px-[83px] px-[20px];
 
             @apply flex flex-row items-center justify-start gap-0;
         }
         &-tab {
-            @apply text-center font-noyh text-hei-blue/50 cursor-pointer text-[32px] leading-[40px] font-black w-[198px] border-r border-hei-blue last:border-r-0;
+            @apply text-center font-noyh text-hei-blue/50 cursor-pointer md:text-[32px] text-[24px] md:leading-[40px] leading-[30px] font-black md:w-[198px] w-fit border-r border-hei-blue last:border-r-0 max-md:px-2;
 
             &.active {
                 @apply text-hei-blue;
@@ -162,7 +162,7 @@
         }
 
         &-gallery-container {
-            @apply relative px-[83px] mt-[23px];
+            @apply relative md:px-[83px] px-[0] md:mt-[23px] mt-[10px];
 
             .embla__arrow {
                 @apply absolute top-1/2 -translate-y-1/2;
@@ -177,7 +177,7 @@
             }
         }
         &-items {
-            @apply relative  aspect-[1200/629] w-full overflow-hidden shadow-[0_4px_4px_rgba(0,0,0,0.25)];
+            @apply relative  md:aspect-[1200/629] aspect-[400/600] w-full overflow-hidden shadow-[0_4px_4px_rgba(0,0,0,0.25)];
 
         }
         &-item {
@@ -200,14 +200,21 @@
     }
 
     &-awards {
-        @apply bg-[#FACDB7] rounded-t-[51px] pt-[140px] pb-[60px];
+        @apply bg-[#FACDB7] md:rounded-t-[51px] rounded-t-[40px] max-md:rounded-b-[40px] md:pt-[140px] pt-[50px] md:pb-[60px] pb-[50px];
 
         .container {
             @apply relative flex flex-col items-center justify-center gap-5;
         }
 
         &-image {
-            @apply relative w-full max-w-[870px];
+            @apply relative w-full max-w-[870px] md:block hidden;
+
+            img {
+                @apply w-full h-auto relative  #{!important};
+            }
+        }
+        &-image-mobile {
+            @apply relative w-full max-w-[300px] md:hidden;
 
             img {
                 @apply w-full h-auto relative  #{!important};
@@ -223,10 +230,10 @@
         }
 
         &-content {
-            @apply relative w-full max-w-[970px] mx-auto pt-[30px] pb-[77px] pl-[301px];
+            @apply relative w-full md:max-w-[970px] max-w-[357px] mx-auto pt-[30px] pb-[77px] md:pl-[301px];
 
             &-avatars {
-                @apply absolute top-0 left-0 h-full w-[354px] bg-[#D9D9D9] z-0 overflow-hidden;
+                @apply md:absolute md:top-0 md:left-0 h-full md:w-[354px] w-[286px] max-md:h-[384px] bg-[#D9D9D9] z-0 overflow-hidden max-md:mx-auto;
 
                 &-avatar {
                     @apply absolute top-0 left-0 w-full h-full z-0 transition-all duration-300 opacity-0;
@@ -255,24 +262,25 @@
             &-slides {
                 @apply bg-[#FFEEE6] rounded-[27px] overflow-hidden relative;
                 .embla__slide {
-                    @apply p-[40px];
+                    @apply md:p-[40px] p-[20px];
                 }
                 &-item {
                     @apply relative flex flex-col items-center justify-center h-full gap-[24px];
                     
                     &-quote {
-                        @apply text-black text-[24px] leading-normal text-center relative px-[20px];
+                        @apply text-black md:text-[24px] text-[20px] leading-normal text-center relative px-[20px];
                         &::after,
                         &::before {
-                            @apply text-black font-noyh text-[128px] leading-normal text-center w-[58px] h-[69px];
+                            @apply text-black font-noyh md:text-[128px] text-[100px] leading-normal text-center w-[58px] h-[69px];
                         }
                         &::after {
-                            @apply content-['”'] absolute bottom-0 right-0 translate-x-[40%];
+                            @apply content-['”'] absolute bottom-0 right-0 md:translate-x-[40%] translate-x-[30%];
                         }
                         &::before {
-                            @apply content-['“'] absolute top-0 left-0 translate-y-[-60%] translate-x-[-45%];
+                            @apply content-['“'] absolute top-0 left-0 md:translate-y-[-60%] translate-y-[-40%] md:translate-x-[-45%] translate-x-[-30%];
                         }
                     }
+
                 }
             }
 

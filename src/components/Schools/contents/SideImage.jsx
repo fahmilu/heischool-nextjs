@@ -9,6 +9,9 @@ const SideImage = ({ data }) => {
                 </div>
                 <div className="side-image__content">
                     <h2>{data.title}</h2>
+                    <div className="side-image-mobile">
+                        <Image src={`${process.env.NEXT_PUBLIC_ASSET_URL}/${data.image}`} alt={data.title} fill />
+                    </div>
                     <div className="side-image__content__description" dangerouslySetInnerHTML={{ __html: data.description }} />
                 </div>
                 <div className="side-image">

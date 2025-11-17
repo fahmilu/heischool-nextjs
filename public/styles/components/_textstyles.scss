@@ -5,17 +5,17 @@
 }
 
 h1 {
-    @apply font-noyh text-[60px]/[normal] font-black;
+    @apply font-noyh xl:text-[60px]/[normal] md:text-[50px]/[normal] text-[42px]/[normal] font-black;
 }
 
 h2 {
-    @apply font-noyh text-[48px]/[normal] font-black;
+    @apply font-noyh xl:text-[48px]/[normal] md:text-[32px]/[normal] text-[28px]/[normal] font-black;
 
     &.bigger {
-        @apply text-[64px]/[normal] font-black;
+        @apply sm:text-[64px]/[normal] text-[50px]/[normal] font-black;
     }
 }
 
 h3 {
-    @apply font-noyh text-[36px]/[normal] font-black;
+    @apply font-noyh sm:text-[36px]/[normal] text-[30px]/[normal] font-black;
 }

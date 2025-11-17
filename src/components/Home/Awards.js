@@ -15,6 +15,11 @@ const Awards = ({ data }) => {
                     <Image src={`${process.env.NEXT_PUBLIC_ASSET_URL}/${data.image}`} alt='Awards' fill />
                 </div>
             </ImageAnimation>
+            <ImageAnimation delay={0.4}>
+                <div className='home-awards-image-mobile'>
+                    <Image src={`${process.env.NEXT_PUBLIC_ASSET_URL}/${data.image_mobile || data.image}`} alt='Awards' fill />
+                </div>
+            </ImageAnimation>
         </div>
     </div>
   )

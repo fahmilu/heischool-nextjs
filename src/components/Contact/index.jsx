@@ -34,7 +34,8 @@ const Contact = () => {
     return (
         <section className="contact-us">
             <div className="contact-us__image">
-                <Image src="/imgs/contact-banner.jpg" alt="Contact Us" fill />
+                <Image src="/imgs/contact-banner.jpg" className="!md:block !hidden" alt="Contact Us" fill />
+                <Image src="/imgs/contact-mobile.jpg" className="!block !md:hidden" alt="Contact Us" fill />
             </div>
             <div className="contact-us__container">
                 {/* Tabs Navigation */}

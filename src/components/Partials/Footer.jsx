@@ -6,10 +6,10 @@ const Footer = () => {
     <footer>
       <div className='container'>
         <div className='footer-left'>
-          <Link href='/' className="book-tour-button">
+          <Link href='/contact-us#enrollment' className="book-tour-button">
             <span>Book a tour</span>
           </Link>
-          <div className="copyright">© { new Date().getFullYear() } HEI Schools Senayan. All rights reserved</div>
+          {/* <div className="copyright hidden md:block">© { new Date().getFullYear() } HEI Schools Senayan. All rights reserved</div> */}
         </div>
         <div className='footer-right'>
           <Link href='/contact-us' className="contact-us-button">
@@ -60,7 +60,7 @@ const Footer = () => {
               </svg>
             </Link>
           </div>
-          <div className="copyright"> +62 811 1970 333</div>
+          <div className="copyright">© { new Date().getFullYear() } HEI Schools Senayan. All rights reserved</div>
         </div>
       </div>
     </footer>

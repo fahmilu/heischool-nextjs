@@ -18,7 +18,7 @@ main {
     @apply overflow-x-clip;
 }
 .container {
-    @apply w-full max-w-[1366px] mx-auto;
+    @apply w-full max-w-[1366px] mx-auto lg:px-[72px] px-[20px];
 }
 
 .embla {
@@ -151,7 +151,7 @@ main {
     min-width: 0;
 
     .embla__slide-image {
-        @apply relative w-full aspect-[1200/629];
+        @apply relative w-full md:aspect-[1200/629] aspect-[400/600];
 
         img {
             @apply object-cover;
@@ -160,14 +160,14 @@ main {
 }
 
 .floating-button {
-    @apply fixed bottom-[100px] px-[30px] gap-[10px] rotate-90 origin-right right-[30px] z-50 bg-white rounded-b-[40px] p-[15px] flex items-end justify-center;
+    @apply fixed lg:bottom-[100px] max-lg:top-1/2 max-lg:translate-y-1/2 px-[30px] gap-[10px] rotate-90 origin-right right-[30px] z-50 bg-white rounded-b-[40px] p-[15px] flex items-end justify-center max-lg:scale-75 max-lg:right-[20px];
 
     span {
         @apply text-hei-blue text-[24px] font-black font-noyh;
     }
 
     &__chat {
-        @apply fixed translate-y-[145px] hover:translate-y-0 transition-all duration-300 bottom-0 left-[57px]  bg-white pt-[17px] pb-[41px] px-[20px] rounded-t-[40px] flex flex-col items-center justify-center gap-5 z-[100] shadow-sm;
+        @apply fixed lg:translate-y-[145px] translate-y-[110px] hover:translate-y-0 transition-all duration-300 bottom-0 lg:left-[57px] left-[20px]  bg-white pt-[17px] pb-[41px] px-[20px] rounded-t-[40px] flex flex-col items-center justify-center gap-5 z-[50] shadow-sm max-lg:scale-75 max-lg:origin-bottom-left;
 
         .button {
           @apply flex items-center justify-center gap-2;

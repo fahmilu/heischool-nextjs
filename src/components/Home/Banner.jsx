@@ -9,7 +9,7 @@ const HomeBanner = ({ data }) => {
   const imageRef = useRef(null)
   const titleRef = useRef(null)
   const [isLoaded, setIsLoaded] = useState(false)
-
+// console.log(data);
   useEffect(() => {
     if (isLoaded && bannerRef.current) {
       // Add loaded class to trigger CSS transitions
@@ -56,6 +56,15 @@ const HomeBanner = ({ data }) => {
             <Image 
               src={`${process.env.NEXT_PUBLIC_ASSET_URL}/${data.image}`}
               alt={data.title} 
+              className="hidden sm:block"
+              fill 
+              onLoad={handleImageLoad}
+              priority
+            />
+            <Image 
+              src={`${process.env.NEXT_PUBLIC_ASSET_URL}/${data.image_mobile ? data.image_mobile : data.image}`}
+              alt={data.title} 
+              className="block sm:hidden"
               fill 
               onLoad={handleImageLoad}
               priority
