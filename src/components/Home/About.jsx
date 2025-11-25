@@ -5,8 +5,10 @@ import { TextAnimation } from "@/utils/textAnimation";
 import { ImageAnimation } from "@/utils/imageAnimation";
 import { useParallax } from "@/utils/useParallax";
 const HomeAbout = ({ data }) => {
-    useParallax(".home-about__image", {
+    useParallax(".home-about__big-circle", {
         speed: 0.025,
+        parent: ".home-about__text",
+        start: "bottom bottom",
         direction: "up",
         // start: "bottom -50%",
         // end: "top top",
@@ -27,6 +29,7 @@ const HomeAbout = ({ data }) => {
             <div className="home-about__circle">
                 <BigCircle />
             </div>
+            <div className="home-about__big-circle"></div>
             <div className="container">
                 <TextAnimation start="top 85%" delay={0.5}>
                     <h2 dangerouslySetInnerHTML={{ __html: data.title }} className="home-about__text relative z-[2]" />

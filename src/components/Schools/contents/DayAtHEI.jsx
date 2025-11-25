@@ -8,8 +8,8 @@ const DayAtHEI = ({ data }) => {
                     <div className="schools-day-at-hei__content__description" dangerouslySetInnerHTML={{ __html: data.description }} />
                 </div>
             </div>
-            <div className="schools-day-at-hei__image">
-                <Image src={`${process.env.NEXT_PUBLIC_ASSET_URL}/${data.image_mobile || data.image}`} alt={data.section_title} fill className="max-sm:!hidden" />
+            <div className="schools-day-at-hei__image 2xl:px-20 md:px-10 px-5">
+                <Image src={`${process.env.NEXT_PUBLIC_ASSET_URL}/${data.image}`} alt={data.section_title} fill className="max-sm:!hidden" />
                 <Image src={`${process.env.NEXT_PUBLIC_ASSET_URL}/${data.image_mobile || data.image}`} alt={data.section_title} fill className="sm:!hidden" />
             </div>
             <div className="schools-day-at-hei__notes">

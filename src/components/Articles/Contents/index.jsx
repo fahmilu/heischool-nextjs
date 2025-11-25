@@ -4,6 +4,7 @@ import Paragraph from './Paragraph';
 import ParagraphWithImage from './ParagraphWithImage';
 import Quote from './Quote';
 import SingleImage from './SingleImage';
+import Reference from './Reference';
 import { BigCircle } from '@/components/SVGs';
 import Related from '../Related';
 const ContentsSwitcher = ({ type, dataParent, data }) => {
@@ -16,7 +17,7 @@ const ContentsSwitcher = ({ type, dataParent, data }) => {
             return <Quote data={data} />;
         case 'single-image':
             return <SingleImage dataParent={dataParent} data={data} />;
-        case 'reference':
+        case 'references':
             return <Reference data={data} />;
         default:
             return null;
@@ -24,7 +25,7 @@ const ContentsSwitcher = ({ type, dataParent, data }) => {
 }
 
 const ArticleContents = ({ data, related }) => {
-    
+    console.log(data);
     return (
         <section className="articles articles__detail">
             <div className="articles__circle">
@@ -32,11 +33,11 @@ const ArticleContents = ({ data, related }) => {
             </div>
             <Banner data={data} />
             <Paragraph data={data} />
-            {/* {data.content.map((item, index) => (
-                <ContentsSwitcher key={index} type={item.type} dataParent={data} data={item} />
-            ))} */}
+            {data.components.map((item, index) => (
+                <ContentsSwitcher key={index} type={item.type} dataParent={data} data={item.data} />
+            ))}
             {related.length > 0 && (
-                <Related data={related} />
+                <Related data={related.slice(0, 3)} />
             )}
         </section>
     );

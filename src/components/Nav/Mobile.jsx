@@ -1,7 +1,7 @@
 'use client'
 import React, { useState } from 'react'
 import Link from 'next/link'
-
+import ChatWithUs from './ChatWithUs';
 const Mobile = ({ navItems }) => {
     const [isOpen, setIsOpen] = useState(false);
     const [openSubmenu, setOpenSubmenu] = useState(null);
@@ -92,6 +92,7 @@ const Mobile = ({ navItems }) => {
                                     className='mobile-menu__item'
                                     onClick={() => {
                                         if (item.href.includes('#')) {
+                                            toggleMenu();
                                             scrollToSection(item.href);
                                         } else {
                                             toggleMenu();
@@ -103,6 +104,7 @@ const Mobile = ({ navItems }) => {
                         </div>
                     ))}
                 </nav>
+                <ChatWithUs />
             </div>
         </>
     );

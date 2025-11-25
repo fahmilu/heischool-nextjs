@@ -167,7 +167,7 @@ main {
     }
 
     &__chat {
-        @apply fixed lg:translate-y-[145px] translate-y-[110px] hover:translate-y-0 transition-all duration-300 bottom-0 lg:left-[57px] left-[20px]  bg-white pt-[17px] pb-[41px] px-[20px] rounded-t-[40px] flex flex-col items-center justify-center gap-5 z-[50] shadow-sm max-lg:scale-75 max-lg:origin-bottom-left;
+        @apply fixed lg:translate-y-[145px] translate-y-[110px] hover:translate-y-0 transition-all duration-300 bottom-0 lg:left-[57px] left-[20px]  bg-white pt-[17px] pb-[41px] px-[20px] rounded-t-[40px] md:flex hidden flex-col items-center justify-center gap-5 z-[50] shadow-sm max-lg:scale-75 max-lg:origin-bottom-left;
 
         .button {
           @apply flex items-center justify-center gap-2;

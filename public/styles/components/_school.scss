@@ -614,9 +614,9 @@
         .wrapper {
             @apply relative h-[800px] -mt-[800px] z-10;
 
-            &::after {
-                @apply content-[''] absolute bottom-0 translate-y-[100%] left-0 w-full h-[40px] bg-gradient-to-b from-[#FDF8F2] to-transparent;
-            }
+            // &::after {
+            //     @apply content-[''] absolute bottom-0 translate-y-[100%] left-0 w-full h-[40px] bg-gradient-to-b from-[#FDF8F2] to-transparent;
+            // }
         }
     }
 }

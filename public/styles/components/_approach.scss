@@ -10,7 +10,7 @@
 
 .section {
     &__banner {
-        @apply relative pt-[220px] pb-[95px];
+        @apply relative sm:pt-[220px] pt-[120px] pb-[95px];
 
         .container {
             @apply relative flex flex-col gap-y-[32px];
@@ -33,9 +33,9 @@
             &__icon {
                 @apply lg:w-[100px] md:w-[70px] md:min-h-full min-h-[70px] relative bg-[--color] cursor-pointer;
                 span {
-                    @apply text-hei-blue lg:text-[40px] text-[36px] font-black font-noyh rotate-[90deg] opacity-0 transition-all duration-300;
-                    @apply absolute lg:top-[100px] top-[80px] lg:left-[-10px] left-[-15px];
-                    @apply max-md:hidden;
+                    @apply text-hei-blue lg:text-[40px] md:text-[36px] text-[28px] font-black font-noyh md:rotate-[90deg] rotate-0 md:opacity-0 transition-all duration-300;
+                    @apply absolute lg:top-[100px] md:top-[80px] top-[30px] lg:left-[-10px] md:left-[-15px] left-[20px];
+                    // @apply max-md:hidden;
                 }
                 img {
                     @apply lg:w-[64px] md:w-[50px] lg:h-[64px] md:h-[50px] w-[40px] h-[40px] aspect-square object-contain md:top-[52px] md:left-[50%] left-[unset] md:-translate-x-1/2 top-1/2 max-md:-translate-y-1/2 max-md:right-[50px] transition-all duration-300 #{!important};
@@ -159,14 +159,15 @@
     }
 
     &__learning-aspiration {
-        @apply lg:mb-[906px] pt-[74px];
+        @apply pt-[74px] bg-white relative;
         // &__items {
         //     // @apply flex flex-row gap-x-[2px] h-[500px];
         // }
-        --gap: 150px;
-        --gap2: 120px;
+        --gap: 100px;
+        --gap2: 150px;
+
         &__item {
-            @apply lg:h-[80vh]  lg:sticky relative lg:top-[--gap] w-full bg-white rounded-t-[38px] max-lg:pb-20 max-lg:-mt-5;
+            @apply lg:sticky relative pb-[50px] lg:top-[--gap] w-full bg-white rounded-t-[38px] max-lg:pb-20 max-lg:-mt-5;
 
             &:before {
                 @apply content-[''] absolute top-[-5px] left-0 w-full h-full lg:z-[-1] rounded-t-[38px];
@@ -184,23 +185,27 @@
             @media screen and (min-width: 1024px) {                
                 &:nth-child(1) {
                     margin-bottom: calc(var(--gap) * 0);
-                    top: calc(var(--gap) * 1);
+                    top: calc(var(--gap2));
                 }
                 &:nth-child(2) {
-                    margin-bottom: calc(var(--gap) * -1);
-                    top: calc(var(--gap) * 2);
+                    // margin-bottom: calc(var(--gap));
+                    top: calc((var(--gap) * 1) + var(--gap2));
                 }
                 &:nth-child(3) {
-                    margin-bottom: calc(var(--gap) * -2);
-                    top: calc(var(--gap) * 3);
+                    // margin-bottom: calc(var(--gap));
+                    top: calc((var(--gap) * 2) + var(--gap2));
                 }
                 &:nth-child(4) {
-                    margin-bottom: calc(var(--gap) * -3);
-                    top: calc(var(--gap) * 4);
+                    // margin-bottom: calc(var(--gap));
+                    top: calc((var(--gap) * 3) + var(--gap2));
                 }
                 &:nth-child(5) {
-                    margin-bottom: calc(var(--gap) * -4);
-                    top: calc(var(--gap) * 5);
+                    // margin-bottom: calc(var(--gap));
+                    top: calc((var(--gap) * 4) + var(--gap2));
+                }
+                &:last-child {
+                    // margin-bottom: -200px;
+                    // @apply lg:absolute bottom-0 top-[unset] left-0 w-full h-fit;
                 }
             }
 

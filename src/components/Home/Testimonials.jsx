@@ -6,7 +6,7 @@ import { useDotButton, DotButton } from '@/components/Embla/Dots';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { useGSAP } from '@gsap/react';
-
+import { Arrows } from "@/components/Gallery/Arrows";
 gsap.registerPlugin(ScrollTrigger);
 
 const Testimonials = ({ data }) => {
@@ -109,6 +109,7 @@ const Testimonials = ({ data }) => {
               </div>
             </div>
           </div>
+          <Arrows emblaApi={emblaApi} />
         </div>
       </section>
     );

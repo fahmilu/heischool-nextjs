@@ -1,7 +1,7 @@
 import Card from "./Card";
 const Related = ({ data }) => {
     return (
-        <section className="content content__related">
+        <section className="content content__related mt-[100px]">
             <div className="container">
                 <div className="content__inside">
                     <h3 className="text-center !mb-[40px]">Related Articles</h3>

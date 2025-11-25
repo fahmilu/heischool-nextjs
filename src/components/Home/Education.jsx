@@ -3,15 +3,15 @@ import React from 'react'
 import Image from 'next/image';
 import { useParallax } from '@/utils/useParallax';
 const Education = ({ data }) => {
-  useParallax(".home-education-image", {
-    speed: 0.5,
-    direction: "up",
-    distance: 150,
-    start: "top bottom",
-    end: "bottom center",
-    ease: "power2.out",
-    parent: ".home-education",
-  });
+  // useParallax(".home-education-image", {
+  //   speed: 0.5,
+  //   direction: "up",
+  //   distance: 150,
+  //   start: "top bottom",
+  //   end: "bottom center",
+  //   ease: "power2.out",
+  //   parent: ".home-education",
+  // });
   return (
     <section className='home-education'>
         <div className='container'>
