@@ -8,18 +8,18 @@ const ContactForm = ({ index, relations, handleChange, handleBlur, touched, erro
             <div className="form-group">
                 <div className="form-row">
                     <div className="form-col">
-                        <label htmlFor={`parentName_${index}`}>Parent's Name*</label>
+                        <label htmlFor={`parent_name_${index}`}>Parent's Name*</label>
                         <input 
                             type="text" 
-                            id={`parentName_${index}`}
-                            name="parentName"
-                            value={formData.parentName}
+                            id={`parent_name_${index}`}
+                            name="parent_name"
+                            value={formData.parent_name}
                             onChange={(e) => handleChange(index, e)}
                             onBlur={(e) => handleBlur(index, e)}
-                            className={isFieldTouched('parentName') && getFieldError('parentName') ? 'error' : ''}
+                            className={isFieldTouched('parent_name') && getFieldError('parent_name') ? 'error' : ''}
                         />
-                        {isFieldTouched('parentName') && getFieldError('parentName') && (
-                            <span className="error-message">{getFieldError('parentName')}</span>
+                        {isFieldTouched('parent_name') && getFieldError('parent_name') && (
+                            <span className="error-message">{getFieldError('parent_name')}</span>
                         )}
                     </div>
                 </div>
@@ -58,18 +58,18 @@ const ContactForm = ({ index, relations, handleChange, handleBlur, touched, erro
                         )}
                     </div>
                     <div className="form-col">
-                        <label htmlFor={`phoneNumber_${index}`}>Phone Number*</label>
+                        <label htmlFor={`phone_${index}`}>Phone Number*</label>
                         <input 
                             type="text" 
-                            id={`phoneNumber_${index}`}
-                            name="phoneNumber"
-                            value={formData.phoneNumber}
+                            id={`phone_${index}`}
+                            name="phone"
+                            value={formData.phone}
                             onChange={(e) => handleChange(index, e)}
                             onBlur={(e) => handleBlur(index, e)}
-                            className={isFieldTouched('phoneNumber') && getFieldError('phoneNumber') ? 'error' : ''}
+                            className={isFieldTouched('phone') && getFieldError('phone') ? 'error' : ''}
                         />
-                        {isFieldTouched('phoneNumber') && getFieldError('phoneNumber') && (
-                            <span className="error-message">{getFieldError('phoneNumber')}</span>
+                        {isFieldTouched('phone') && getFieldError('phone') && (
+                            <span className="error-message">{getFieldError('phone')}</span>
                         )}
                     </div>
                 </div>

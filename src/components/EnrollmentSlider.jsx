@@ -18,7 +18,7 @@ const EnrollmentSlider = () => {
         loop: false,
     });
 
-    console.log(slides);
+    // console.log(slides);
 
     return (
         slides && (

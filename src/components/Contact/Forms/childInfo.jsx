@@ -1,6 +1,6 @@
 import DropdownSelect from '@/components/DropdownSelect';
 
-const ChildInfoForm = ({ index, genders, preferedLevel, handleChange, handleBlur, touched, errors, formData }) => {
+const ChildInfoForm = ({ index, genders, prevered_level, handleChange, handleBlur, touched, errors, formData }) => {
     const getFieldError = (fieldName) => errors[`${fieldName}_${index}`];
     const isFieldTouched = (fieldName) => touched[`${fieldName}_${index}`];
 
@@ -9,18 +9,18 @@ const ChildInfoForm = ({ index, genders, preferedLevel, handleChange, handleBlur
             <div className="form-group">
                 <div className="form-row">
                     <div className="form-col">
-                        <label htmlFor={`childFullName_${index}`}>Child Full Name*</label>
+                        <label htmlFor={`name_${index}`}>Child Full Name*</label>
                         <input 
                             type="text" 
-                            id={`childFullName_${index}`}
-                            name="childFullName"
-                            value={formData.childFullName}
+                            id={`name_${index}`}
+                            name="name"
+                            value={formData.name}
                             onChange={(e) => handleChange(index, e)}
                             onBlur={(e) => handleBlur(index, e)}
-                            className={isFieldTouched('childFullName') && getFieldError('childFullName') ? 'error' : ''}
+                            className={isFieldTouched('name') && getFieldError('name') ? 'error' : ''}
                         />
-                        {isFieldTouched('childFullName') && getFieldError('childFullName') && (
-                            <span className="error-message">{getFieldError('childFullName')}</span>
+                        {isFieldTouched('name') && getFieldError('name') && (
+                            <span className="error-message">{getFieldError('name')}</span>
                         )}
                     </div>
                 </div>
@@ -44,33 +44,33 @@ const ChildInfoForm = ({ index, genders, preferedLevel, handleChange, handleBlur
             <div className="form-group">
                 <div className="form-row">
                     <div className="form-col">
-                        <label htmlFor={`birthdate_${index}`}>Birthdate*</label>
+                        <label htmlFor={`birth_date_${index}`}>Birth_date*</label>
                         <input 
                             type="date" 
-                            id={`birthdate_${index}`}
-                            name="birthdate"
-                            value={formData.birthdate}
+                            id={`birth_date_${index}`}
+                            name="birth_date"
+                            value={formData.birth_date}
                             onChange={(e) => handleChange(index, e)}
                             onBlur={(e) => handleBlur(index, e)}
-                            className={isFieldTouched('birthdate') && getFieldError('birthdate') ? 'error' : ''}
+                            className={isFieldTouched('birth_date') && getFieldError('birth_date') ? 'error' : ''}
                         />
-                        {isFieldTouched('birthdate') && getFieldError('birthdate') && (
-                            <span className="error-message">{getFieldError('birthdate')}</span>
+                        {isFieldTouched('birth_date') && getFieldError('birth_date') && (
+                            <span className="error-message">{getFieldError('birth_date')}</span>
                         )}
                     </div>
                     <div className="form-col">
-                        <label htmlFor={`preferedStartDate_${index}`}>Preferred Start Date*</label>
+                        <label htmlFor={`prefered_start_date_${index}`}>Preferred Start Date*</label>
                         <input 
                             type="date" 
-                            id={`preferedStartDate_${index}`}
-                            name="preferedStartDate"
-                            value={formData.preferedStartDate}
+                            id={`prefered_start_date_${index}`}
+                            name="prefered_start_date"
+                            value={formData.prefered_start_date}
                             onChange={(e) => handleChange(index, e)}
                             onBlur={(e) => handleBlur(index, e)}
-                            className={isFieldTouched('preferedStartDate') && getFieldError('preferedStartDate') ? 'error' : ''}
+                            className={isFieldTouched('prefered_start_date') && getFieldError('prefered_start_date') ? 'error' : ''}
                         />
-                        {isFieldTouched('preferedStartDate') && getFieldError('preferedStartDate') && (
-                            <span className="error-message">{getFieldError('preferedStartDate')}</span>
+                        {isFieldTouched('prefered_start_date') && getFieldError('prefered_start_date') && (
+                            <span className="error-message">{getFieldError('prefered_start_date')}</span>
                         )}
                     </div>
                 </div>
@@ -78,15 +78,15 @@ const ChildInfoForm = ({ index, genders, preferedLevel, handleChange, handleBlur
             <div className="form-group">
                 <div className="form-row">
                     <div className="form-col">
-                        <label htmlFor={`preferedLevel_${index}`}>Preferred Level*</label>
+                        <label htmlFor={`prevered_level_${index}`}>Preferred Level*</label>
                         <DropdownSelect 
-                            options={preferedLevel} 
-                            value={formData.preferedLevel}
-                            name="preferedLevel"
+                            options={prevered_level} 
+                            value={formData.prevered_level}
+                            name="prevered_level"
                             onChange={(e) => handleChange(index, e)} 
                         />
-                        {isFieldTouched('preferedLevel') && getFieldError('preferedLevel') && (
-                            <span className="error-message">{getFieldError('preferedLevel')}</span>
+                        {isFieldTouched('prevered_level') && getFieldError('prevered_level') && (
+                            <span className="error-message">{getFieldError('prevered_level')}</span>
                         )}
                     </div>
                 </div>

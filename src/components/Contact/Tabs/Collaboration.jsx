@@ -152,7 +152,7 @@ const Collaboration = () => {
         console.log('Form submitted:', formData);
         
         // Simulate API call
-        pushData('collaboration-submission', formData).then((data) => {
+        pushData('collaboration-submissions', formData).then((data) => {
             console.log(data);
         }).catch((error) => {
             console.log(error);
@@ -173,6 +173,10 @@ const Collaboration = () => {
             setErrors({});
             setTouched({});
         }, 1000);
+
+        setTimeout(() => {
+            setSubmitStatus(null);
+        }, 5000);
     };
 
     return (
@@ -259,7 +263,7 @@ const Collaboration = () => {
                         <div className="form-col">
                             <DropdownSelect 
                                 options={Subjects} 
-                                onChange={handleSubjectChange}
+                                onChange={(e) => handleSubjectChange(e.target.value)}
                             />
                             {touched.subject && errors.subject && (
                                 <span className="error-message">{errors.subject}</span>
