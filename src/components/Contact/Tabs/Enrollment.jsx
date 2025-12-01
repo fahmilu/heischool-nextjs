@@ -343,7 +343,7 @@ const Enrollment = () => {
         });
         setErrors(errors => ({ ...errors, ...newErrors }));
         setTouched(touched => ({ ...touched, ...newErrors }));
-        return Object.keys(newErrors).length > 0;
+        return newErrors;
     };
     
     const handleSubmit = async (e) => {
@@ -351,12 +351,12 @@ const Enrollment = () => {
         
         // Reset submit status
         setSubmitStatus(null);
-
+        setIsSubmitting(true);
         // Validate all contacts and children
         const isContactsValid = validateAllContacts();
         const isChildrenValid = validateAllChildren();
         const newErrors = validateForm();
-        console.log(isContactsValid, isChildrenValid, newErrors);
+        console.log('newErrors:', newErrors);
         if (!isContactsValid || !isChildrenValid || Object.keys(newErrors).length > 0) {
             setSubmitStatus('error');
             // Scroll to first error
@@ -365,80 +365,88 @@ const Enrollment = () => {
                 if (firstError) {
                     firstError.scrollIntoView({ behavior: 'smooth', block: 'center' });
                 }
+                setIsSubmitting(false);
             }, 100);
             return;
-        }
-
-        setIsSubmitting(true);
-
-        try {
-            // Format the date for submission
-            const submissionData = {
-                ...formData,
-                visit_date: formData.visit_date ? formData.visit_date.toISOString().split('T')[0] : '',
-                contacts: contacts,
-                child_informations: children,
-                location_id: locations.find(location => location.label === formData.location)?.id
-            };
-
-            console.log('Form Data:', submissionData);
-            
-            pushData('enrollment-submissions', submissionData).then((data) => {
-                console.log(data);
-                        // Log the data for now
-                // console.log('Enrollment Form Submitted:', result);
-
-                // Set success status
-                setSubmitStatus('success');
-
-                // Optional: Reset form after successful submission
-                setContacts([{
-                    parent_name: '',
-                    relationship: '',
-                    email: '',
-                    phone: '',
-                    address: ''
-                }]);
-                setChildren([{
-                    name: '',
-                    gender: '',
-                    birth_date: '',
-                    prefered_start_date: '',
-                    prevered_level: ''
-                }]);
-                setErrors({});
-                setTouched({});
-                setFormData({
-                    location: '',
-                    visit_date: null,
-                    visit_time: '',
-                    remarks: '',
-                    enqu: ''
-                });
-                // Scroll to success message
-                setTimeout(() => {
-                    const successMessage = document.querySelector('.submit-success');
-                    if (successMessage) {
-                        successMessage.scrollIntoView({ behavior: 'smooth', block: 'center' });
-                    }
-                }, 100);
+        } else {
+            try {
+                // Format the date for submission (timezone-safe)
+                const formatDate = (date) => {
+                    if (!date) return '';
+                    const day = String(date.getDate()).padStart(2, '0');
+                    const month = String(date.getMonth() + 1).padStart(2, '0');
+                    const year = date.getFullYear();
+                    return `${day}-${month}-${year}`;
+                };
                 
-                setTimeout(() => {
-                    setSubmitStatus(null);
-                }, 3000);
-            }).catch((error) => {
-                console.log(error);
-            });
-
-
-
-
-        } catch (error) {
-            console.error('Submission error:', error);
-            setSubmitStatus('error');
-        } finally {
-            setIsSubmitting(false);
+                const submissionData = {
+                    ...formData,
+                    visit_date: formatDate(formData.visit_date),
+                    contacts: contacts,
+                    child_informations: children,
+                    location_id: locations.find(location => location.label === formData.location)?.id
+                };
+    
+                console.log('Form Data:', formData);
+                console.log('Form Data:', submissionData);
+                
+                pushData('enrollment-submissions', submissionData).then((data) => {
+                    // console.log(data);
+                            // Log the data for now
+                    // console.log('Enrollment Form Submitted:', result);
+    
+                    // Set success status
+                    setSubmitStatus('success');
+    
+                    // Optional: Reset form after successful submission
+                    setContacts([{
+                        parent_name: '',
+                        relationship: '',
+                        email: '',
+                        phone: '',
+                        address: ''
+                    }]);
+                    setChildren([{
+                        name: '',
+                        gender: '',
+                        birth_date: '',
+                        prefered_start_date: '',
+                        prevered_level: ''
+                    }]);
+                    setErrors({});
+                    setTouched({});
+                    setFormData({
+                        location: '',
+                        visit_date: null,
+                        visit_time: '',
+                        remarks: '',
+                        enqu: ''
+                    });
+                    // Scroll to success message
+                    setTimeout(() => {
+                        const successMessage = document.querySelector('.submit-success');
+                        if (successMessage) {
+                            successMessage.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                        }
+                    }, 100);
+                    
+                    setTimeout(() => {
+                        setSubmitStatus(null);
+                    }, 10000);
+                }).catch((error) => {
+                    console.log(error);
+                });
+    
+    
+            } catch (error) {
+                console.error('Submission error:', error);
+                setSubmitStatus('error');
+            } finally {
+                setIsSubmitting(false);
+            }
         }
+
+
     };
 
     return (
