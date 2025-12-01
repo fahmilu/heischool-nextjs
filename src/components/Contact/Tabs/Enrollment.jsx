@@ -12,6 +12,8 @@ import {
     selectAllLocations, 
   } from '@/redux/slices/locationsSlice';
 import DropdownSelect from '@/components/DropdownSelect';
+import DatePicker from 'react-datepicker';
+import 'react-datepicker/dist/react-datepicker.css';
 const Enrollment = () => {
 
     const locations = useAppSelector(selectAllLocations);
@@ -88,7 +90,7 @@ const Enrollment = () => {
 
     const [formData, setFormData] = useState({
         location: '',
-        visit_date: '',
+        visit_date: null,
         visit_time: '',
         remarks: '',
         enquiry_source: '',
@@ -123,7 +125,14 @@ const Enrollment = () => {
             case 'prevered_level':
                 return value.trim() === '' ? 'Preferred level is required' : '';
             case 'visit_date':
-                return value.trim() === '' ? 'Visit date is required' : '';
+                if (!value) return 'Visit date is required';
+                const selectedDate = value instanceof Date ? value : new Date(value);
+                const dayOfWeek = selectedDate.getDay();
+                // 0 = Sunday, 6 = Saturday
+                if (dayOfWeek === 0 || dayOfWeek === 6) {
+                    return 'Please select a weekday (Monday-Friday)';
+                }
+                return '';
             case 'visit_time':
                 return value.trim() === '' ? 'Visit time is required' : '';
             case 'enqu':
@@ -188,9 +197,19 @@ const Enrollment = () => {
         setFormData({ ...formData, [name]: value });
     };
 
-    const handleVisit_dateChange = (e) => {
-        const { name, value } = e.target;
-        setFormData({ ...formData, [name]: value });
+    const handleVisit_dateChange = (date) => {
+        setFormData({ ...formData, visit_date: date });
+        
+        // Validate field on change
+        const error = validateField('visit_date', date);
+        setErrors(prev => ({
+            ...prev,
+            visit_date: error
+        }));
+        setTouched(prev => ({
+            ...prev,
+            visit_date: true
+        }));
     };
 
     const handleRemarksChange = (e) => {
@@ -353,13 +372,18 @@ const Enrollment = () => {
         setIsSubmitting(true);
 
         try {
-            formData.contacts = contacts;
-            formData.child_informations = children;
-            formData.location_id = locations.find(location => location.label === formData.location)?.id;
+            // Format the date for submission
+            const submissionData = {
+                ...formData,
+                visit_date: formData.visit_date ? formData.visit_date.toISOString().split('T')[0] : '',
+                contacts: contacts,
+                child_informations: children,
+                location_id: locations.find(location => location.label === formData.location)?.id
+            };
 
-            console.log('Form Data:', formData);
+            console.log('Form Data:', submissionData);
             
-            pushData('enrollment-submissions', formData).then((data) => {
+            pushData('enrollment-submissions', submissionData).then((data) => {
                 console.log(data);
                         // Log the data for now
                 // console.log('Enrollment Form Submitted:', result);
@@ -386,7 +410,7 @@ const Enrollment = () => {
                 setTouched({});
                 setFormData({
                     location: '',
-                    visit_date: '',
+                    visit_date: null,
                     visit_time: '',
                     remarks: '',
                     enqu: ''
@@ -523,7 +547,20 @@ const Enrollment = () => {
                     <div className="form-row">
                         <div className="form-col">
                             <label htmlFor="visit-date">Visit Date*</label>
-                            <input type="date" id="visit_date" name="visit_date" value={formData.visit_date} onChange={handleVisit_dateChange} />
+                            <DatePicker
+                                selected={formData.visit_date}
+                                onChange={handleVisit_dateChange}
+                                minDate={new Date()}
+                                filterDate={(date) => {
+                                    const day = date.getDay();
+                                    // Disable weekends (0 = Sunday, 6 = Saturday)
+                                    return day !== 0 && day !== 6;
+                                }}
+                                dateFormat="dd/MM/yyyy"
+                                placeholderText="Select a weekday"
+                                className="w-full"
+                                id="visit_date"
+                            />
                             {touched.visit_date && errors.visit_date && (
                                 <span className="error-message">{errors.visit_date}</span>
                             )}

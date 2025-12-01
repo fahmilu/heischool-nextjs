@@ -60,7 +60,7 @@ const DropdownSelect = ({
             <button
                 type="button"
                 onClick={toggleDropdown}
-                className="w-full px-4 py-3 text-left bg-white border border-gray-300 rounded-lg shadow-sm hover:border-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-all duration-200"
+                className="w-full px-4 py-2 h-[48px] text-left bg-white border border-gray-300 rounded-lg shadow-sm hover:border-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-all duration-200"
             >
                 <div className="flex items-center justify-between">
                     <span className={`block truncate text-[16px] font-noyh ${!selectedOption ? 'text-gray-400' : 'text-gray-900'}`}>
