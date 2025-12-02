@@ -33,9 +33,12 @@ const ArticleContents = ({ data, related }) => {
             </div>
             <Banner data={data} />
             <Paragraph data={data} />
-            {data.components.map((item, index) => (
-                <ContentsSwitcher key={index} type={item.type} dataParent={data} data={item.data} />
-            ))}
+            {
+                data.components &&
+                data.components.map((item, index) => (
+                    <ContentsSwitcher key={index} type={item.type} dataParent={data} data={item.data} />
+                ))
+            }
             {related.length > 0 && (
                 <Related data={related.slice(0, 3)} />
             )}
