@@ -312,7 +312,11 @@
                 @apply md:flex hidden flex-row gap-[20px] w-full max-w-[1034px] flex-wrap justify-center;
             }
             &__item {
-                @apply text-black whitespace-nowrap cursor-pointer hover:opacity-80 transition-all duration-300 bg-[--color] px-[40px] py-[12px] rounded-[12px] text-[24px] font-noyh font-bold capitalize;
+                @apply text-black whitespace-nowrap cursor-pointer hover:opacity-80 transition-all duration-300 bg-[--color] px-[40px] py-[12px] rounded-[12px] text-[24px] font-noyh font-bold capitalize opacity-60;
+
+                &.active {
+                    @apply opacity-100 scale-105 shadow-lg;
+                }
             }
 
             .embla {
@@ -556,8 +560,19 @@
             }
 
             &-dots {
-                @apply flex flex-row items-center justify-center gap-[10px] pt-[29px];
-
+                @apply flex flex-row items-center relative justify-center gap-[10px] pt-[29px];
+                .embla__arrows {
+                    @apply absolute h-full w-full;
+                    .embla__arrow {
+                        &--prev {
+                            @apply left-20;
+                        }
+    
+                        &--next {
+                            @apply right-20;
+                        }
+                    }
+                }
                 .embla__dot {
                     @apply w-[10px] h-[10px] rounded-full border border-[#755757];
 
@@ -566,6 +581,7 @@
                     }
                 }
             }
+            
         }
 
     }

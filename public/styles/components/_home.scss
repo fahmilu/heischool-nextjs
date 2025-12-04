@@ -288,7 +288,18 @@
             }
 
             &-dots {
-                @apply flex flex-row items-center justify-center gap-[10px] pt-[29px];
+                @apply flex flex-row relative items-center justify-center gap-[10px] pt-[29px];
+                .embla__arrows {
+                    @apply absolute h-full w-full;
+                    .embla__arrow {
+                        &--prev {
+                            @apply left-20;
+                        }
+                        &--next {
+                            @apply right-20;
+                        }
+                    }
+                }
 
                 .embla__dot {
                     @apply w-[10px] h-[10px] rounded-full border border-[#755757];

@@ -87,7 +87,7 @@ const Footer = () => {
               )
             }
           </div>
-          <div className="copyright">© { new Date().getFullYear() } HEI Schools Senayan. All rights reserved</div>
+          <div className="copyright">© { new Date().getFullYear() } HEI Schools Indonesia. All rights reserved</div>
         </div>
       </div>
     </footer>

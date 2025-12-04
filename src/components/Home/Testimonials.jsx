@@ -96,20 +96,25 @@ const Testimonials = ({ data }) => {
                   ))}
                 </div>
               </div>
-              <div className="home-testimonials-content-dots">
-                {scrollSnaps.map((_, index) => (
-                  <DotButton
-                    key={index}
-                    onClick={() => onDotButtonClick(index)}
-                    className={"embla__dot".concat(
-                      index === selectedIndex ? " embla__dot--selected" : ""
-                    )}
-                  />
-                ))}
-              </div>
+              {data.items.length > 1 && (
+                <div className="home-testimonials-content-dots">
+                  <Arrows emblaApi={emblaApi} className="md:!hidden" />
+                  {scrollSnaps.map((_, index) => (
+                    <DotButton
+                      key={index}
+                      onClick={() => onDotButtonClick(index)}
+                      className={"embla__dot".concat(
+                        index === selectedIndex ? " embla__dot--selected" : ""
+                      )}
+                    />
+                  ))}
+                </div>
+              )}
             </div>
           </div>
-          <Arrows emblaApi={emblaApi} />
+          {data.items.length > 1 && (
+            <Arrows emblaApi={emblaApi} className="max-md:!hidden" />
+          )}
         </div>
       </section>
     );

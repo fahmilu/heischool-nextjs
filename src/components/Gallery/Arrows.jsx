@@ -1,6 +1,6 @@
 import React, { useCallback, useEffect, useState } from 'react'
 
-export const Arrows = ({ emblaApi }) => {
+export const Arrows = ({ emblaApi, className }) => {
     const [currentSlide, setCurrentSlide] = useState(0);
     const [prevSlide, setPrevSlide] = useState(0);
     const [nextSlide, setNextSlide] = useState(0);
@@ -30,7 +30,7 @@ export const Arrows = ({ emblaApi }) => {
     }, [emblaApi, onSelect]);
 
     return (
-        <div className='embla__arrows'>
+        <div className={`embla__arrows ${className}`}>
             <button className='embla__arrow embla__arrow--prev' onClick={onPrevButtonClick} disabled={prevBtnDisabled}>
               <svg xmlns="http://www.w3.org/2000/svg" width={25} className='sm:block hidden' height={28} viewBox="0 0 25 28" fill="none">
                 <path d="M1.89278 15.8749C0.588537 15.0997 0.588537 13.2115 1.89278 12.4363L21.4782 0.796103C22.8114 0.00375776 24.5 0.964516 24.5 2.51538L24.5 25.7958C24.5 27.3467 22.8114 28.3074 21.4782 27.5151L1.89278 15.8749Z" fill="#00503C" />

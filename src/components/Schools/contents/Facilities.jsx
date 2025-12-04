@@ -1,29 +1,33 @@
 "use client";
+import { useState, useEffect, useCallback } from "react";
 import Image from "next/image";
 import useEmblaCarousel from "embla-carousel-react";
 import { Arrows } from "@/components/Gallery/Arrows";
-import Autoplay from 'embla-carousel-autoplay';
-import { Cloud } from "@/components/SVGs";
+
 const Facilities = ({ data }) => {
-    console.log(data);
+    const [activeTab, setActiveTab] = useState(0);
+    
+    const filteredItems = data.items.filter(item => item.images.length > 0);
+    const activeImages = filteredItems[activeTab]?.images || [];
+
     const options = {
         loop: true,
         align: "center",
         dragFree: false,
-        autoPlay: true,
     };
 
-    const autoplay = Autoplay({
-        delay: 3000,
-        stopOnInteraction: false,
-        stopOnFocusIn: false,
-    });
-    
     const [emblaRef, emblaApi] = useEmblaCarousel(options);
 
-    const itemClick = (index) => {
-        emblaApi.scrollTo(index);
-    }
+    // Reset carousel to first slide when tab changes
+    useEffect(() => {
+        if (emblaApi) {
+            emblaApi.scrollTo(0, true);
+        }
+    }, [activeTab, emblaApi]);
+
+    const handleTabClick = (index) => {
+        setActiveTab(index);
+    };
 
     const colorItems = [
         "#FDC202",
@@ -33,33 +37,42 @@ const Facilities = ({ data }) => {
         "#F9CB9C",
         "#F4A89E",
         "#8FCAAB",
-    ]
+    ];
+
     return (
         <>
             <section className="schools-facilities embla">
                 <div className="container">
                     <h2>{data.section_title}</h2>
                     <div className="schools-facilities__content__items">
-                    {data.items.filter(item => item.images.length > 0).map((item, index) => (
-                        <div key={index} className="schools-facilities__content__item" style={{ "--color": colorItems[index] }} onClick={() => itemClick(index)}>
-                            {item.title}
-                        </div>
-                    ))}
+                        {filteredItems.map((item, index) => (
+                            <div 
+                                key={index} 
+                                className={`schools-facilities__content__item ${activeTab === index ? 'active' : ''}`} 
+                                style={{ "--color": colorItems[index % colorItems.length] }} 
+                                onClick={() => handleTabClick(index)}
+                            >
+                                {item.title}
+                            </div>
+                        ))}
                     </div>
                     <div className="schools-facilities__content">
-                        <div className="embla" ref={emblaRef}>
+                        <div className="embla" ref={emblaRef} key={activeTab}>
                             <div className="embla__container">
-                            {data.items.filter(item => item.images.length > 0).map((item, index) => (
-                                <div key={index} className="embla__slide">
-                                    <Image src={`${process.env.NEXT_PUBLIC_ASSET_URL}/${item.images[0].image}`} alt={item.title} fill />
-                                </div>
-                            ))}
+                                {activeImages.map((img, index) => (
+                                    <div key={index} className="embla__slide">
+                                        <Image 
+                                            src={`${process.env.NEXT_PUBLIC_ASSET_URL}/${img.image}`} 
+                                            alt={`${filteredItems[activeTab]?.title || 'Facility'} - ${index + 1}`} 
+                                            fill 
+                                        />
+                                    </div>
+                                ))}
+                            </div>
+                            <Arrows emblaApi={emblaApi} />
                         </div>
-                        <Arrows emblaApi={emblaApi} />
-                    </div>
                     </div>
                 </div>
-
             </section>
         </>
     );
