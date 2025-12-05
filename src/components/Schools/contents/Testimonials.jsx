@@ -6,6 +6,7 @@ import { useDotButton, DotButton } from '@/components/Embla/Dots';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { useGSAP } from '@gsap/react';
+import { Arrows } from "@/components/Gallery/Arrows";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -65,6 +66,7 @@ const Testimonials = ({ data }) => {
           <div className="schools-testimonials-content">
             <h3 className="bigger text-white text-center mx-auto max-w-[400px] mb-[40px]">{data.section_title}</h3>
             <div className="schools-testimonials-content-avatars" ref={avatarsRef}>
+              
               {data.items.map((avatar, index) => (
                 <div
                   key={index}
@@ -96,19 +98,25 @@ const Testimonials = ({ data }) => {
                   ))}
                 </div>
               </div>
-              <div className="schools-testimonials-content-dots">
-                {scrollSnaps.map((_, index) => (
-                  <DotButton
-                    key={index}
-                    onClick={() => onDotButtonClick(index)}
-                    className={"embla__dot".concat(
-                      index === selectedIndex ? " embla__dot--selected" : ""
-                    )}
-                  />
-                ))}
-              </div>
+              {data.items.length > 1 && (
+                <div className="schools-testimonials-content-dots">
+                  <Arrows emblaApi={emblaApi} className="md:!hidden" />
+                  {scrollSnaps.map((_, index) => (
+                    <DotButton
+                      key={index}
+                      onClick={() => onDotButtonClick(index)}
+                      className={"embla__dot".concat(
+                        index === selectedIndex ? " embla__dot--selected" : ""
+                      )}
+                    />
+                  ))}
+                </div>
+              )}
             </div>
           </div>
+          {data.items.length > 1 && (
+            <Arrows emblaApi={emblaApi} className="max-md:!hidden" />
+          )}
         </div>
       </section>
     );

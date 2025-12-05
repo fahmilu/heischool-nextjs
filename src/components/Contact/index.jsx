@@ -4,9 +4,12 @@ import Enrollment from './Tabs/Enrollment';
 import VisitUs from './Tabs/VisitUs';
 import Collaboration from './Tabs/Collaboration';
 import Image from 'next/image';
-const Contact = () => {
+const Contact = ({ page }) => {
     const [activeTab, setActiveTab] = useState(null);
-
+    console.log(page);
+    const banner = page.components.find(component => component.type === 'banner');
+    const imageDesktop = banner.data.image;
+    const imageMobile = banner.data.image_mobile || banner.data.image;
     // Handle initial tab state based on URL hash
     useEffect(() => {
         const hash = window.location.hash.slice(1); // Remove the # symbol
@@ -34,8 +37,8 @@ const Contact = () => {
     return (
         <section className="contact-us">
             <div className="contact-us__image">
-                <Image src="/imgs/contact-banner.jpg" className="!md:block !hidden" alt="Contact Us" fill />
-                <Image src="/imgs/contact-mobile.jpg" className="!block !md:hidden" alt="Contact Us" fill />
+                <Image src={`${process.env.NEXT_PUBLIC_ASSET_URL}/${imageDesktop}`} className="!md:block !hidden" alt="Contact Us" fill />
+                <Image src={`${process.env.NEXT_PUBLIC_ASSET_URL}/${imageMobile}`} className="!block !md:hidden" alt="Contact Us" fill />
             </div>
             <div className="contact-us__container">
                 {/* Tabs Navigation */}

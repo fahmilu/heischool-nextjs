@@ -31,16 +31,19 @@
         &__circle {
             @apply absolute top-0 left-0 -translate-x-1/2 -translate-y-1/2 md:w-[1155px] w-[500px] md:h-[1155px] h-[500px];
         }
-
+        
+        &__big-circle {
+            @apply absolute bottom-0 right-0 bg-[#FACDB7] opacity-20 rounded-full translate-x-[30%] translate-y-[0%] md:w-[800px] w-[500px] md:h-[800px] h-[500px];
+        }
         .container {
-            @apply relative flex flex-col items-center justify-center sm:pt-[144px] pt-[100px] max-w-[1200px] pb-[252px] gap-[52px];
+            @apply relative flex flex-col items-center justify-center sm:pt-[144px] pt-[100px] max-w-[1200px] pb-[152px] gap-[52px];
         }
         h2 {
             @apply text-center text-hei-blue;
         }
 
         &__image {
-            @apply relative w-full md:max-w-[600px] max-w-[300px] -mt-[200px];
+            @apply relative w-full md:max-w-[600px] max-w-[300px];
             
             img {
                 @apply w-full h-auto relative  #{!important};
@@ -285,7 +288,18 @@
             }
 
             &-dots {
-                @apply flex flex-row items-center justify-center gap-[10px] pt-[29px];
+                @apply flex flex-row relative items-center justify-center gap-[10px] pt-[29px];
+                .embla__arrows {
+                    @apply absolute h-full w-full;
+                    .embla__arrow {
+                        &--prev {
+                            @apply left-20;
+                        }
+                        &--next {
+                            @apply right-20;
+                        }
+                    }
+                }
 
                 .embla__dot {
                     @apply w-[10px] h-[10px] rounded-full border border-[#755757];

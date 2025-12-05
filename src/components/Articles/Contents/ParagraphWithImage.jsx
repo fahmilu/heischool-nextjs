@@ -7,14 +7,14 @@ const ParagraphWithImage = ({ data }) => {
                     {data.title && <h3 className="!mb-2" dangerouslySetInnerHTML={{ __html: data.title }} />}
                     {data.image && (
                         <div className="content__paragraph-image">
-                            <Image src={process.env.NEXT_PUBLIC_ASSET_URL + data.image} alt={data.title} fill />
+                            <Image src={`${process.env.NEXT_PUBLIC_ASSET_URL}/${data.image}`} alt={'image detail'} fill />
                         </div>
                     )}
                     {data.caption && (
                         <div className="content__paragraph-image-caption">{data.caption}</div>
                     )}
-                    {data.content && (
-                        <div className="content__paragraph-content" dangerouslySetInnerHTML={{ __html: data.content }} />
+                    {data.description && (
+                        <div className="content__paragraph-content" dangerouslySetInnerHTML={{ __html: data.description }} />
                     )}
                 </div>
             </div>

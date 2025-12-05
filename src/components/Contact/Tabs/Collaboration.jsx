@@ -1,7 +1,7 @@
 'use client';
 import { useState } from 'react';
 import DropdownSelect from '@/components/DropdownSelect';
-
+import { pushData } from '@/services/api';
 const Collaboration = () => {
     const Subjects = [
         'School Tour',
@@ -11,10 +11,10 @@ const Collaboration = () => {
     ];
 
     const [formData, setFormData] = useState({
-        firstName: '',
-        lastName: '',
+        first_name: '',
+        last_name: '',
         email: '',
-        phoneNumber: '',
+        phone: '',
         subject: '',
         message: ''
     });
@@ -30,18 +30,18 @@ const Collaboration = () => {
         return emailRegex.test(email);
     };
 
-    const validatePhoneNumber = (phone) => {
+    const validatePhone = (phone) => {
         const phoneRegex = /^[\d\s\-\+\(\)]+$/;
         return phoneRegex.test(phone) && phone.replace(/\D/g, '').length >= 8;
     };
 
     const validateField = (name, value) => {
         switch (name) {
-            case 'firstName':
+            case 'first_name':
                 if (!value.trim()) return 'First name is required';
                 if (value.trim().length < 2) return 'First name must be at least 2 characters';
                 return '';
-            case 'lastName':
+            case 'last_name':
                 if (!value.trim()) return 'Last name is required';
                 if (value.trim().length < 2) return 'Last name must be at least 2 characters';
                 return '';
@@ -49,9 +49,9 @@ const Collaboration = () => {
                 if (!value.trim()) return 'Email is required';
                 if (!validateEmail(value)) return 'Please enter a valid email address';
                 return '';
-            case 'phoneNumber':
+            case 'phone':
                 if (!value.trim()) return 'Phone number is required';
-                if (!validatePhoneNumber(value)) return 'Please enter a valid phone number';
+                if (!validatePhone(value)) return 'Please enter a valid phone number';
                 return '';
             case 'subject':
                 if (!value) return 'Please select a subject';
@@ -152,22 +152,31 @@ const Collaboration = () => {
         console.log('Form submitted:', formData);
         
         // Simulate API call
+        pushData('collaboration-submissions', formData).then((data) => {
+            console.log(data);
+        }).catch((error) => {
+            console.log(error);
+        });
         setTimeout(() => {
             setIsSubmitting(false);
             setSubmitStatus('success');
 
             // Reset form
             setFormData({
-                firstName: '',
-                lastName: '',
+                first_name: '',
+                last_name: '',
                 email: '',
-                phoneNumber: '',
+                phone: '',
                 subject: '',
                 message: ''
             });
             setErrors({});
             setTouched({});
         }, 1000);
+
+        setTimeout(() => {
+            setSubmitStatus(null);
+        }, 5000);
     };
 
     return (
@@ -176,33 +185,33 @@ const Collaboration = () => {
                 <h4>Your Name<small>(Required)</small></h4>
                 <div className="form-row">
                     <div className="form-col">
-                        <label htmlFor="firstName">First Name</label>
+                        <label htmlFor="first_name">First Name</label>
                         <input 
                             type="text" 
-                            id="firstName" 
-                            name="firstName"
-                            value={formData.firstName}
+                            id="first_name" 
+                            name="first_name"
+                            value={formData.first_name}
                             onChange={handleChange}
                             onBlur={handleBlur}
-                            className={touched.firstName && errors.firstName ? 'error' : ''}
+                            className={touched.first_name && errors.first_name ? 'error' : ''}
                         />
-                        {touched.firstName && errors.firstName && (
-                            <span className="error-message">{errors.firstName}</span>
+                        {touched.first_name && errors.first_name && (
+                            <span className="error-message">{errors.first_name}</span>
                         )}
                     </div>
                     <div className="form-col">
-                        <label htmlFor="lastName">Last Name</label>
+                        <label htmlFor="last_name">Last Name</label>
                         <input 
                             type="text" 
-                            id="lastName" 
-                            name="lastName"
-                            value={formData.lastName}
+                            id="last_name" 
+                            name="last_name"
+                            value={formData.last_name}
                             onChange={handleChange}
                             onBlur={handleBlur}
-                            className={touched.lastName && errors.lastName ? 'error' : ''}
+                            className={touched.last_name && errors.last_name ? 'error' : ''}
                         />
-                        {touched.lastName && errors.lastName && (
-                            <span className="error-message">{errors.lastName}</span>
+                        {touched.last_name && errors.last_name && (
+                            <span className="error-message">{errors.last_name}</span>
                         )}
                     </div>
                 </div>
@@ -231,18 +240,18 @@ const Collaboration = () => {
                 <h4>Phone Number<small>(Required)</small></h4>
                 <div className="form-row">
                     <div className="form-col">
-                        {/* <label htmlFor="phoneNumber">Phone Number</label> */}
+                        {/* <label htmlFor="phone">Phone Number</label> */}
                         <input 
                             type="tel" 
-                            id="phoneNumber" 
-                            name="phoneNumber"
-                            value={formData.phoneNumber}
+                            id="phone" 
+                            name="phone"
+                            value={formData.phone}
                             onChange={handleChange}
                             onBlur={handleBlur}
-                            className={touched.phoneNumber && errors.phoneNumber ? 'error' : ''}
+                            className={touched.phone && errors.phone ? 'error' : ''}
                         />
-                        {touched.phoneNumber && errors.phoneNumber && (
-                            <span className="error-message">{errors.phoneNumber}</span>
+                        {touched.phone && errors.phone && (
+                            <span className="error-message">{errors.phone}</span>
                         )}
                     </div>
                 </div>
@@ -254,7 +263,7 @@ const Collaboration = () => {
                         <div className="form-col">
                             <DropdownSelect 
                                 options={Subjects} 
-                                onChange={handleSubjectChange}
+                                onChange={(e) => handleSubjectChange(e.target.value)}
                             />
                             {touched.subject && errors.subject && (
                                 <span className="error-message">{errors.subject}</span>
