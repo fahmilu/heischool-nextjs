@@ -15,7 +15,7 @@ const nextConfig = {
         hostname: 'heischools.co.id',
       },
     ],
-  },  
+  },
 };
 
 export default nextConfig;
