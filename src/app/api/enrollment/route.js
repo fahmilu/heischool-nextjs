@@ -60,12 +60,12 @@ export async function POST(request) {
         */
         
         // For now, just log the data and return success
-        console.log('Enrollment form received:', {
-            location: formData.location,
-            contactsCount: formData.contacts.length,
-            childrenCount: formData.children.length,
-            visitDate: formData.visitDate
-        });
+        // console.log('Enrollment form received:', {
+        //     location: formData.location,
+        //     contactsCount: formData.contacts.length,
+        //     childrenCount: formData.children.length,
+        //     visitDate: formData.visitDate
+        // });
         
         // Optional: Store in database
         // await db.enrollment.create({ data: formData });

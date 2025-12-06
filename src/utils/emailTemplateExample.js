@@ -50,7 +50,6 @@ const exampleFormData = {
 const emailHTML = generateEnrollmentEmail(exampleFormData);
 
 // Log or send the email
-console.log('Generated Email HTML:', emailHTML);
 
 /**
  * Example API endpoint handler (Next.js API route)

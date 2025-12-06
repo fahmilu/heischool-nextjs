@@ -6,7 +6,6 @@ import Collaboration from './Tabs/Collaboration';
 import Image from 'next/image';
 const Contact = ({ page }) => {
     const [activeTab, setActiveTab] = useState(null);
-    console.log(page);
     const banner = page.components.find(component => component.type === 'banner');
     const imageDesktop = banner.data.image;
     const imageMobile = banner.data.image_mobile || banner.data.image;
