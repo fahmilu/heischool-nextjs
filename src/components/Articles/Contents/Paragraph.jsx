@@ -1,5 +1,4 @@
 const Paragraph = ({ data }) => {
-    console.log(data);
     return (
         <div className="content content__paragraph">
             <div className="container">

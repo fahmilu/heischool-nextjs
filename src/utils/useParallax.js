@@ -286,7 +286,6 @@ export const useResponsiveParallax = (element, options = {}, breakpoint = 768, d
     const isMobile = window.innerWidth <= breakpoint;
     
     if (isMobile) {
-      console.log('Parallax disabled on mobile for performance');
       return cleanup;
     }
 

@@ -356,7 +356,6 @@ const Enrollment = () => {
         const isContactsValid = validateAllContacts();
         const isChildrenValid = validateAllChildren();
         const newErrors = validateForm();
-        console.log('newErrors:', newErrors);
         if (!isContactsValid || !isChildrenValid || Object.keys(newErrors).length > 0) {
             setSubmitStatus('error');
             // Scroll to first error
@@ -386,9 +385,6 @@ const Enrollment = () => {
                     child_informations: children,
                     location_id: locations.find(location => location.label === formData.location)?.id
                 };
-    
-                console.log('Form Data:', formData);
-                console.log('Form Data:', submissionData);
                 
                 pushData('enrollment-submissions', submissionData).then((data) => {
                     // console.log(data);

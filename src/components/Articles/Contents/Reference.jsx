@@ -1,5 +1,4 @@
 const Reference = ({ data }) => {
-    console.log(data);
     return (data.references.length > 0 && (
         <div className="content content__reference">
             <div className="container">

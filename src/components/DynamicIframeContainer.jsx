@@ -38,7 +38,7 @@ const DynamicIframeContainer = ({ src, minHeight = 400, maxHeight = 2000 }) => {
       }
     } catch (e) {
       // Cross-origin or other access issues
-      console.log('Direct iframe access not available (cross-origin)');
+      // console.log('Direct iframe access not available (cross-origin)');
     }
     return false;
   }, [minHeight, maxHeight]);

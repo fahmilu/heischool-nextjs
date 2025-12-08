@@ -147,15 +147,15 @@ const Collaboration = () => {
         // Submit form
         setIsSubmitting(true);
         setSubmitStatus(null);
-        console.log('Form Data:', formData);
+        // console.log('Form Data:', formData);
         // Here you would typically send the data to your API
-        console.log('Form submitted:', formData);
+        // console.log('Form submitted:', formData);
         
         // Simulate API call
         pushData('collaboration-submissions', formData).then((data) => {
-            console.log(data);
+            // console.log(data);
         }).catch((error) => {
-            console.log(error);
+            // console.log(error);
         });
         setTimeout(() => {
             setIsSubmitting(false);

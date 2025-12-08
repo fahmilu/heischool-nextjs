@@ -25,7 +25,7 @@ const ContentsSwitcher = ({ type, dataParent, data }) => {
 }
 
 const ArticleContents = ({ data, related }) => {
-    console.log(data);
+    // console.log(data);
     return (
         <section className="articles articles__detail">
             <div className="articles__circle">
