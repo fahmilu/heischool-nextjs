@@ -18,6 +18,13 @@ const nextConfig = {
   },
   eslint: { ignoreDuringBuilds: true },
   typescript: { ignoreBuildErrors: true },
+  
+  // Build optimizations to prevent hanging on servers
+  experimental: {
+    workerThreads: false,
+    cpus: 1,
+  },
+  productionBrowserSourceMaps: false,
 };
 
 export default nextConfig;
