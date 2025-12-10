@@ -17,9 +17,9 @@
     "gsap": "^3.13.0",
     "lenis": "^1.3.11",
     "next": "15.5.7",
-    "react": "19.1.0",
+    "react": "^19.2.1",
     "react-datepicker": "^8.10.0",
-    "react-dom": "19.1.0",
+    "react-dom": "^19.2.1",
     "react-redux": "^9.2.0",
     "tailwindcss-px-to-viewport": "^0.1.4"
   },
