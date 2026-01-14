@@ -32,7 +32,7 @@ const ArticleContents = ({ data, related }) => {
                 <BigCircle />
             </div>
             <Banner data={data} />
-            <Paragraph data={data} />
+            {/* <Paragraph data={data} /> */}
             {
                 data.components &&
                 data.components.map((item, index) => (

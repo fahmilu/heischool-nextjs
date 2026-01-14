@@ -8,7 +8,7 @@ const DetailLocation = ({ data }) => {
                     <p>{data.address} {data.city}</p>
                 </div>
                 <div dangerouslySetInnerHTML={{ __html: iframeTags }} className="map-container"></div>
-                <a href={'/contact#enrollment'}>ENQUIRE</a>
+                <a href={'/contact-us#enrollment'}>ENQUIRE</a>
             </div>
         </section>
     );

@@ -3,6 +3,7 @@ import HomeAbout from "@/components/Home/About";
 import HomeHistory from "@/components/Home/History";
 import HomeEducation from "@/components/Home/Education";
 import HomeMap from "@/components/Home/Map";
+import HomeIframe from "@/components/Home/Iframe";
 import HomeLocation from "@/components/Home/Location";
 import HomeAwards from "@/components/Home/Awards";
 import HomeTestimonials from "@/components/Home/Testimonials";
@@ -23,6 +24,8 @@ export default function Switcher({ page, data, isHome = false }) {
             return <HomeHistory data={data.data} />
         case 'home-education':
             return <HomeEducation data={data.data} />
+        case 'iframe':
+            return <HomeIframe data={data.data} />
         case 'single-image':
             return isHome ? <HomeMap data={data.data} /> : <ApproachBanner data={data.data} />;
         case 'tabs-of-images':

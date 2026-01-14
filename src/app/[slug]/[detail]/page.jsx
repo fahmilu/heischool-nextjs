@@ -51,7 +51,7 @@ const DetailPage = async ({params}) => {
         const articlesData = await fetchData('news');
 
         const relatedArticles = articlesData.data.filter(article => article.id !== articleDetailData.data.id && article.tags.some(tag => articleDetailData.data.tags.includes(tag)));
-        console.log(articleDetailData);
+        // console.log(articleDetailData);
         return (
             <ArticleContents data={articleDetailData.data} related={relatedArticles} />
         );

@@ -33,12 +33,12 @@
             &__icon {
                 @apply lg:w-[100px] md:w-[70px] md:min-h-full min-h-[70px] relative bg-[--color] cursor-pointer;
                 span {
-                    @apply text-hei-blue lg:text-[40px] md:text-[36px] text-[28px] font-black font-noyh md:rotate-[90deg] rotate-0 md:opacity-0 transition-all duration-300;
-                    @apply absolute lg:top-[100px] md:top-[80px] top-[30px] lg:left-[-10px] md:left-[-15px] left-[20px];
+                    @apply text-hei-blue lg:text-[40px] md:text-[36px] sm:text-[28px] text-[24px] font-black font-noyh md:rotate-[90deg] rotate-0 md:opacity-0 transition-all duration-300;
+                    @apply absolute lg:top-[100px] md:top-[80px] top-1/2 max-md:-translate-y-1/2 lg:left-[-10px] md:left-[-15px] left-[20px] max-md:pr-[20px] max-md:w-[80%];
                     // @apply max-md:hidden;
                 }
                 img {
-                    @apply lg:w-[64px] md:w-[50px] lg:h-[64px] md:h-[50px] w-[40px] h-[40px] aspect-square object-contain md:top-[52px] md:left-[50%] left-[unset] md:-translate-x-1/2 top-1/2 max-md:-translate-y-1/2 max-md:right-[50px] transition-all duration-300 #{!important};
+                    @apply lg:w-[64px] md:w-[50px] lg:h-[64px] md:h-[50px] w-[40px] h-[40px] aspect-square object-contain md:top-[52px] md:left-[50%] left-[unset] md:-translate-x-1/2 top-1/2 max-md:-translate-y-1/2 max-md:right-[20px] transition-all duration-300 #{!important};
                 }
 
                 &:hover {
