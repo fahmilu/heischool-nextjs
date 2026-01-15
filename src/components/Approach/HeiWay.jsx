@@ -25,17 +25,17 @@ const HeiWay = ({ data }) => {
                     {data.items.map((item, index) => (
                         <div key={index} className={`section__hei-way__item ${activeItem === index ? 'active' : ''}`} onClick={() => onItemClick(index)} style={{ "--color": colorItems[index] }}>
                             <div className="section__hei-way__item__icon">
-                                <span className="max-md:hidden">
+                                {/* <span className="max-md:hidden">
                                     Details
-                                </span>
-                                <span className="md:!hidden">
+                                </span> */}
+                                <span>
                                     {item.title}
                                 </span>
                                 <Image src={`${process.env.NEXT_PUBLIC_ASSET_URL}/${item.icon}`} alt={item.title} fill />
                             </div>
                             <div>
                                 <div className="section__hei-way__item__content" data-lenis-prevent={activeItem === index}> 
-                                    <h3 className="max-md:hidden">{item.title}</h3>
+                                    {/* <h3 className="max-md:hidden">{item.title}</h3> */}
                                     <h3 className="sm:!hidden">{item.title_mobile}</h3>
                                     <Image src={`${process.env.NEXT_PUBLIC_ASSET_URL}/${item.image}`} alt={item.title} fill className="section__hei-way__item__content__image" />
                                     
